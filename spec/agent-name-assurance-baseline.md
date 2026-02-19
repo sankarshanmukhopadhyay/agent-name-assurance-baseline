@@ -173,3 +173,13 @@ Residual risk MUST be documented by implementers as part of deployment-specific 
 - Formal threat model mapping
 - Automated conformance test suite
 - Interoperable UI signaling guidelines
+
+
+---
+
+# Annex References
+
+Normative requirements in this specification are informed by:
+- Annex A — Risk Surface & Harm Matrix
+- Annex B — NIST & SDO Crosswalk
+
