@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ANAGB Conformance Schema",
+  "version": "0.1",
+  "type": "object",
+  "required": [
+    "implementation_name",
+    "verification_tier",
+    "conformance_profile"
+  ],
+  "properties": {
+    "implementation_name": {
+      "type": "string"
+    },
+    "verification_tier": {
+      "type": "string",
+      "enum": [
+        "AN-0",
+        "AN-1",
+        "AN-2",
+        "AN-3"
+      ]
+    },
+    "conformance_profile": {
+      "type": "string",
+      "enum": [
+        "Core",
+        "Deploy",
+        "Transact",
+        "Enterprise"
+      ]
+    },
+    "controls": {
+      "type": "object"
+    }
+  }
+}
