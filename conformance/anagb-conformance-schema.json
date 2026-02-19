@@ -1,12 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ANAGB Conformance Schema",
+  "title": "ANAGB Conformance Claim Schema",
   "version": "0.1",
   "type": "object",
   "required": [
     "implementation_name",
     "verification_tier",
-    "conformance_profile"
+    "conformance_profile",
+    "controls"
   ],
   "properties": {
     "implementation_name": {
@@ -29,6 +30,14 @@
         "Transact",
         "Enterprise"
       ]
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ANAGB-[A-Z]+-[0-9]{2}$"
+      },
+      "description": "List of implemented ANAGB control IDs."
     }
   }
 }

@@ -1,22 +1,33 @@
-# Agent Name Assurance & Governance Baseline (ANAGB) v0.1
+# agent-name-assurance-baseline
 
 ![Version](https://img.shields.io/badge/version-0.1-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
+![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
 ![Alignment](https://img.shields.io/badge/aligned-NIST-blueviolet)
-![Focus](https://img.shields.io/badge/focus-Trust%20Infrastructure-black)
 
-## Overview
+## About
+A normative assurance and governance baseline for Agent Names and Agent Pages. Defines verification tiers, control IDs, security/privacy safeguards, AI guardrails, and machine-checkable conformance declarations aligned with NIST frameworks to prevent phishing, trust inflation, and authority drift.
 
-ANAGB defines a normative assurance, security, privacy, and AI governance baseline for:
+## Contents
 
-- Agent Names
-- Agent Pages
-- Agent-to-Agent interaction
-- AI-mediated decisioning within decentralized agent ecosystems
+- **Normative spec:** `spec/agent-name-assurance-baseline.md`
+- **Control catalog:** embedded in the spec (Control IDs like `ANAGB-RES-01`, `ANAGB-AI-03`)
+- **Conformance**
+  - Conformance checklist: `conformance/checklist.md`
+  - Conformance declaration template (Markdown): `conformance/conformance-declaration-template.md`
+  - Conformance declaration schema (JSON Schema): `conformance/conformance-declaration.schema.json`
+  - Sample conformance declaration: `conformance/sample-conformance-declaration.json`
+  - Conformance claim schema (implemented controls list): `conformance/anagb-conformance-schema.json`
+- **Annexes**
+  - Risk surface matrix: `annex/A-risk-surface-matrix.md`
+  - NIST crosswalk: `annex/B-nist-crosswalk-matrix.md`
+- **Threat model scaffold:** `threat-model/threat-matrix.md`
 
-## Conformance
+## Conformance model
 
-Implementers may publish formal conformance declarations using:
+Implementers SHOULD publish a signed conformance declaration using the JSON schema in `conformance/conformance-declaration.schema.json` and include evidence pointers for each implemented control ID.
 
-/conformance/conformance-declaration-template.md
+## License
+
+Apache 2.0

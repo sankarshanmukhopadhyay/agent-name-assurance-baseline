@@ -1,0 +1,117 @@
+{
+  "spec_version": "0.1",
+  "implementation": {
+    "name": "ExampleAgent",
+    "version": "1.2.0",
+    "organization": "Example Corp",
+    "jurisdiction": "IN",
+    "deployment_environment": "Production",
+    "public_endpoint": "https://example.org/@exampleagent"
+  },
+  "verification_tier": "AN-2",
+  "conformance_profile": "Deploy",
+  "controls": {
+    "ANAGB-UI-01": {
+      "status": "implemented"
+    },
+    "ANAGB-UI-02": {
+      "status": "implemented"
+    },
+    "ANAGB-UI-03": {
+      "status": "implemented"
+    },
+    "ANAGB-RES-01": {
+      "status": "implemented"
+    },
+    "ANAGB-RES-02": {
+      "status": "implemented"
+    },
+    "ANAGB-RES-03": {
+      "status": "implemented"
+    },
+    "ANAGB-RES-04": {
+      "status": "implemented"
+    },
+    "ANAGB-RES-05": {
+      "status": "implemented"
+    },
+    "ANAGB-RES-06": {
+      "status": "implemented"
+    },
+    "ANAGB-PRIV-01": {
+      "status": "implemented"
+    },
+    "ANAGB-PRIV-02": {
+      "status": "implemented"
+    },
+    "ANAGB-PRIV-03": {
+      "status": "implemented"
+    },
+    "ANAGB-PRIV-04": {
+      "status": "implemented"
+    },
+    "ANAGB-PRIV-05": {
+      "status": "implemented"
+    },
+    "ANAGB-PRIV-06": {
+      "status": "implemented"
+    },
+    "ANAGB-AGT-01": {
+      "status": "implemented"
+    },
+    "ANAGB-AGT-02": {
+      "status": "implemented"
+    },
+    "ANAGB-LOG-01": {
+      "status": "implemented"
+    },
+    "ANAGB-LOG-02": {
+      "status": "implemented"
+    },
+    "ANAGB-LOG-03": {
+      "status": "implemented"
+    },
+    "ANAGB-ABUSE-01": {
+      "status": "implemented"
+    },
+    "ANAGB-ABUSE-02": {
+      "status": "implemented"
+    },
+    "ANAGB-AI-01": {
+      "status": "implemented"
+    },
+    "ANAGB-AI-02": {
+      "status": "implemented"
+    },
+    "ANAGB-AI-03": {
+      "status": "implemented"
+    },
+    "ANAGB-AI-04": {
+      "status": "implemented"
+    },
+    "ANAGB-AI-05": {
+      "status": "implemented"
+    },
+    "ANAGB-AI-06": {
+      "status": "implemented"
+    },
+    "ANAGB-IR-01": {
+      "status": "implemented"
+    },
+    "ANAGB-IR-02": {
+      "status": "implemented"
+    },
+    "ANAGB-IR-03": {
+      "status": "implemented"
+    },
+    "ANAGB-IR-04": {
+      "status": "implemented"
+    }
+  },
+  "exceptions": [],
+  "declaration": {
+    "authorized_signatory": "Jane Doe",
+    "title": "Chief Security Officer",
+    "date": "2026-02-19"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ANAGB Conformance Declaration",
+  "type": "object",
+  "required": [
+    "spec_version",
+    "implementation",
+    "verification_tier",
+    "conformance_profile",
+    "controls",
+    "declaration"
+  ],
+  "properties": {
+    "spec_version": {
+      "type": "string"
+    },
+    "implementation": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "jurisdiction": {
+          "type": "string"
+        },
+        "deployment_environment": {
+          "type": "string"
+        },
+        "public_endpoint": {
+          "type": "string"
+        }
+      }
+    },
+    "verification_tier": {
+      "type": "string",
+      "enum": [
+        "AN-0",
+        "AN-1",
+        "AN-2",
+        "AN-3"
+      ]
+    },
+    "conformance_profile": {
+      "type": "string",
+      "enum": [
+        "Core",
+        "Deploy",
+        "Transact",
+        "Enterprise"
+      ]
+    },
+    "controls": {
+      "type": "object",
+      "description": "Map of control IDs to implementation statements.",
+      "patternProperties": {
+        "^ANAGB-[A-Z]+-[0-9]{2}$": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "implemented",
+                "not_implemented",
+                "not_applicable"
+              ]
+            },
+            "evidence": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "control_id",
+          "justification"
+        ],
+        "properties": {
+          "control_id": {
+            "type": "string",
+            "pattern": "^ANAGB-[A-Z]+-[0-9]{2}$"
+          },
+          "justification": {
+            "type": "string"
+          },
+          "compensating_measures": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "authorized_signatory",
+        "date"
+      ],
+      "properties": {
+        "authorized_signatory": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}
