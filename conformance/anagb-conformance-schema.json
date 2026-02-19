@@ -29,9 +29,6 @@
         "Transact",
         "Enterprise"
       ]
-    },
-    "controls": {
-      "type": "object"
     }
   }
 }

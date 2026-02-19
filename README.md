@@ -15,31 +15,8 @@ ANAGB defines a normative assurance, security, privacy, and AI governance baseli
 - Agent-to-Agent interaction
 - AI-mediated decisioning within decentralized agent ecosystems
 
-It prevents phishing amplification, trust inflation, capability enumeration abuse, privacy overexposure, delegated authority drift, and AI-driven harm without accountability.
+## Conformance
 
-## Core Components
+Implementers may publish formal conformance declarations using:
 
-1. Verification Tiers (AN-0 to AN-3)
-2. Security & Privacy Baseline
-3. AI Guardrails
-4. Conformance Profiles
-
-## Repository Structure
-
-/spec  
-/conformance  
-/threat-model  
-/annex  
-
-## Alignment
-
-- NIST 800-63 Digital Identity Guidelines
-- NIST 800-53 Rev.5 Security Controls
-- NIST AI Risk Management Framework
-- NIST Privacy Framework
-- NIST 800-207 Zero Trust Architecture
-- NIST 800-218 Secure Software Development Framework
-
-## License
-
-Apache 2.0
+/conformance/conformance-declaration-template.md
