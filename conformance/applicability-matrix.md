@@ -36,7 +36,6 @@ Notes:
 
 | Control ID | Title | Requirement Level | Core | Deploy | Transact | Enterprise | Notes |
 |---|---|---:|:---:|:---:|:---:|:---:|---|
-
 | `ANAGB-UI-01` | Tier display | M | M | M | M | M |  |
 | `ANAGB-UI-02` | No generic verified | M | M | M | M | M |  |
 | `ANAGB-UI-03` | High-risk step-up | M | C | C | M | M | Applies for **high-risk actions** (step-up & revocation checks). |
@@ -94,4 +93,3 @@ For controls marked **C** (Conditional), either:
 - **AN-2**: issuer trust framework reference + revocation checking evidence
 - **AN-3**: legal entity validation evidence + change control + incident response attestations
 - **Deploy/Transact/Enterprise**: abuse monitoring metrics, logging retention configs, incident runbooks
-
