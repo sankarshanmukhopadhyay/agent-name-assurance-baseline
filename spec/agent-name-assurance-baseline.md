@@ -124,6 +124,7 @@ This section applies where AI systems influence contact mediation, trust scoring
 | Enterprise | AN-3 + transparency logging + formal governance attestation |
 
 Conformance claims MUST specify the adopted profile and the implemented control IDs.
+A tier/profile applicability matrix is provided in `conformance/applicability-matrix.md` to make control scoping auditable and repeatable.
 
 ---
 
