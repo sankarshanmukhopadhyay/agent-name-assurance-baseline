@@ -13,6 +13,7 @@
 - [ ] ANAGB-RES-01 implemented
 - [ ] ANAGB-RES-02 implemented
 - [ ] ANAGB-RES-03 implemented
+- [ ] ANAGB-RES-04 implemented (recommended)
 - [ ] ANAGB-RES-05 implemented
 - [ ] ANAGB-RES-06 implemented (recommended for AN-2/AN-3)
 
@@ -21,9 +22,12 @@
 - [ ] ANAGB-PRIV-02 implemented
 - [ ] ANAGB-PRIV-03 implemented
 - [ ] ANAGB-PRIV-04 implemented
+- [ ] ANAGB-PRIV-05 implemented (recommended)
+- [ ] ANAGB-PRIV-06 implemented (recommended)
 
 ## Interaction, logging, abuse
 - [ ] ANAGB-AGT-01 implemented
+- [ ] ANAGB-AGT-02 implemented (recommended)
 - [ ] ANAGB-LOG-01 implemented
 - [ ] ANAGB-LOG-02 implemented
 - [ ] ANAGB-LOG-03 implemented
