@@ -1,5 +1,5 @@
 {
-  "spec_version": "0.2.0",
+  "spec_version": "0.2.1",
   "assurance_level": "AL2",
   "implementation": {
     "name": "Example AL2 best practice",

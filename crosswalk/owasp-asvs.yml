@@ -1,0 +1,54 @@
+standard_id: OWASP-ASVS
+standard_name: OWASP Application Security Verification Standard (ASVS)
+standard_version: 4.x
+scope: Application security verification expectations for agent implementations (web/apps/services).
+mappings:
+- anagb:
+    assurance_levels:
+    - AL2
+    evidence_categories:
+    - security
+    - testing
+    - operations
+    refs:
+    - docs/assurance-levels.md#al2
+    - conformance/checklist.md#security
+  external:
+    id: ASVS Level 1
+    name: Baseline security verification for most applications
+    url: https://owasp.org/www-project-application-security-verification-standard/
+  rationale: AL2 requires demonstrable baseline security controls and repeatable verification.
+- anagb:
+    assurance_levels:
+    - AL3
+    evidence_categories:
+    - security
+    - testing
+    - operations
+    - attestation
+    refs:
+    - docs/assurance-levels.md#al3
+    - evidence-bundles/evidence-bundle.schema.json
+  external:
+    id: ASVS Level 2
+    name: Increased assurance for applications handling sensitive data / higher risk
+    url: https://owasp.org/www-project-application-security-verification-standard/
+  rationale: AL3 implies stronger protection against common and targeted attacks plus
+    higher-quality evidence.
+- anagb:
+    assurance_levels:
+    - AL4
+    evidence_categories:
+    - security
+    - testing
+    - operations
+    - attestation
+    - risk
+    refs:
+    - docs/assurance-levels.md#al4
+  external:
+    id: ASVS Level 3
+    name: Highest assurance; critical applications with significant threat exposure
+    url: https://owasp.org/www-project-application-security-verification-standard/
+  rationale: AL4 corresponds to high-criticality deployments where advanced verification
+    depth is expected.

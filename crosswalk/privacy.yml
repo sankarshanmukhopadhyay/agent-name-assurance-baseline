@@ -1,0 +1,37 @@
+standard_id: PRIVACY
+standard_name: Privacy Alignment (ISO/IEC 27701 + GDPR concepts)
+standard_version: mixed
+scope: Privacy management and accountability expectations for agents processing personal
+  data.
+mappings:
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - privacy
+    - governance
+    - risk
+    refs:
+    - conformance/checklist.md#privacy
+    - docs/assurance-levels.md
+  external:
+    id: ISO/IEC 27701
+    name: Privacy Information Management System (PIMS)
+    url: https://www.iso.org/standard/71670.html
+  rationale: Evidence bundles should include privacy governance and controls when
+    agents process personal data.
+- anagb:
+    assurance_levels:
+    - AL3
+    - AL4
+    evidence_categories:
+    - privacy
+    - attestation
+    - risk
+  external:
+    id: GDPR (conceptual mapping)
+    name: Lawful basis, transparency, DSAR, minimization, security of processing
+  rationale: Public-facing and delegated agents raise GDPR-style accountability requirements;
+    include as guidance for global adopters.

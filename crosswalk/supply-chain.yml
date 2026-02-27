@@ -1,0 +1,54 @@
+standard_id: SUPPLY-CHAIN
+standard_name: Software Supply Chain Alignment (SLSA, NIST SSDF, SBOM formats)
+standard_version: mixed
+scope: Build provenance, dependency transparency, and secure SDLC expectations for
+  agent implementations.
+mappings:
+- anagb:
+    assurance_levels:
+    - AL3
+    - AL4
+    evidence_categories:
+    - security
+    - attestation
+    - operations
+    - testing
+    refs:
+    - docs/assurance-levels.md#al3
+    - docs/assurance-levels.md#al4
+  external:
+    id: SLSA
+    name: Supply-chain Levels for Software Artifacts (build provenance)
+    url: https://slsa.dev/
+  rationale: AL3/AL4 should include build provenance and hardened pipelines to reduce
+    compromise risk.
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - security
+    - operations
+    - governance
+  external:
+    id: NIST SSDF
+    name: Secure Software Development Framework (SP 800-218)
+    url: https://csrc.nist.gov/publications/detail/sp/800-218/final
+  rationale: SSDF provides an SDLC control baseline that maps naturally into evidence
+    bundles.
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - attestation
+    - security
+    - operations
+  external:
+    id: SBOM
+    name: Software Bill of Materials (SPDX / CycloneDX)
+    url: https://www.cisa.gov/sbom
+  rationale: SBOM artifacts are practical audit inputs and should be included as optional/required
+    artifacts by AL.

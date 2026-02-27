@@ -56,3 +56,16 @@ This repo provides synthetic examples for:
   - `evidence-bundles/examples/al3-good-enough/`
   - `evidence-bundles/examples/al3-best-practice/`
 
+
+
+---
+
+## Standards alignment (optional)
+
+Implementers MAY include non-normative standards mapping metadata in their bundle using `standards_alignment`.
+
+This is intended to help reviewers reuse existing audit artifacts (ISO 27001, SOC 2, OWASP, etc.) without weakening the normative ANAGB requirements.
+
+References:
+- Crosswalk registry: `crosswalk/README.md`
+- Annex index: `annex/README.md`

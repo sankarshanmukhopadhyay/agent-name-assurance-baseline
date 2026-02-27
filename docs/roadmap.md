@@ -108,3 +108,30 @@ Delivered:
 
 This roadmap is a living artifact. Items may evolve, merge, or reprioritize based on ecosystem feedback and downstream dependencies.
 **No schedule is implied.**
+
+
+## 8. Standards coverage and machine-readable crosswalk registry
+
+- Expand annex coverage to include major adjacent standards used in real audits and procurement:
+  - OWASP (ASVS, API Security Top 10)
+  - ISO 27001/27002
+  - SOC 2 (Trust Services Criteria)
+  - Software supply chain standards (SLSA, NIST SSDF, SBOM formats)
+  - Privacy standards (ISO 27701 + GDPR concepts)
+  - AI governance standards (ISO 42001, ISO 23894, OECD, EU AI Act pointers)
+  - Identity and crypto standards (W3C DID/VC, IETF JOSE/COSE, FIDO2/WebAuthn)
+- Provide **machine-readable** mappings (YAML/JSON) so the crosswalk is usable by tooling (not just prose).
+- Wire crosswalk references into evidence bundles and conformance declarations as optional, non-normative metadata.
+
+**Outcome:** faster adoption and higher audit interoperability without weakening the normative core.
+
+### Status
+✅ **Completed (v0.2.1)**
+
+Delivered:
+- Annex index and expanded annex set: `annex/README.md`
+- Machine-readable crosswalk registry: `crosswalk/README.md`
+- Crosswalk YAMLs for OWASP, ISO, SOC2, supply chain, privacy, AI governance, and identity/crypto: `crosswalk/*.yml`
+- Optional `standards_alignment` field in schemas for traceable mapping:
+  - Evidence bundles: `evidence-bundles/evidence-bundle.schema.json`
+  - Conformance declarations: `conformance/conformance-declaration.schema.json`

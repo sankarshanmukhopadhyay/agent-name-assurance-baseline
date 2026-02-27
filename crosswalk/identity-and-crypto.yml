@@ -1,0 +1,50 @@
+standard_id: IDENTITY-CRYPTO
+standard_name: Identity & Cryptography Alignment (W3C DID/VC, IETF JOSE/COSE, FIDO2/WebAuthn)
+standard_version: mixed
+scope: Identity binding, authentication, signatures, and credentialing options for
+  agent ecosystems.
+mappings:
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - security
+    - attestation
+    - governance
+    refs:
+    - docs/implementer-guidance.md#did-based
+    - docs/implementer-guidance.md#registry-backed
+  external:
+    id: W3C DID Core / Verifiable Credentials
+    name: Decentralized identifiers and verifiable credential data model
+    url: https://www.w3.org/TR/did-core/
+  rationale: DID/VC provide interoperable identity binding and claim verification
+    patterns suitable for agent name/page assertions.
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - security
+    - testing
+  external:
+    id: IETF JOSE / COSE
+    name: JWT/JWS/JWE and CBOR Object Signing/Encryption
+  rationale: Signature and encryption profiles can be implemented using JOSE/COSE;
+    evidence should record chosen profile and key management.
+- anagb:
+    assurance_levels:
+    - AL3
+    - AL4
+    evidence_categories:
+    - security
+    - operations
+  external:
+    id: FIDO2 / WebAuthn
+    name: Phishing-resistant authentication for operators and privileged actions
+    url: https://fidoalliance.org/fido2/
+  rationale: For high assurance (AL3/AL4), privileged operations should use phishing-resistant
+    authentication where feasible.

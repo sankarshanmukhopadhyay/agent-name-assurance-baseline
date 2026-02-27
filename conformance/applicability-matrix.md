@@ -1,4 +1,4 @@
-# Tier & Profile Applicability Matrix (ANAGB v0.2.0)
+# Tier & Profile Applicability Matrix (ANAGB v0.2.1)
 
 This document operationalizes **what you must implement** by combining:
 

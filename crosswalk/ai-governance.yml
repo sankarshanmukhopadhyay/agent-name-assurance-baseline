@@ -1,0 +1,52 @@
+standard_id: AI-GOV
+standard_name: AI Governance Alignment (ISO/IEC 42001, ISO/IEC 23894, OECD principles,
+  EU AI Act pointers)
+standard_version: mixed
+scope: Management system and risk governance alignment for AI-enabled agent behavior.
+mappings:
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - ai
+    - risk
+    - governance
+    - testing
+    refs:
+    - docs/implementer-guidance.md#decision-logs-and-assumptions
+    - threat-model/threat-matrix.md
+  external:
+    id: ISO/IEC 42001
+    name: AI Management System (AIMS)
+    url: https://www.iso.org/standard/81230.html
+  rationale: ANAGB AI safeguards and evidence bundles align with management-system
+    expectations for governance and continual improvement.
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - ai
+    - risk
+  external:
+    id: ISO/IEC 23894
+    name: AI Risk Management guidance
+    url: https://www.iso.org/standard/77304.html
+  rationale: Risk assessment and treatment evidence can be crosswalked to ISO 23894
+    concepts.
+- anagb:
+    assurance_levels:
+    - AL3
+    - AL4
+    evidence_categories:
+    - ai
+    - testing
+    - attestation
+  external:
+    id: OECD AI Principles / EU AI Act (pointers)
+    name: Transparency, robustness, accountability, risk-tier expectations
+  rationale: High assurance deployments should explicitly demonstrate these properties
+    in evidence and testing.

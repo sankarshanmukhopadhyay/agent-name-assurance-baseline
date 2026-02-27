@@ -1,0 +1,50 @@
+standard_id: SOC2-TSC
+standard_name: AICPA SOC 2 Trust Services Criteria (TSC)
+standard_version: 2017+
+scope: Trust Services Criteria alignment for organizations attesting operational controls.
+mappings:
+- anagb:
+    assurance_levels:
+    - AL2
+    evidence_categories:
+    - security
+    - operations
+    - governance
+    refs:
+    - docs/assurance-levels.md#al2
+  external:
+    id: Security (Common Criteria)
+    name: Baseline security criteria expected for SOC 2 reports
+  rationale: AL2 aligns with foundational SOC2 security expectations for startups
+    and services.
+- anagb:
+    assurance_levels:
+    - AL3
+    evidence_categories:
+    - security
+    - operations
+    - attestation
+    - risk
+    refs:
+    - docs/assurance-levels.md#al3
+  external:
+    id: Security + Availability/Confidentiality (as applicable)
+    name: Expanded TSC coverage for higher assurance deployments
+  rationale: AL3 implies stronger operational assurances and richer evidence suitable
+    for broader SOC2 scope.
+- anagb:
+    assurance_levels:
+    - AL4
+    evidence_categories:
+    - security
+    - operations
+    - attestation
+    - risk
+    - privacy
+    refs:
+    - docs/assurance-levels.md#al4
+  external:
+    id: Full TSC scope (context-dependent)
+    name: Security, Availability, Confidentiality, Processing Integrity, Privacy
+  rationale: AL4 environments typically demand multi-domain operational assurance
+    and formal attestations.

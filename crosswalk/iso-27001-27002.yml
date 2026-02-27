@@ -1,0 +1,25 @@
+standard_id: ISO-27001-27002
+standard_name: ISO/IEC 27001 & ISO/IEC 27002
+standard_version: '2022'
+scope: ISMS control alignment for enterprise and public-sector procurement and audits.
+mappings:
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - governance
+    - risk
+    - security
+    - operations
+    - attestation
+    refs:
+    - docs/implementer-guidance.md#enterprise-iam-backed
+    - docs/assurance-levels.md
+  external:
+    id: Annex A (2022) control domains
+    name: Governance, people, physical, technological controls (ISMS)
+    url: https://www.iso.org/standard/82875.html
+  rationale: ANAGB evidence bundles can be mapped into ISMS artifacts (policies, risk
+    treatment, monitoring, incident response).

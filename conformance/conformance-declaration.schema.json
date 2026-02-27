@@ -168,8 +168,46 @@
       },
       "additionalProperties": false,
       "description": "Pointer to an evidence bundle index."
+    },
+    "standards_alignment": {
+      "type": "array",
+      "description": "Optional standards alignment declarations (non-normative).",
+      "items": {
+        "type": "object",
+        "required": [
+          "standard_id",
+          "standard_name"
+        ],
+        "properties": {
+          "standard_id": {
+            "type": "string",
+            "pattern": "^[A-Z0-9][A-Z0-9\\-]{2,64}$"
+          },
+          "standard_name": {
+            "type": "string"
+          },
+          "standard_version": {
+            "type": "string"
+          },
+          "crosswalk_ref": {
+            "type": "string",
+            "description": "Path to an in-repo machine-readable crosswalk file (YAML)."
+          },
+          "mapped_artifact_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9\\-]{2,64}$"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
     }
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "$id": "https://example.org/anagb/conformance-declaration.schema.json"
 }

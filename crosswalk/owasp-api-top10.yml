@@ -1,0 +1,24 @@
+standard_id: OWASP-API-TOP10
+standard_name: OWASP API Security Top 10
+standard_version: 2019/2023
+scope: API-specific risks for agent endpoints (name claims, page publishing, verification
+  APIs).
+mappings:
+- anagb:
+    assurance_levels:
+    - AL2
+    - AL3
+    - AL4
+    evidence_categories:
+    - security
+    - testing
+    refs:
+    - conformance/checklist.md#security
+    - threat-model/threat-matrix.md
+  external:
+    id: API Top 10 (general)
+    name: Common API risk classes (authorization, auth, data exposure, injection,
+      etc.)
+    url: https://owasp.org/www-project-api-security/
+  rationale: Agent ecosystems are API-first; API threat classes should be explicitly
+    covered in testing and threat modeling.

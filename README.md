@@ -1,10 +1,10 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.2.0-blue)
+![Version](https://img.shields.io/badge/version-0.2.1-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
-![Alignment](https://img.shields.io/badge/aligned-NIST-blueviolet)
+![Alignment](https://img.shields.io/badge/aligned-multi-blueviolet)
 
 ## About
 A normative assurance and governance baseline for **Agent Names** and **Agent Pages**. Defines verification tiers, control IDs, security/privacy safeguards, AI guardrails, and **machine-checkable conformance declarations** aligned with NIST frameworks to reduce phishing amplification, trust inflation, privacy harm, and authority drift.
@@ -31,8 +31,17 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
   - Sample conformance declaration: `conformance/sample-conformance-declaration.json`
   - Conformance claim schema (implemented controls list): `conformance/anagb-conformance-schema.json`
 - **Annexes**
+  - Annex index: `annex/README.md`
   - Risk surface matrix: `annex/A-risk-surface-matrix.md`
   - NIST crosswalk: `annex/B-nist-crosswalk-matrix.md`
+  - OWASP alignment (ASVS + API Top 10): `annex/C-owasp-alignment.md`
+  - ISO 27001/27002 alignment: `annex/D-iso27001-alignment.md`
+  - SOC 2 alignment: `annex/E-soc2-alignment.md`
+  - Supply chain & SBOM alignment: `annex/F-supply-chain-alignment.md`
+  - Privacy alignment: `annex/G-privacy-alignment.md`
+  - AI governance alignment: `annex/H-ai-governance-alignment.md`
+  - Identity & crypto alignment: `annex/I-identity-and-crypto-alignment.md`
+  - Machine-readable crosswalk registry: `crosswalk/README.md`
 - **Threat model:** `threat-model/threat-matrix.md`
 - **Repo validation tool:** `tools/validate_repo.py` (used by CI)
 

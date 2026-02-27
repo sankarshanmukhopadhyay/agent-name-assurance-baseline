@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Iterable
 
 import jsonschema
+import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,6 +55,47 @@ def validate_json(schema: dict, instance: dict, label: str) -> None:
         path = "/".join([str(p) for p in e.path]) or "(root)"
         raise RuntimeError(f"{label}: schema validation error at {path}: {e.message}") from e
 
+
+
+
+def validate_crosswalk_registry() -> list[str]:
+    errors: list[str] = []
+    cw_dir = ROOT / "crosswalk"
+    if not cw_dir.exists():
+        return errors
+
+    required_top = {"standard_id", "standard_name", "standard_version", "scope", "mappings"}
+
+    for p in sorted(cw_dir.glob("*.yml")):
+        try:
+            doc = yaml.safe_load(p.read_text(encoding="utf-8"))
+        except Exception as e:
+            errors.append(f"[crosswalk] {p.name}: YAML parse error: {e}")
+            continue
+
+        if not isinstance(doc, dict):
+            errors.append(f"[crosswalk] {p.name}: expected a mapping/object at top level")
+            continue
+
+        missing = required_top - set(doc.keys())
+        if missing:
+            errors.append(f"[crosswalk] {p.name}: missing keys: {sorted(missing)}")
+            continue
+
+        if not isinstance(doc.get("mappings"), list) or len(doc["mappings"]) < 1:
+            errors.append(f"[crosswalk] {p.name}: 'mappings' must be a non-empty list")
+            continue
+
+        # lightweight checks for mapping entries
+        for j, entry in enumerate(doc["mappings"]):
+            if not isinstance(entry, dict):
+                errors.append(f"[crosswalk] {p.name}: mapping[{j}] must be an object")
+                continue
+            if "anagb" not in entry or "external" not in entry:
+                errors.append(f"[crosswalk] {p.name}: mapping[{j}] must include 'anagb' and 'external'")
+                continue
+
+    return errors
 
 def main() -> int:
     spec = read_text("spec/agent-name-assurance-baseline.md")
