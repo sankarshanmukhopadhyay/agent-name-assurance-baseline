@@ -45,6 +45,13 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
 - **Threat model:** `threat-model/threat-matrix.md`
 - **Repo validation tool:** `tools/validate_repo.py` (used by CI)
 
+
+## Integration with DPI AI Governance Frameworks
+
+This repository provides an **identity assurance substrate** for named agents. The DPI AI Governance repositories consume this work via a lightweight interface contract (risk-tier ↔ minimum assurance expectation) and MUST NOT duplicate ANAB annexes.
+
+- DPI AI crosswalk annex: `annex/J-dpi-ai-crosswalk.md`
+
 ## Conformance model
 Implementers SHOULD publish a **signed** conformance declaration using `conformance/conformance-declaration.schema.json` and include evidence pointers for each implemented control ID.
 

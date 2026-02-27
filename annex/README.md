@@ -18,6 +18,7 @@ The annex set is intentionally split into:
 - **Annex G — Privacy alignment (ISO 27701 + GDPR concepts):** `annex/G-privacy-alignment.md`
 - **Annex H — AI governance alignment (ISO 42001, ISO 23894, OECD, EU AI Act pointers):** `annex/H-ai-governance-alignment.md`
 - **Annex I — Identity & crypto alignment (W3C DID/VC, IETF JOSE/COSE, FIDO2/WebAuthn):** `annex/I-identity-and-crypto-alignment.md`
+- **Annex J — DPI AI crosswalk (risk tier ↔ identity assurance):** `annex/J-dpi-ai-crosswalk.md`
 
 ## Machine-readable crosswalk registry
 
