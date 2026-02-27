@@ -1,0 +1,54 @@
+{
+  "spec_version": "0.2.0",
+  "assurance_level": "AL3",
+  "implementation": {
+    "name": "Example AL3 good enough",
+    "version": "1.0.0",
+    "organization": "ExampleCo",
+    "deployment_environment": "synthetic"
+  },
+  "generated_at": "2026-02-27T05:00:00+00:00",
+  "review_window_days": 90,
+  "artifacts": [
+    {
+      "id": "decision-log",
+      "category": "governance",
+      "required": true,
+      "description": "Key decisions, assumptions, and trade-offs with dates and owners.",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/decision-log.md"
+      }
+    },
+    {
+      "id": "risk-assessment",
+      "category": "risk",
+      "required": true,
+      "description": "Risk/threat assessment aligned to threat-model/threat-matrix.md.",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/risk-assessment.md"
+      }
+    },
+    {
+      "id": "controls-mapping",
+      "category": "testing",
+      "required": true,
+      "description": "Mapping from ANAGB controls to implementation evidence pointers.",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/controls-mapping.md"
+      }
+    },
+    {
+      "id": "test-results",
+      "category": "testing",
+      "required": true,
+      "description": "Reproducible test results or test vectors for critical controls.",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/test-results/README.md"
+      }
+    }
+  ]
+}

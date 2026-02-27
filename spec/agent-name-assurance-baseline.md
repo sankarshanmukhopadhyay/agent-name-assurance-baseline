@@ -1,7 +1,9 @@
-# Agent Name Assurance & Governance Baseline (ANAGB) v0.1
+# Agent Name Assurance & Governance Baseline (ANAGB) v0.2.0
 
 ## Status
 Draft — Working Group Review
+
+This release introduces **Assurance Levels (AL1–AL4)** and standardized **evidence bundles** for repeatable audits.
 
 ## Normative Language
 The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**, **SHOULD**, **SHOULD NOT**, **RECOMMENDED**, and **MAY** are to be interpreted as described in RFC 2119.
@@ -20,6 +22,19 @@ This specification defines assurance, security, privacy, and AI governance requi
 The objective is to prevent phishing amplification, trust inflation, privacy harm, authority confusion, and unsafe AI delegation while enabling human-readable identifiers layered over decentralized identifiers (DIDs).
 
 ---
+
+
+## 1.1 Assurance levels (AL1–AL4)
+
+In addition to verification tiers (AN-0…AN-3), implementers MUST declare an **Assurance Level** claim (AL1–AL4) describing the maturity and auditability of the overall deployment.
+
+- AL definitions and boundary cases are specified in `docs/assurance-levels.md`.
+- AL2 and above MUST be backed by a published evidence bundle (see `evidence-bundles/`).
+
+Conformance artifacts MUST include:
+- `assurance_level` (AL1–AL4)
+- `evidence_bundle` pointer for AL2+
+
 
 ## 2. Verification Tiers
 

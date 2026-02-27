@@ -1,10 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ANAGB Conformance Claim Schema",
-  "version": "0.1",
+  "version": "0.2.0",
   "type": "object",
   "required": [
     "implementation_name",
+    "assurance_level",
     "verification_tier",
     "conformance_profile",
     "controls"
@@ -38,6 +39,38 @@
         "pattern": "^ANAGB-[A-Z]+-[0-9]{2}$"
       },
       "description": "List of implemented ANAGB control IDs."
+    },
+    "assurance_level": {
+      "type": "string",
+      "enum": [
+        "AL1",
+        "AL2",
+        "AL3",
+        "AL4"
+      ]
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "control_id",
+          "justification"
+        ],
+        "properties": {
+          "control_id": {
+            "type": "string",
+            "pattern": "^ANAGB-[A-Z]+-[0-9]{2}$"
+          },
+          "justification": {
+            "type": "string"
+          },
+          "compensating_measures": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
     }
   }
 }

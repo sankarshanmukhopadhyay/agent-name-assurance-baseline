@@ -1,0 +1,154 @@
+{
+  "spec_version": "0.2.0",
+  "assurance_level": "AL3",
+  "implementation": {
+    "name": "Enterprise Agent",
+    "version": "0.1.0",
+    "organization": "MegaCorp",
+    "jurisdiction": "N/A",
+    "deployment_environment": "production",
+    "public_endpoint": "https://example.invalid/agent"
+  },
+  "verification_tier": "AN-3",
+  "conformance_profile": "Enterprise",
+  "evidence_bundle": {
+    "type": "path",
+    "ref": "evidence-bundles/examples/al3-best-practice/bundle.json"
+  },
+  "controls": {
+    "ANAGB-ABUSE-01": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-abuse-01"
+    },
+    "ANAGB-ABUSE-02": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-abuse-02"
+    },
+    "ANAGB-AGT-01": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-agt-01"
+    },
+    "ANAGB-AGT-02": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-agt-02"
+    },
+    "ANAGB-AI-01": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ai-01"
+    },
+    "ANAGB-AI-02": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ai-02"
+    },
+    "ANAGB-AI-03": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ai-03"
+    },
+    "ANAGB-AI-04": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ai-04"
+    },
+    "ANAGB-AI-05": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ai-05"
+    },
+    "ANAGB-AI-06": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ai-06"
+    },
+    "ANAGB-IR-01": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ir-01"
+    },
+    "ANAGB-IR-02": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ir-02"
+    },
+    "ANAGB-IR-03": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ir-03"
+    },
+    "ANAGB-IR-04": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ir-04"
+    },
+    "ANAGB-LOG-01": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-log-01"
+    },
+    "ANAGB-LOG-02": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-log-02"
+    },
+    "ANAGB-LOG-03": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-log-03"
+    },
+    "ANAGB-PRIV-01": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-priv-01"
+    },
+    "ANAGB-PRIV-02": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-priv-02"
+    },
+    "ANAGB-PRIV-03": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-priv-03"
+    },
+    "ANAGB-PRIV-04": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-priv-04"
+    },
+    "ANAGB-PRIV-05": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-priv-05"
+    },
+    "ANAGB-PRIV-06": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-priv-06"
+    },
+    "ANAGB-RES-01": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-res-01"
+    },
+    "ANAGB-RES-02": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-res-02"
+    },
+    "ANAGB-RES-03": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-res-03"
+    },
+    "ANAGB-RES-04": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-res-04"
+    },
+    "ANAGB-RES-05": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-res-05"
+    },
+    "ANAGB-RES-06": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-res-06"
+    },
+    "ANAGB-UI-01": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ui-01"
+    },
+    "ANAGB-UI-02": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ui-02"
+    },
+    "ANAGB-UI-03": {
+      "status": "implemented",
+      "evidence": "evidence://anagb-ui-03"
+    }
+  },
+  "exceptions": [],
+  "declaration": {
+    "authorized_signatory": "Jane Doe",
+    "title": "Security Lead",
+    "date": "2026-02-27"
+  }
+}

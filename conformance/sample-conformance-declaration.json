@@ -1,5 +1,5 @@
 {
-  "spec_version": "0.1",
+  "spec_version": "0.2.0",
   "implementation": {
     "name": "ExampleAgent",
     "version": "1.2.0",
@@ -113,5 +113,10 @@
     "authorized_signatory": "Jane Doe",
     "title": "Chief Security Officer",
     "date": "2026-02-19"
+  },
+  "assurance_level": "AL2",
+  "evidence_bundle": {
+    "type": "path",
+    "ref": "evidence-bundles/examples/al2-good-enough/bundle.json"
   }
 }

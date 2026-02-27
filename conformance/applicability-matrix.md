@@ -1,7 +1,8 @@
-# Tier & Profile Applicability Matrix (ANAGB v0.1)
+# Tier & Profile Applicability Matrix (ANAGB v0.2.0)
 
 This document operationalizes **what you must implement** by combining:
 
+- **Assurance levels** (AL1…AL4): maturity/auditability of the overall deployment
 - **Verification tiers** (AN-0 … AN-3): strength of the *name ↔ DID binding*  
 - **Conformance profiles** (Core / Deploy / Transact / Enterprise): scope of operational controls
 

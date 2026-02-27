@@ -1,6 +1,6 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.1-blue)
+![Version](https://img.shields.io/badge/version-0.2.0-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
@@ -9,10 +9,21 @@
 ## About
 A normative assurance and governance baseline for **Agent Names** and **Agent Pages**. Defines verification tiers, control IDs, security/privacy safeguards, AI guardrails, and **machine-checkable conformance declarations** aligned with NIST frameworks to reduce phishing amplification, trust inflation, privacy harm, and authority drift.
 
+## Start here (fast path)
+
+1. Read the **normative spec**: `spec/agent-name-assurance-baseline.md`  
+2. Choose your **Tier** (AN-0…AN-3) + **Profile** (Core/Deploy/Transact/Enterprise): `conformance/applicability-matrix.md`  
+3. Decide your **Assurance Level** (AL1–AL4): `docs/assurance-levels.md`  
+4. Publish a **conformance declaration** + **evidence bundle**:
+   - Declaration schema: `conformance/conformance-declaration.schema.json`
+   - Evidence bundle schema: `evidence-bundles/evidence-bundle.schema.json`
+5. Use implementation guidance + patterns: `docs/implementer-guidance.md`
+
 ## Contents
 - **Normative spec:** `spec/agent-name-assurance-baseline.md`
 - **Control catalog:** embedded in the spec (Control IDs like `ANAGB-RES-01`, `ANAGB-AI-03`)
 - **Applicability matrix (tier/profile):** `conformance/applicability-matrix.md`
+- **Evidence bundles:** `evidence-bundles/README.md`
 - **Conformance**
   - Conformance checklist: `conformance/checklist.md`
   - Conformance declaration template (Markdown): `conformance/conformance-declaration-template.md`
@@ -50,6 +61,10 @@ Implementers SHOULD publish a **signed** conformance declaration using `conforma
 5. **Publish and reference**
    - Host the signed declaration at a stable URL under your Agent Page / docs site.
    - Link to it from the Agent Page so verifiers and relying parties can fetch it deterministically.
+
+## Release discipline
+- Changelog: `CHANGELOG.md`
+- Versioning & compatibility: `docs/versioning-and-compatibility.md`
 
 ## License
 Apache 2.0

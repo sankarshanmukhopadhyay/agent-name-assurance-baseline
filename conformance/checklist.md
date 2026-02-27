@@ -47,3 +47,31 @@
 - [ ] ANAGB-IR-02 implemented
 - [ ] ANAGB-IR-03 implemented
 - [ ] ANAGB-IR-04 implemented
+
+## Evidence bundle and audit readiness (AL)
+
+### AL1 (minimum)
+- [ ] Assurance level declared (AL1–AL4)
+- [ ] Boundary case classification declared (HITL / delegated / org-issued)
+- [ ] Authority boundary documented (allowed vs disallowed actions)
+- [ ] Key rotation / revocation procedure documented
+- [ ] Minimal audit log fields present (actor, time, identity, result)
+
+### AL2 (managed)
+- [ ] Evidence bundle published and referenced in conformance declaration
+- [ ] Change control for policy/config affecting binding and delegation
+- [ ] Delegation artifact scoped + revocable (if delegation exists)
+- [ ] JML controls for org-issued agents (if org-issued)
+
+### AL3 (auditable)
+- [ ] Reproducible tests / test vectors for critical controls
+- [ ] Decision log present with assumptions and threat model mapping
+- [ ] Review cadence defined for threat/risk updates
+- [ ] Step-up gating for high-risk actions (if delegated)
+
+### AL4 (continuous)
+- [ ] Continuous monitoring for assurance-critical conditions
+- [ ] Automated evidence capture / freshness measurement
+- [ ] SLOs defined for resolution/revocation/transparency services
+- [ ] Post-incident assurance loop defined and exercised
+

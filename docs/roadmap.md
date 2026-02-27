@@ -16,6 +16,14 @@ adopted by ecosystems (wallets, agents, registries, verifiers) without bespoke i
 
 **Outcome:** assurance levels that can be implemented and audited without interpretive dance.
 
+### Status
+✅ **Completed (v0.2.0)**
+
+Delivered:
+- Normative AL1–AL4 definitions with boundary cases + upgrade paths: `docs/assurance-levels.md`
+- Checklist expansion for audit readiness: `conformance/checklist.md`
+- Conformance schema support for `assurance_level` + evidence bundle pointers
+
 ## 2. Evidence bundles and audit artifacts
 
 - Publish a standardized **evidence bundle** model per assurance level (required vs optional artifacts).
@@ -24,6 +32,14 @@ adopted by ecosystems (wallets, agents, registries, verifiers) without bespoke i
 
 **Outcome:** predictable audits and repeatable compliance.
 
+### Status
+✅ **Completed (v0.2.0)**
+
+Delivered:
+- Standardized evidence bundle model + JSON schema: `evidence-bundles/evidence-bundle.schema.json`
+- Synthetic example bundles (“good enough” vs “best practice”): `evidence-bundles/examples/`
+- Checklist expansion for repeatable audit execution: `conformance/checklist.md`
+
 ## 3. Conformance model hardening
 
 - Evolve the conformance schema(s) to fully express AL requirements, profiles, and exceptions.
@@ -31,6 +47,14 @@ adopted by ecosystems (wallets, agents, registries, verifiers) without bespoke i
 - Improve validation rules and error messages to be machine-consumable.
 
 **Outcome:** machine-operable conformance, not prose-only compliance.
+
+### Status
+✅ **Completed (v0.2.0)**
+
+Delivered:
+- Conformance schemas updated to express AL claims + evidence bundle pointers + exceptions
+- Additional sample declarations (startup, enterprise, public sector): `conformance/samples/`
+- Improved validation tooling output for machine parsing: `tools/validate_repo.py`
 
 ## 4. Threat model and misuse-case coverage
 
@@ -56,6 +80,14 @@ adopted by ecosystems (wallets, agents, registries, verifiers) without bespoke i
 
 **Outcome:** faster adoption, fewer foot-guns.
 
+### Status
+✅ **Completed (v0.2.0)**
+
+Delivered:
+- Worked end-to-end adoption flow + decision log expectations: `docs/implementer-guidance.md`
+- Stack guidance (Web PKI, DID-based, registry-backed, enterprise IAM-backed)
+- Design patterns and anti-patterns for implementers
+
 ## 7. Repository UX and release discipline
 
 - Improve navigation: link spec → conformance → annexes → threat model with a clear “start here” flow.
@@ -63,6 +95,14 @@ adopted by ecosystems (wallets, agents, registries, verifiers) without bespoke i
 - Expand CI checks (schema validation, markdown linting, link checking) for sustained quality.
 
 **Outcome:** a repo that behaves like product-grade infrastructure.
+
+### Status
+✅ **Completed (v0.2.0)**
+
+Delivered:
+- Clear “start here” navigation flow: `README.md`
+- CHANGELOG + explicit versioning/compatibility policy: `CHANGELOG.md`, `docs/versioning-and-compatibility.md`
+- Expanded CI checks: schema validation, markdown linting, link checking (`.github/workflows/ci.yml`)
 
 ## Tracking philosophy
 

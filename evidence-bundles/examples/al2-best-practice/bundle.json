@@ -1,0 +1,64 @@
+{
+  "spec_version": "0.2.0",
+  "assurance_level": "AL2",
+  "implementation": {
+    "name": "Example AL2 best practice",
+    "version": "1.0.0",
+    "organization": "ExampleCo",
+    "deployment_environment": "synthetic"
+  },
+  "generated_at": "2026-02-27T05:00:00+00:00",
+  "review_window_days": 90,
+  "artifacts": [
+    {
+      "id": "decision-log",
+      "category": "governance",
+      "required": true,
+      "description": "Key decisions, assumptions, and trade-offs with dates and owners.",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/decision-log.md"
+      }
+    },
+    {
+      "id": "risk-assessment",
+      "category": "risk",
+      "required": true,
+      "description": "Risk/threat assessment aligned to threat-model/threat-matrix.md.",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/risk-assessment.md"
+      }
+    },
+    {
+      "id": "controls-mapping",
+      "category": "testing",
+      "required": true,
+      "description": "Mapping from ANAGB controls to implementation evidence pointers.",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/controls-mapping.md"
+      }
+    },
+    {
+      "id": "runbooks",
+      "category": "operations",
+      "required": false,
+      "description": "Operational runbooks for key rotation, revocation incidents, and abuse response.",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/runbooks.md"
+      }
+    },
+    {
+      "id": "attestation",
+      "category": "attestation",
+      "required": false,
+      "description": "Optional third-party attestation placeholder (synthetic).",
+      "location": {
+        "type": "path",
+        "ref": "artifacts/attestation.md"
+      }
+    }
+  ]
+}
