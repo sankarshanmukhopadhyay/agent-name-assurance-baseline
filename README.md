@@ -7,6 +7,17 @@
 ![Alignment](https://img.shields.io/badge/aligned-multi-blueviolet)
 
 ## About
+
+## Ecosystem & related repositories
+
+ANAB is a domain baseline within a broader assurance ecosystem:
+
+- **`schemas`:** canonical contracts and the normative definition of Assurance Levels (AL1–AL4).
+- **DCAS (`dtg-conformance-assurance`):** verifier workflow and evaluation method that can be used to assess ANAB conformance claims.
+- **ANAB (this repo):** domain-specific controls, declarations, and evidence bundles for Agent Names and Agent Pages.
+
+This repo adopts AL semantics from `schemas` and focuses on domain-specific tiers (AN-0…AN-3) and operational profiles.
+
 A normative assurance and governance baseline for **Agent Names** and **Agent Pages**. Defines verification tiers, control IDs, security/privacy safeguards, AI guardrails, and **machine-checkable conformance declarations** aligned with NIST frameworks to reduce phishing amplification, trust inflation, privacy harm, and authority drift.
 
 ## Start here (fast path)
