@@ -1,8 +1,29 @@
 # Changelog
 
+## v0.3.0
+
+- Add ecosystem interoperability documentation and upstream references (dtg-credentials, verifiable-trust-infrastructure, openVTC).
+- Add non-normative architecture diagram for cross-repo composition.
+
+
+
 All notable changes to this project will be documented in this file.
 
 This repo follows semantic versioning as described in `docs/versioning-and-compatibility.md`.
+
+## [0.2.2] - 2026-03-05
+
+### Added
+- Pinned upstream working extract for *Agent Names and Agent Pages* under `upstream/agent-names-and-agent-pages/` to support control traceability.
+- Docs landing page for GitHub Pages (`docs/index.md`) and Pages guidance (`docs/github-pages.md`).
+- CI dependency pinning via `requirements-ci.txt`.
+- `VERSION` file for explicit release pinning.
+
+### Fixed
+- CI now installs all required Python dependencies (including YAML support) so validation runs cleanly on a fresh runner.
+
+### Quality
+- README “About” updated to explain upstream-to-controls traceability.
 
 ## [0.2.1] - 2026-02-27
 

@@ -126,7 +126,7 @@ This roadmap is a living artifact. Items may evolve, merge, or reprioritize base
 **Outcome:** faster adoption and higher audit interoperability without weakening the normative core.
 
 ### Status
-✅ **Completed (v0.2.1)**
+✅ **Completed (v0.2.2)**
 
 Delivered:
 - Annex index and expanded annex set: `annex/README.md`

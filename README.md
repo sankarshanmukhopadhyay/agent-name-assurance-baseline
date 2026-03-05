@@ -1,12 +1,16 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.2.1-blue)
+![Version](https://img.shields.io/badge/version-0.2.2-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
 ![Alignment](https://img.shields.io/badge/aligned-multi-blueviolet)
 
 ## About
+
+ANAB defines a **normative assurance baseline** for *Agent Names* and *Agent Pages*: how they are bound to cryptographic identifiers, how resolution and endpoints are verified, and how relying parties interpret “strength” via tiers and evidence.
+
+Upstream design input is tracked in `upstream/agent-names-and-agent-pages/` (non-normative extract). This repo converts those concepts into **controls, evidence expectations, and machine-checkable declarations**.
 
 ## Ecosystem & related repositories
 
@@ -95,3 +99,7 @@ Implementers SHOULD publish a **signed** conformance declaration using `conforma
 
 ## License
 Apache 2.0
+
+## Ecosystem interoperability
+
+See `docs/ecosystem-interoperability.md` and `docs/architecture.md` for how this repo composes with DTG Labs upstream work (`dtg-credentials`, `verifiable-trust-infrastructure`, `openVTC`).

@@ -1,4 +1,4 @@
-# Agent Name Assurance & Governance Baseline (ANAGB) v0.2.1
+# Agent Name Assurance & Governance Baseline (ANAGB) v0.3.0
 
 ## Status
 Draft — Working Group Review
@@ -7,6 +7,22 @@ This release introduces **Assurance Levels (AL1–AL4)** and standardized **evid
 
 ## Normative Language
 The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**, **SHOULD**, **SHOULD NOT**, **RECOMMENDED**, and **MAY** are to be interpreted as described in RFC 2119.
+
+---
+
+## Upstream concept mapping (non-normative)
+
+This baseline is informed by the upstream *Agent Names and Agent Pages* draft (working extract under `upstream/agent-names-and-agent-pages/`).
+
+The table below shows how key upstream concepts are operationalized as controls.
+
+| Upstream concept | What we operationalize | Primary controls |
+|---|---|---|
+| Human-friendly agent naming layered over DIDs | Treat the name as a **routing hint**; trust is derived from binding + verification evidence | ANAGB-RES-01, ANAGB-UI-01, ANAGB-UI-02 |
+| Resolution chain (name → DID → DID document → endpoints) | Require secure transport, binding integrity, and monitoring for drift/takeover | ANAGB-RES-01, ANAGB-RES-03, ANAGB-RES-05 |
+| Spoofing/impersonation risk | No generic “verified” indicator; step-up for risky actions; stronger tiers require stronger evidence | ANAGB-UI-02, ANAGB-UI-03, Tier AN-1…AN-3 requirements |
+| Agent Page as a discovery surface | Minimize disclosure, avoid auto-exchange, require explicit consent, and support anti-scraping | ANAGB-PRIV-01…04, ANAGB-PRIV-05…06 |
+| High assurance verification and transparency expectations | Encourage (or require, where applicable) revocation checking and transparency logging | ANAGB-RES-06, ANAGB-LOG-01…03 |
 
 ---
 
