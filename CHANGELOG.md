@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.3.0
+## v0.4.0
 
 - Add ecosystem interoperability documentation and upstream references (dtg-credentials, verifiable-trust-infrastructure, openVTC).
 - Add non-normative architecture diagram for cross-repo composition.

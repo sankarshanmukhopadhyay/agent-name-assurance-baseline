@@ -1,4 +1,4 @@
-# Agent Name Assurance & Governance Baseline (ANAGB) v0.3.0
+# Agent Name Assurance & Governance Baseline (ANAGB) v0.4.0
 
 ## Status
 Draft — Working Group Review
