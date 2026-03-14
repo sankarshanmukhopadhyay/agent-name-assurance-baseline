@@ -21,7 +21,7 @@ ANAB remains identifier- and transport-agnostic. When TSP is used:
 
 - Agent identifiers are bound to endpoints via the resolution and verification model described in the ANAB documentation.
 - TSP provides authenticated, integrity-protected exchange between endpoints.
-- Evidence artifacts exchanged over TSP SHOULD be signed and versioned, and SHOULD reference schemas from the Schemas repository.
+- Evidence artifacts exchanged over TSP SHOULD be signed and versioned, and SHOULD reference canonical trust artifact schemas from `trust-infrastructure-schemas`.
 
 ## Implementation notes
 

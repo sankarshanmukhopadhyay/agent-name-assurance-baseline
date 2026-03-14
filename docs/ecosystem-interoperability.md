@@ -10,7 +10,7 @@ This repository is designed to compose with upstream DTG Labs projects. The obje
 
 ## Compatibility model
 
-This repository provides the **assurance and conformance layer**. The upstream repos provide **ecosystem architecture, credential semantics, and implementation surfaces**.
+This repository provides the **domain baseline layer** for agent names and agent pages. The upstream repos provide **canonical trust artifact schemas, ecosystem architecture, credential semantics, and implementation surfaces**.
 
 ### What composes cleanly
 

@@ -5,7 +5,8 @@ This diagram is a **non-normative** view of how this repository composes with DT
 ```mermaid
 flowchart TB
   subgraph A[Assurance and Conformance Layer]
-    S[Schemas]
+    S[Trust Infrastructure Schemas
+(OTAM)]
     D[DCAS]
     N[ANAB]
     S --> D --> N
@@ -35,7 +36,7 @@ flowchart TB
   DC -. "artifact exchange over transport" .- TSP
 
   %% Interop touchpoints (non-normative)
-  S -. "schemas for claims" .- DC
+  S -. "trust artifact schemas" .- DC
   D -. "assurance profiles" .- VTI
   N -. "identifier trust tasks" .- O
 ```

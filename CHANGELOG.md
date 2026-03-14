@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 This repo follows semantic versioning as described in `docs/versioning-and-compatibility.md`.
 
+## [0.5.1] - 2026-03-14
+
+### Changed
+- Updated ecosystem references from `schemas` to `trust-infrastructure-schemas`.
+- Clarified that ANAB consumes canonical Assurance Level semantics from the OTAM-aligned trust artifact repository.
+- Refreshed architecture, interoperability, and transport docs to describe ANAB as a domain baseline layered on canonical trust artifact schemas.
+
+### Compatibility
+- No ANAB control semantics, JSON schema bodies, or conformance requirements changed.
+
 ## [0.5.0] - 2026-03-14
 
 ### Added

@@ -1,6 +1,6 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.5.0-blue)
+![Version](https://img.shields.io/badge/version-0.5.1-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
@@ -16,11 +16,11 @@ Upstream design input is tracked in `upstream/agent-names-and-agent-pages/` (non
 
 ANAB is a domain baseline within a broader assurance ecosystem:
 
-- **`schemas`:** canonical contracts and the normative definition of Assurance Levels (AL1–AL4).
+- **`trust-infrastructure-schemas` (OTAM implementation):** canonical trust artifact contracts and the normative definition of Assurance Levels (AL1–AL4).
 - **DCAS (`dtg-conformance-assurance`):** verifier workflow and evaluation method that can be used to assess ANAB conformance claims.
 - **ANAB (this repo):** domain-specific controls, declarations, and evidence bundles for Agent Names and Agent Pages.
 
-This repo adopts AL semantics from `schemas` and focuses on domain-specific tiers (AN-0…AN-3) and operational profiles.
+This repo adopts AL semantics from `trust-infrastructure-schemas` and focuses on domain-specific tiers (AN-0…AN-3) and operational profiles.
 
 A normative assurance and governance baseline for **Agent Names** and **Agent Pages**. Defines verification tiers, control IDs, security/privacy safeguards, A2A-facing controls, AI guardrails, and **machine-checkable conformance declarations** aligned with NIST frameworks to reduce phishing amplification, trust inflation, privacy harm, and authority drift.
 

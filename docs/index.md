@@ -1,6 +1,6 @@
 # ANAB documentation
 
-This documentation set is the **front door** for the Agent Name Assurance Baseline (ANAB).
+This documentation set is the **front door** for the Agent Name Assurance Baseline (ANAB), a domain baseline that composes with canonical trust artifact schemas from `trust-infrastructure-schemas` (OTAM implementation).
 
 ## Start here
 

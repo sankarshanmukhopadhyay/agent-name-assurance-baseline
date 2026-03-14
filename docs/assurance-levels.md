@@ -11,7 +11,7 @@ Assurance Levels add a third, complementary axis:
 
 ## Normative source
 
-The **canonical definition** of AL1–AL4 lives in the `schemas` repository at `assurance/assurance-levels.md`.
+The **canonical definition** of AL1–AL4 lives in the `trust-infrastructure-schemas` repository as part of the Open Trust Artifact Model (OTAM) at `assurance/assurance-levels.md`.
 
 This document focuses on **how ANAB uses AL** (operational expectations and mapping), and intentionally avoids re-defining AL semantics.
 
