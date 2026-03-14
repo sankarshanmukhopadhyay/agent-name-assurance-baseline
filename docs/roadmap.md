@@ -135,3 +135,21 @@ Delivered:
 - Optional `standards_alignment` field in schemas for traceable mapping:
   - Evidence bundles: `evidence-bundles/evidence-bundle.schema.json`
   - Conformance declarations: `conformance/conformance-declaration.schema.json`
+
+
+## 9. A2A alignment and task trust surfaces
+
+- Add explicit controls for signed Agent Cards, task/context scoping, authenticated callbacks, and media-type safety.
+- Publish ANAB guidance for composition with A2A and DCAS.
+- Expand the threat model to include cross-tenant task leakage and callback trust failure.
+
+**Outcome:** named agents can participate in A2A ecosystems without pretending that name assurance alone proves operational safety.
+
+### Status
+✅ **Completed (v0.5.0)**
+
+Delivered:
+- A2A-facing controls in the normative baseline
+- A2A alignment guidance: `docs/a2a-alignment.md`
+- A2A annex: `annex/K-a2a-alignment.md`
+- Threat model expansion for A2A task trust surfaces

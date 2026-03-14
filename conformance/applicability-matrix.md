@@ -1,4 +1,4 @@
-# Tier & Profile Applicability Matrix (ANAGB v0.2.2)
+# Tier & Profile Applicability Matrix (ANAGB v0.5.0)
 
 This document operationalizes **what you must implement** by combining:
 
@@ -59,6 +59,12 @@ Notes:
 | `ANAGB-LOG-03` | Exportable logs | M | — | M | M | M |  |
 | `ANAGB-ABUSE-01` | Rate limiting | M | — | M | M | M |  |
 | `ANAGB-ABUSE-02` | Replay mitigation | M | — | M | M | M |  |
+| `ANAGB-A2A-01` | Signed Agent Card / metadata integrity | C | — | C | M | M | Applies when machine-readable Agent Card metadata is published. |
+| `ANAGB-A2A-02` | Page ↔ Card ↔ declaration consistency | C | — | C | M | M | Applies when an Agent Card or equivalent machine-readable metadata is published. |
+| `ANAGB-A2A-03` | Extended metadata gating | C | — | S | M | M | Applies when extended metadata is disclosed after auth or other policy checks. |
+| `ANAGB-A2A-04` | Task/context/tenant scoping | C | — | C | M | M | Applies when the named agent supports A2A-style task flows. |
+| `ANAGB-A2A-05` | Authenticated push/stream trust boundary | C | — | C | M | M | Applies when webhooks, push notifications, or streaming are supported. |
+| `ANAGB-A2A-06` | Safe media-type handling | C | — | C | M | M | Applies when artifacts or structured outputs are returned to relying parties. |
 | `ANAGB-AI-01` | AI usage disclosure | M | — | — | C | C | Applies only when **AI-mediated decisioning/delegation** is in scope. |
 | `ANAGB-AI-02` | Decision categories | M | — | — | C | C | Applies only when **AI-mediated decisioning/delegation** is in scope. |
 | `ANAGB-AI-03` | Redress mechanism | M | — | — | C | C | Applies only when **AI-mediated decisioning/delegation** is in scope. |

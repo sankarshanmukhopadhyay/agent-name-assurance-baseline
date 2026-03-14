@@ -8,6 +8,7 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - Assurance model: `assurance-levels.md`
 - Implementer guidance: `implementer-guidance.md`
 - Versioning & compatibility: `versioning-and-compatibility.md`
+- A2A alignment: `a2a-alignment.md`
 
 ## Conformance
 

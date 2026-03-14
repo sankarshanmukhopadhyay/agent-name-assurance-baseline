@@ -46,3 +46,13 @@ This matrix maps adversary goals → common attack paths → the ANAGB controls 
 |---|---|---|
 | Knock out resolution/discovery | Rate spikes, endpoint abuse, TLS downgrade, cache poisoning | `ANAGB-RES-05`, `ANAGB-RES-04`, `ANAGB-LOG-02` |
 | Prevent clean recovery after compromise | No IR plan, no key rotation, revocation breaks identity continuity | `ANAGB-IR-01`, `ANAGB-IR-02`, `ANAGB-IR-03`, `ANAGB-IR-04` |
+
+
+## A2A-specific additions
+
+| Threat | Description | Typical control response |
+|---|---|---|
+| Agent Card drift | The public Agent Page and the machine-readable Agent Card diverge, creating trust confusion. | `ANAGB-A2A-02`, `ANAGB-RES-05` |
+| Cross-tenant task leakage | Task or context identifiers can be replayed or guessed across tenants or principals. | `ANAGB-A2A-04`, `ANAGB-ABUSE-02` |
+| Unsafely trusted callback | Push notifications or webhook updates are accepted without sufficient authenticity checks. | `ANAGB-A2A-05` |
+| Artifact trust inflation | A named agent returns unsupported or ambiguous output that is over-trusted by relying parties. | `ANAGB-A2A-06`, `ANAGB-AI-06` |

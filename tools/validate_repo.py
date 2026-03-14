@@ -40,11 +40,11 @@ def iter_json_files(dir_rel: str) -> Iterable[Path]:
 
 def extract_control_ids_from_spec(spec_text: str) -> set[str]:
     # Control IDs are rendered in backticks inside the control tables.
-    return set(re.findall(r"`(ANAGB-[A-Z]+-\d{2})`", spec_text))
+    return set(re.findall(r"`(ANAGB-[A-Z0-9]+-\d{2})`", spec_text))
 
 
 def extract_control_ids_from_checklist(checklist_text: str) -> set[str]:
-    return set(re.findall(r"\b(ANAGB-[A-Z]+-\d{2})\b", checklist_text))
+    return set(re.findall(r"\b(ANAGB-[A-Z0-9]+-\d{2})\b", checklist_text))
 
 
 def validate_json(schema: dict, instance: dict, label: str) -> None:

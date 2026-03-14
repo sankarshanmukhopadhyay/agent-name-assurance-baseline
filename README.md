@@ -1,6 +1,6 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.2.2-blue)
+![Version](https://img.shields.io/badge/version-0.5.0-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
@@ -22,7 +22,7 @@ ANAB is a domain baseline within a broader assurance ecosystem:
 
 This repo adopts AL semantics from `schemas` and focuses on domain-specific tiers (AN-0…AN-3) and operational profiles.
 
-A normative assurance and governance baseline for **Agent Names** and **Agent Pages**. Defines verification tiers, control IDs, security/privacy safeguards, AI guardrails, and **machine-checkable conformance declarations** aligned with NIST frameworks to reduce phishing amplification, trust inflation, privacy harm, and authority drift.
+A normative assurance and governance baseline for **Agent Names** and **Agent Pages**. Defines verification tiers, control IDs, security/privacy safeguards, A2A-facing controls, AI guardrails, and **machine-checkable conformance declarations** aligned with NIST frameworks to reduce phishing amplification, trust inflation, privacy harm, and authority drift.
 
 ## Start here (fast path)
 
@@ -92,6 +92,18 @@ Implementers SHOULD publish a **signed** conformance declaration using `conforma
 5. **Publish and reference**
    - Host the signed declaration at a stable URL under your Agent Page / docs site.
    - Link to it from the Agent Page so verifiers and relying parties can fetch it deterministically.
+
+## A2A alignment
+
+This release adds explicit alignment with **A2A 1.0** concepts that matter for named agents:
+
+- signed Agent Cards
+- task and context authorization scoping
+- extended Agent Card disclosure control
+- webhook and streaming trust boundaries
+- multi-tenant endpoint isolation
+
+See `docs/a2a-alignment.md` and `annex/K-a2a-alignment.md`.
 
 ## Release discipline
 - Changelog: `CHANGELOG.md`

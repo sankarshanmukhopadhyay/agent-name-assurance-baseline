@@ -30,3 +30,5 @@ Design goals:
 - Consumable by CI and external validation tools without scraping prose
 
 See: `crosswalk/README.md`
+
+- `K-a2a-alignment.md` — A2A concept-to-control mapping for named agents

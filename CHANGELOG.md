@@ -1,15 +1,29 @@
 # Changelog
 
-## v0.4.0
-
-- Add ecosystem interoperability documentation and upstream references (dtg-credentials, verifiable-trust-infrastructure, openVTC).
-- Add non-normative architecture diagram for cross-repo composition.
-
-
-
 All notable changes to this project will be documented in this file.
 
 This repo follows semantic versioning as described in `docs/versioning-and-compatibility.md`.
+
+## [0.5.0] - 2026-03-14
+
+### Added
+- Explicit A2A alignment guidance in `docs/a2a-alignment.md`.
+- New Annex K for A2A concept-to-control mapping.
+- Six A2A-facing controls covering signed metadata, page/card consistency, metadata gating, task scoping, callback trust boundaries, and media-type safety.
+
+### Changed
+- Normative baseline updated to treat Agent Pages and Agent Cards as a coherent trust surface when used in A2A ecosystems.
+- Applicability matrix and checklist updated to show when A2A-facing controls apply.
+- Threat model expanded for Agent Card drift, cross-tenant task leakage, callback trust, and artifact trust inflation.
+
+### Quality
+- README and docs landing page updated so A2A composition is discoverable without tribal knowledge.
+
+## [0.4.0] - 2026-03-05
+
+### Added
+- Ecosystem interoperability documentation and upstream references (dtg-credentials, verifiable-trust-infrastructure, openVTC).
+- Non-normative architecture diagram for cross-repo composition.
 
 ## [0.2.2] - 2026-03-05
 
@@ -22,19 +36,12 @@ This repo follows semantic versioning as described in `docs/versioning-and-compa
 ### Fixed
 - CI now installs all required Python dependencies (including YAML support) so validation runs cleanly on a fresh runner.
 
-### Quality
-- README “About” updated to explain upstream-to-controls traceability.
-
 ## [0.2.1] - 2026-02-27
 
 ### Added
 - Expanded standards annex coverage (OWASP, ISO 27001/27002, SOC 2, supply chain, privacy, AI governance, identity/crypto) with an annex index (`annex/README.md`).
 - Machine-readable crosswalk registry for standards alignment (`crosswalk/*.yml`).
 - Optional `standards_alignment` metadata in evidence bundle and conformance declaration schemas for traceable mappings.
-
-### Quality
-- README navigation updated to include annex index and crosswalk registry.
-- Roadmap updated with completed standards coverage item (`docs/roadmap.md`).
 
 ## [0.2.0] - 2026-02-27
 
@@ -43,14 +50,6 @@ This repo follows semantic versioning as described in `docs/versioning-and-compa
 - Standardized evidence bundle model + JSON schema + synthetic examples (`evidence-bundles/`).
 - Implementer guidance with worked flow, stack guidance, patterns and anti-patterns (`docs/implementer-guidance.md`).
 - Additional sample conformance declarations for common archetypes (`conformance/samples/`).
-
-### Changed
-- Conformance schemas updated to express assurance level and evidence bundle pointers.
-- Checklist expanded for audit readiness and AL requirements.
-
-### Quality
-- CI validation expanded (schema checks, link checks, markdown lint).
-- Repo navigation improved with a “start here” flow in README.
 
 ## [0.1.0] - Initial draft
 - Initial normative baseline, control catalog, conformance tooling, annexes, and threat model.

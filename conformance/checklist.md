@@ -34,6 +34,14 @@
 - [ ] ANAGB-ABUSE-01 implemented
 - [ ] ANAGB-ABUSE-02 implemented
 
+## A2A alignment (if used)
+- [ ] ANAGB-A2A-01 implemented
+- [ ] ANAGB-A2A-02 implemented
+- [ ] ANAGB-A2A-03 implemented
+- [ ] ANAGB-A2A-04 implemented
+- [ ] ANAGB-A2A-05 implemented
+- [ ] ANAGB-A2A-06 implemented
+
 ## AI (if used)
 - [ ] ANAGB-AI-01 implemented
 - [ ] ANAGB-AI-02 implemented

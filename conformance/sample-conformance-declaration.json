@@ -1,5 +1,5 @@
 {
-  "spec_version": "0.2.2",
+  "spec_version": "0.5.0",
   "implementation": {
     "name": "ExampleAgent",
     "version": "1.2.0",
@@ -106,6 +106,30 @@
     },
     "ANAGB-IR-04": {
       "status": "implemented"
+    },
+    "ANAGB-A2A-01": {
+      "status": "implemented",
+      "notes": "Signed Agent Card or equivalent integrity control published."
+    },
+    "ANAGB-A2A-02": {
+      "status": "implemented",
+      "notes": "Agent Page, Agent Card, and declaration kept consistent by release checks."
+    },
+    "ANAGB-A2A-03": {
+      "status": "implemented",
+      "notes": "Extended metadata disclosed only after auth where applicable."
+    },
+    "ANAGB-A2A-04": {
+      "status": "implemented",
+      "notes": "Task, context, and tenant identifiers authorization scoped."
+    },
+    "ANAGB-A2A-05": {
+      "status": "implemented",
+      "notes": "Streaming or callback channels require authenticity checks and replay mitigation."
+    },
+    "ANAGB-A2A-06": {
+      "status": "implemented",
+      "notes": "Supported media types declared and unsupported content safely rejected."
     }
   },
   "exceptions": [],

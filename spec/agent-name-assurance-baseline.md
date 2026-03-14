@@ -1,4 +1,4 @@
-# Agent Name Assurance & Governance Baseline (ANAGB) v0.4.0
+# Agent Name Assurance & Governance Baseline (ANAGB) v0.5.0
 
 ## Status
 Draft — Working Group Review
@@ -104,20 +104,28 @@ Implementations MUST classify agent name bindings according to one of the follow
 
 ## 5. Agent-to-Agent Interaction Controls
 
+Agent names increasingly resolve into agents that participate in **A2A-style discovery and delegated task execution**. When that happens, the name and page are no longer mere brochureware. They become the first trust anchor for protocol negotiation, endpoint selection, and operational reliance.
+
 ### 5.1 Capability Discovery
-- **ANAGB-AGT-01**: authenticated capability discovery.
-- **ANAGB-AGT-02**: coarse-grained anonymous discovery (recommended).
+
+The Agent Page or linked Agent Card MUST disclose enough metadata for a verifier to distinguish low-risk discovery from operational delegation. Anonymous discovery MAY be coarse-grained. High-value capability disclosure SHOULD be authenticated and policy-gated.
 
 ### 5.2 Logging & Auditability
-- **ANAGB-LOG-01**: log credential exchanges.
-- **ANAGB-LOG-02**: tamper-evident logs.
-- **ANAGB-LOG-03**: exportable, machine-readable logs.
+
+Named agents that participate in A2A flows MUST emit logs that let reviewers reconstruct the relationship between the public name, the resolved endpoint, the authenticated principal, the task identifier, and the resulting action.
 
 ### 5.3 Abuse Protection
-- **ANAGB-ABUSE-01**: rate limiting.
-- **ANAGB-ABUSE-02**: replay mitigation.
 
----
+Interaction endpoints MUST resist replay, enumeration, and rate-based abuse. Where the public Agent Page points to machine-operable interfaces, the implementation MUST minimize the chance that a pretty name launders an unsafe endpoint.
+
+### 5.4 A2A-Specific Binding Expectations
+
+When an implementation publishes an A2A Agent Card or equivalent metadata, the following additional requirements apply:
+
+- the Agent Card SHOULD be signed or otherwise integrity protected
+- the name, operator, endpoint, supported interfaces, and auth requirements SHOULD remain consistent across the Agent Page, the Agent Card, and the conformance declaration
+- task, context, tenant, and subscription identifiers MUST be authorization-scoped
+- access to extended metadata SHOULD be policy-gated where disclosure increases attack surface
 
 ## 6. AI Decisioning Guardrails
 
@@ -161,44 +169,46 @@ A tier/profile applicability matrix is provided in `conformance/applicability-ma
 
 ## 9. Control Catalog (Normative)
 
-The following control IDs are normative requirements unless marked RECOMMENDED.
-
-| Control ID | Title | Requirement |
-|---|---|---|
-| `ANAGB-UI-01` | Tier display | Implementations MUST display the verification tier explicitly wherever an agent name is rendered. |
-| `ANAGB-UI-02` | No generic verified | Implementations MUST NOT present a generic “Verified” indicator without the tier context. |
-| `ANAGB-UI-03` | High-risk step-up | High-risk transactions MUST verify revocation status for AN-2 and AN-3 prior to execution. |
-| `ANAGB-RES-01` | Cryptographic binding | Name-to-DID binding MUST be cryptographically provable. |
-| `ANAGB-RES-02` | Replay resistance | Bindings MUST be replay-resistant using nonce and/or timestamp mechanisms. |
-| `ANAGB-RES-03` | TLS required | All resolution endpoints MUST use TLS. |
-| `ANAGB-RES-04` | HSTS recommended | HSTS SHOULD be enabled on resolution endpoints. |
-| `ANAGB-RES-05` | Drift monitoring | Implementations MUST monitor for DNS drift and/or domain takeover indicators and alert on unexpected binding changes. |
-| `ANAGB-RES-06` | Transparency log | For AN-2 and AN-3, implementations SHOULD publish binding events to an append-only transparency log. |
-| `ANAGB-PRIV-01` | Data minimization default | Public agent pages MUST default to minimal disclosure. |
-| `ANAGB-PRIV-02` | Explicit reveal | Sensitive attributes MUST require explicit user action to reveal. |
-| `ANAGB-PRIV-03` | No auto-share | Agent pages MUST NOT auto-initiate credential exchange flows. |
-| `ANAGB-PRIV-04` | Consent required | Credential exchange MUST require explicit consent. |
-| `ANAGB-PRIV-05` | Noindex support | Implementations SHOULD support noindex directives for pages and sensitive contexts. |
-| `ANAGB-PRIV-06` | Scrape controls | Automated scraping SHOULD be rate-limited and bulk enumeration SHOULD be restricted. |
-| `ANAGB-AGT-01` | Authenticated capability discovery | Detailed capability discovery MUST require authentication. |
-| `ANAGB-AGT-02` | Coarse anonymous discovery | Anonymous capability discovery SHOULD return coarse-grained responses only. |
-| `ANAGB-LOG-01` | Exchange logging | All credential exchanges MUST be logged. |
-| `ANAGB-LOG-02` | Tamper-evident logs | Logs MUST be tamper-evident. |
-| `ANAGB-LOG-03` | Exportable logs | Audit logs MUST be exportable in a machine-readable format. |
-| `ANAGB-ABUSE-01` | Rate limiting | Endpoints MUST implement rate limiting. |
-| `ANAGB-ABUSE-02` | Replay mitigation | Replay attacks MUST be mitigated via nonces and validation. |
-| `ANAGB-AI-01` | AI usage disclosure | Where AI influences decisions, AI usage MUST be disclosed. |
-| `ANAGB-AI-02` | Decision categories | Decision categories influenced by AI MUST be documented. |
-| `ANAGB-AI-03` | Redress mechanism | A redress mechanism MUST exist for AI-influenced decisions. |
-| `ANAGB-AI-04` | Human override | Blocking contact, revoking credentials, or executing delegated actions MUST allow human override. |
-| `ANAGB-AI-05` | Delegation bounded | Autonomous agents MUST implement scoped delegation, expiration timestamps, transaction caps, and revocation endpoints. |
-| `ANAGB-AI-06` | Authority non-implication | AI identity MUST NOT imply authority. Authority MUST be explicitly delegated and bounded. |
-| `ANAGB-IR-01` | Incident response plan | Implementations MUST maintain a documented incident response plan. |
-| `ANAGB-IR-02` | Key rotation | Key rotation MUST be supported. |
-| `ANAGB-IR-03` | Machine-verifiable revocation | Revocation status MUST be machine-verifiable. |
-| `ANAGB-IR-04` | Safe suspension | Name suspension MUST NOT enable impersonation. |
-
----
+| Control ID | Requirement |
+|---|---|
+| `ANAGB-UI-01` | Implementations MUST display the achieved tier accurately and MUST NOT collapse all tiers into a generic “verified” label. |
+| `ANAGB-UI-02` | Implementations MUST distinguish identity/binding assurance from behavioral or authority assurance. |
+| `ANAGB-UI-03` | High-risk actions MUST trigger step-up verification and fresh revocation checking before reliance. |
+| `ANAGB-RES-01` | The Agent Name MUST bind to the claimed cryptographic identifier using verifiable proof. |
+| `ANAGB-RES-02` | Name resolution and binding artifacts MUST resist replay and stale-state confusion. |
+| `ANAGB-RES-03` | Production resolution endpoints MUST use TLS. |
+| `ANAGB-RES-04` | HSTS SHOULD be enabled for web-hosted agent pages and resolution endpoints. |
+| `ANAGB-RES-05` | Implementations MUST monitor for binding drift and unauthorized endpoint changes. |
+| `ANAGB-RES-06` | Transparency logging SHOULD be used for material binding changes and MUST be used for Enterprise profile claims. |
+| `ANAGB-PRIV-01` | Agent Pages MUST minimize personal and organizational data exposed by default. |
+| `ANAGB-PRIV-02` | Sensitive details MUST require an explicit reveal or equivalent user action. |
+| `ANAGB-PRIV-03` | Implementations MUST NOT auto-share high-risk data to unknown requesters. |
+| `ANAGB-PRIV-04` | Consent or another documented lawful basis MUST govern non-public data disclosure. |
+| `ANAGB-PRIV-05` | No-index hints SHOULD be supported where public discoverability is not intended. |
+| `ANAGB-PRIV-06` | Implementations SHOULD apply scrape-friction and anti-enumeration controls proportionate to risk. |
+| `ANAGB-AGT-01` | Capability discovery for operational or sensitive features MUST be authenticated. |
+| `ANAGB-AGT-02` | Coarse anonymous discovery SHOULD remain available for low-risk ecosystem interoperability. |
+| `ANAGB-LOG-01` | Exchanges involving named agents MUST be logged with sufficient identifiers for audit. |
+| `ANAGB-LOG-02` | Logs MUST be tamper-evident. |
+| `ANAGB-LOG-03` | Logs MUST be exportable for independent review. |
+| `ANAGB-ABUSE-01` | Interaction endpoints MUST enforce rate limits or equivalent abuse throttles. |
+| `ANAGB-ABUSE-02` | Interaction flows MUST mitigate replay and duplicate submission. |
+| `ANAGB-A2A-01` | Published Agent Cards or equivalent metadata SHOULD be signed or otherwise integrity protected. |
+| `ANAGB-A2A-02` | The Agent Page, Agent Card, and conformance declaration MUST remain consistent for name, operator, endpoint, and auth requirements. |
+| `ANAGB-A2A-03` | Access to extended Agent Card metadata SHOULD be policy-gated where disclosure increases attack surface. |
+| `ANAGB-A2A-04` | Task, context, tenant, and subscription identifiers MUST be authorization-scoped and resistant to cross-tenant leakage. |
+| `ANAGB-A2A-05` | Push notifications and streaming updates MUST be authenticated or otherwise integrity protected, with replay mitigation. |
+| `ANAGB-A2A-06` | Implementations MUST declare supported media types and handle unsupported content safely to avoid trust inflation through ambiguous artifacts. |
+| `ANAGB-AI-01` | If AI-mediated decisioning or delegation is used, the implementation MUST disclose that fact. |
+| `ANAGB-AI-02` | The implementation MUST distinguish advisory, assistive, and autonomous decision categories. |
+| `ANAGB-AI-03` | A redress mechanism MUST exist for consequential errors or misclassification. |
+| `ANAGB-AI-04` | Human override MUST exist for consequential actions where feasible. |
+| `ANAGB-AI-05` | Delegation MUST be bounded by scope, purpose, and revocability. |
+| `ANAGB-AI-06` | Names and tiers MUST NOT imply authority that has not actually been granted. |
+| `ANAGB-IR-01` | An incident response procedure MUST exist for compromise or misleading resolution events. |
+| `ANAGB-IR-02` | Key rotation procedures MUST be documented and exercised. |
+| `ANAGB-IR-03` | Revocation status MUST be machine-verifiable where the deployment claims operational assurance. |
+| `ANAGB-IR-04` | Safe suspension behavior MUST exist for compromised or disputed names and pages. |
 
 ## Annex References
 Normative requirements in this specification are informed by:
