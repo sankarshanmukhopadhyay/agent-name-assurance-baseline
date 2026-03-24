@@ -1,0 +1,32 @@
+standard_id: OASF
+standard_name: Open Agentic Schema Framework
+standard_version: 0.x
+scope: >-
+  Crosswalk between ANAB controls and OASF publication surfaces so Agent Name assurance
+  metadata can be attached to an OASF-described agent without inventing a parallel
+  discovery envelope.
+mappings:
+  - anagb: ANAGB-RES-01
+    external: record.publisher
+    strength: supporting
+    notes: OASF publisher metadata helps preserve operator accountability for the bound agent identity.
+  - anagb: ANAGB-A2A-02
+    external: modules.anab_publication.card_consistency
+    strength: supporting
+    notes: OASF extension module can carry consistency assertions across Agent Page, Agent Card, and ANAB declaration.
+  - anagb: ANAGB-A2A-07
+    external: modules.anab_publication.operator_binding
+    strength: strong
+    notes: OASF module should disclose the operator-binding method and the accountable operator identifier.
+  - anagb: ANAGB-A2A-08
+    external: modules.anab_publication.identity_verification
+    strength: strong
+    notes: OASF module should identify issuer or trust anchor plus verification method or endpoint.
+  - anagb: ANAGB-A2A-09
+    external: modules.anab_publication.freshness
+    strength: strong
+    notes: OASF module should expose issuance, expiry, and revocation semantics for published ANAB trust descriptions.
+  - anagb: ANAGB-A2A-10
+    external: modules.anab_publication.downgrade_policy
+    strength: strong
+    notes: OASF module should describe fail-safe handling requirements when attached ANAB metadata cannot be trusted.

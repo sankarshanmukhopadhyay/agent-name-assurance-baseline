@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1.0",
+  "profile_id": "OASF-ANAB-ENTERPRISE",
+  "oasf_surface": {
+    "record_ref": "https://example.org/oasf/records/enterprise-agent.json",
+    "publisher_ref": "did:web:example.org",
+    "extension_name": "anab_publication",
+    "interaction_surface": "a2a"
+  },
+  "anab_assurance": {
+    "assurance_level": "AL3",
+    "declaration_ref": "../sample-conformance-declaration.json",
+    "evidence_bundle_ref": "../../evidence-bundles/examples/al3-best-practice/bundle.json",
+    "applicable_controls": [
+      "ANAGB-RES-01",
+      "ANAGB-A2A-07",
+      "ANAGB-A2A-08",
+      "ANAGB-A2A-09",
+      "ANAGB-A2A-10",
+      "ANAGB-IR-03"
+    ]
+  },
+  "discovery_hints": {
+    "agent_card_ref": "../samples/a2a-agent-card-with-anab-extension.json",
+    "policy_ref": "../../crosswalk/oasf.yml",
+    "revocation_ref": "https://example.org/status/agent-enterprise"
+  }
+}

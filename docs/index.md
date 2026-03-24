@@ -10,6 +10,7 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - Versioning & compatibility: `versioning-and-compatibility.md`
 - A2A alignment: `a2a-alignment.md`
 - ANAB-over-A2A binding: `anab-over-a2a-binding.md`
+- OASF integration: `oasf-integration.md`
 
 ## Conformance
 
@@ -42,3 +43,4 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 ## Composition
 
 - `dcas-composition.md` — how ANAB declarations and evidence bundles feed a DCAS evaluation flow.
+- `oasf-integration.md` — how ANAB declarations and evidence pointers travel through an OASF publication surface.

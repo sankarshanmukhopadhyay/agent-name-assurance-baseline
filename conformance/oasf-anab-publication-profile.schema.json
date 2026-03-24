@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/anagb/oasf-anab-publication-profile.schema.json",
+  "title": "ANAB OASF Publication Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "oasf_surface",
+    "anab_assurance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "profile_id": {
+      "type": "string",
+      "pattern": "^OASF-ANAB-[A-Z0-9\\-]+$"
+    },
+    "oasf_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_ref",
+        "extension_name"
+      ],
+      "properties": {
+        "record_ref": {
+          "type": "string"
+        },
+        "publisher_ref": {
+          "type": "string"
+        },
+        "extension_name": {
+          "type": "string",
+          "const": "anab_publication"
+        },
+        "interaction_surface": {
+          "type": "string"
+        }
+      }
+    },
+    "anab_assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assurance_level",
+        "declaration_ref",
+        "evidence_bundle_ref",
+        "applicable_controls"
+      ],
+      "properties": {
+        "assurance_level": {
+          "type": "string",
+          "enum": [
+            "AL1",
+            "AL2",
+            "AL3",
+            "AL4"
+          ]
+        },
+        "declaration_ref": {
+          "type": "string"
+        },
+        "evidence_bundle_ref": {
+          "type": "string"
+        },
+        "applicable_controls": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^ANAGB-[A-Z0-9]+-[0-9]{2}$"
+          }
+        }
+      }
+    },
+    "discovery_hints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "agent_card_ref": {
+          "type": "string"
+        },
+        "policy_ref": {
+          "type": "string"
+        },
+        "revocation_ref": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

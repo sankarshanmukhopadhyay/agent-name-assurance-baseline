@@ -19,6 +19,7 @@ ANAB is a domain baseline within a broader assurance ecosystem:
 - **`trust-infrastructure-schemas` (OTAM implementation):** canonical trust artifact contracts and the normative definition of Assurance Levels (AL1–AL4).
 - **DCAS (`dtg-conformance-assurance`):** verifier workflow and evaluation method that can be used to assess ANAB conformance claims.
 - **ANAB (this repo):** domain-specific controls, declarations, and evidence bundles for Agent Names and Agent Pages.
+- **OASF:** optional publication surface for making ANAB declarations and evidence pointers discoverable in agent ecosystems.
 
 This repo adopts AL semantics from `trust-infrastructure-schemas` and focuses on domain-specific tiers (AN-0…AN-3) and operational profiles.
 
@@ -61,6 +62,7 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
 - **ANAB-over-A2A binding:** `docs/anab-over-a2a-binding.md`
 - **Binding schema:** `conformance/anab-over-a2a-description-extension.schema.json`
 - **Repo validation tool:** `tools/validate_repo.py` (used by CI)
+- **OASF integration:** `docs/oasf-integration.md`, `crosswalk/oasf.yml`, `conformance/oasf-anab-publication-profile.schema.json`
 
 
 ## Integration with DPI AI Governance Frameworks

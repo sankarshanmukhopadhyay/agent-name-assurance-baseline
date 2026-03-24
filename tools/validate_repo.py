@@ -117,7 +117,7 @@ def main() -> int:
     conformance_files = [ROOT / "conformance" / "sample-conformance-declaration.json"]
     conformance_files += [
         f for f in iter_json_files("conformance/samples")
-        if f.name != "a2a-agent-card-with-anab-extension.json"
+        if f.name not in {"a2a-agent-card-with-anab-extension.json", "oasf-anab-publication-profile.json"}
     ]
     all_sample_controls: set[str] = set()
 
@@ -150,7 +150,12 @@ def main() -> int:
         raise RuntimeError(f"A2A extension sample malformed: {e}") from e
     validate_json(extension_schema, params, "ANAB-over-A2A extension sample params")
 
-    print("OK: schemas valid; controls consistent; bundles valid; A2A binding sample valid.")
+    # 5) Validate OASF publication profile sample
+    oasf_profile_schema = load_json("conformance/oasf-anab-publication-profile.schema.json")
+    oasf_profile_sample = load_json("conformance/samples/oasf-anab-publication-profile.json")
+    validate_json(oasf_profile_schema, oasf_profile_sample, "OASF publication profile sample")
+
+    print("OK: schemas valid; controls consistent; bundles valid; A2A binding sample valid; OASF publication profile valid.")
     return 0
 
 
