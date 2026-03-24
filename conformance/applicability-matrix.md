@@ -65,6 +65,10 @@ Notes:
 | `ANAGB-A2A-04` | Task/context/tenant scoping | C | — | C | M | M | Applies when the named agent supports A2A-style task flows. |
 | `ANAGB-A2A-05` | Authenticated push/stream trust boundary | C | — | C | M | M | Applies when webhooks, push notifications, or streaming are supported. |
 | `ANAGB-A2A-06` | Safe media-type handling | C | — | C | M | M | Applies when artifacts or structured outputs are returned to relying parties. |
+| `ANAGB-A2A-07` | Card/operator identity-proof coherence | C | — | C | M | M | Applies when the deployment publishes ANAB-over-A2A trust metadata or verified identity claims. |
+| `ANAGB-A2A-08` | Issuer trust anchor disclosure | C | — | C | M | M | Applies when verified identity status is asserted from an external issuer, registry, or verifier service. |
+| `ANAGB-A2A-09` | Freshness and revocation semantics | C | — | C | M | M | Applies when ANAB trust descriptions are published for verifier consumption. |
+| `ANAGB-A2A-10` | Downgrade-safe trust handling | C | — | C | M | M | Applies when local policy relies on ANAB-over-A2A metadata for trust decisions. |
 | `ANAGB-AI-01` | AI usage disclosure | M | — | — | C | C | Applies only when **AI-mediated decisioning/delegation** is in scope. |
 | `ANAGB-AI-02` | Decision categories | M | — | — | C | C | Applies only when **AI-mediated decisioning/delegation** is in scope. |
 | `ANAGB-AI-03` | Redress mechanism | M | — | — | C | C | Applies only when **AI-mediated decisioning/delegation** is in scope. |

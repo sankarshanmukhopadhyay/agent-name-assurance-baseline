@@ -9,6 +9,7 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - Implementer guidance: `implementer-guidance.md`
 - Versioning & compatibility: `versioning-and-compatibility.md`
 - A2A alignment: `a2a-alignment.md`
+- ANAB-over-A2A binding: `anab-over-a2a-binding.md`
 
 ## Conformance
 
@@ -20,7 +21,7 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 
 ## Upstream inputs
 
-- Pinned upstream extract: `../upstream/agent-names-and-agent-pages/README.md`
+- Upstream reference and local notes: `../upstream/agent-names-and-agent-pages/README.md`
 
 ## Ecosystem interoperability
 

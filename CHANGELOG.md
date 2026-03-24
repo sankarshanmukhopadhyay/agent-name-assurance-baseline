@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 This repo follows semantic versioning as described in `docs/versioning-and-compatibility.md`.
 
+## [Unreleased]
+
+### Added
+- Added `docs/anab-over-a2a-binding.md` as a detailed binding specification for carrying ANAB trust metadata in A2A Agent Cards through the A2A extension model.
+- Added `conformance/anab-over-a2a-description-extension.schema.json` and `conformance/samples/a2a-agent-card-with-anab-extension.json` for machine-readable binding validation and implementation guidance.
+- Added four new A2A-facing controls: `ANAGB-A2A-07` through `ANAGB-A2A-10`.
+
+### Changed
+- Refreshed upstream references to point at `https://github.com/trustoverip/dtgwg-agent-names-tf` instead of treating the local extract as the upstream source of truth.
+- Expanded A2A alignment, applicability, checklist, and threat model content to cover verified-identity extensions, freshness, and downgrade-safe trust handling.
+
 ## [0.6.0] - 2026-03-24
 
 ### Added

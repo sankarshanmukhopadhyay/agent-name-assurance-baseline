@@ -1,0 +1,99 @@
+{
+  "name": "Example Research Agent",
+  "description": "Research and policy synthesis agent with published ANAB declaration.",
+  "url": "https://example.org/a2a",
+  "provider": {
+    "organization": "Example Corp",
+    "url": "https://example.org"
+  },
+  "version": "1.0.0",
+  "documentationUrl": "https://example.org/agents/research",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": true,
+    "extensions": [
+      {
+        "uri": "https://trustoverip.github.io/dtgwg-agent-names-tf/extensions/anab-description/v1",
+        "description": "Publishes ANAB declaration, operator binding, and verifier-consumable trust metadata for this agent.",
+        "required": false,
+        "params": {
+          "anabVersion": "0.6.0",
+          "verificationTier": "AN-2",
+          "assuranceLevel": "AL2",
+          "bindingStrength": "operator-bound",
+          "declaration": {
+            "format": "anab-conformance-declaration",
+            "mediaType": "application/json",
+            "uri": "https://example.org/.well-known/anab/conformance.json",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "evidenceBundle": {
+            "uri": "https://example.org/.well-known/anab/evidence/bundle.json",
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "agentName": {
+            "displayName": "Example Research Agent",
+            "pageUri": "https://example.org/agents/research",
+            "resolverUri": "https://example.org/.well-known/agent-name.json"
+          },
+          "operator": {
+            "legalName": "Example Corp",
+            "operatorId": "did:web:example.org",
+            "contactUri": "https://example.org/legal/agent-operator"
+          },
+          "cardBinding": {
+            "bindingMethod": "jws-detached",
+            "issuer": "did:web:example.org",
+            "kid": "did:web:example.org#anab-card-signing-1",
+            "verificationMaterialUri": "https://example.org/.well-known/jwks.json"
+          },
+          "identityVerification": {
+            "status": "verified",
+            "issuer": "Example Trust Registry",
+            "verificationUri": "https://registry.example.org/agents/example-research-agent",
+            "revocationCheck": "required"
+          },
+          "authorityBoundary": {
+            "statement": "Identity and operator binding verified. No implied authority to spend funds or sign regulated filings.",
+            "delegationRequired": true,
+            "delegationPolicyUri": "https://example.org/policy/delegation"
+          },
+          "freshness": {
+            "issuedAt": "2026-03-24T08:00:00Z",
+            "expiresAt": "2026-06-22T08:00:00Z",
+            "maxCacheAgeSeconds": 86400
+          }
+        }
+      }
+    ]
+  },
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "policy-synthesis",
+      "name": "Policy synthesis",
+      "description": "Produces policy notes and structured summaries.",
+      "tags": [
+        "policy",
+        "research",
+        "analysis"
+      ],
+      "examples": [
+        "Summarize the latest procurement guidance for AI deployments."
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "text/plain",
+        "application/json"
+      ]
+    }
+  ]
+}

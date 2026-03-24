@@ -12,7 +12,7 @@ The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**, **
 
 ## Upstream concept mapping (non-normative)
 
-This baseline is informed by the upstream *Agent Names and Agent Pages* draft (working extract under `upstream/agent-names-and-agent-pages/`).
+This baseline is informed by the upstream ToIP Agent Names Task Force repository at `https://github.com/trustoverip/dtgwg-agent-names-tf`. Local material under `upstream/agent-names-and-agent-pages/` is non-normative convenience material only.
 
 The table below shows how key upstream concepts are operationalized as controls.
 
@@ -126,6 +126,10 @@ When an implementation publishes an A2A Agent Card or equivalent metadata, the f
 - the name, operator, endpoint, supported interfaces, and auth requirements SHOULD remain consistent across the Agent Page, the Agent Card, and the conformance declaration
 - task, context, tenant, and subscription identifiers MUST be authorization-scoped
 - access to extended metadata SHOULD be policy-gated where disclosure increases attack surface
+- if ANAB trust metadata is published through an A2A extension, the Agent Card MUST remain coherently bound to the accountable operator identity
+- verified identity claims published in or alongside an Agent Card MUST disclose issuer, verification method, and verifier policy expectations
+- published trust descriptions SHOULD include freshness and revocation semantics suitable for verifier consumption
+- deployments that rely on ANAB-over-A2A trust metadata MUST fail safely when clients cannot process or trust that metadata
 
 ## 6. AI Decisioning Guardrails
 
@@ -199,6 +203,10 @@ A tier/profile applicability matrix is provided in `conformance/applicability-ma
 | `ANAGB-A2A-04` | Task, context, tenant, and subscription identifiers MUST be authorization-scoped and resistant to cross-tenant leakage. |
 | `ANAGB-A2A-05` | Push notifications and streaming updates MUST be authenticated or otherwise integrity protected, with replay mitigation. |
 | `ANAGB-A2A-06` | Implementations MUST declare supported media types and handle unsupported content safely to avoid trust inflation through ambiguous artifacts. |
+| `ANAGB-A2A-07` | Where ANAB trust metadata or verified identity claims are published through A2A, the Agent Card MUST be coherently bound to the accountable operator identity and the binding method MUST be disclosed. |
+| `ANAGB-A2A-08` | Implementations publishing externally verified identity status for an agent MUST disclose the issuer or trust anchor, the verification method or endpoint, and the policy under which relying parties should interpret that status. |
+| `ANAGB-A2A-09` | Published ANAB-over-A2A trust descriptions SHOULD include issuance freshness, expiry, and revocation semantics, and MUST support revocation checking where the deployment claims operational assurance. |
+| `ANAGB-A2A-10` | Clients and deployments MUST fail safely when ANAB-over-A2A trust metadata is absent, unsupported, stale, or unverifiable, and MUST NOT silently upgrade trust based on partial metadata. |
 | `ANAGB-AI-01` | If AI-mediated decisioning or delegation is used, the implementation MUST disclose that fact. |
 | `ANAGB-AI-02` | The implementation MUST distinguish advisory, assistive, and autonomous decision categories. |
 | `ANAGB-AI-03` | A redress mechanism MUST exist for consequential errors or misclassification. |

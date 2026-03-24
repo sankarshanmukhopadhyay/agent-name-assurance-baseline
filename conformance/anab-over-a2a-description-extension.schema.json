@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trustoverip.github.io/dtgwg-agent-names-tf/schemas/anab-over-a2a-description-extension.schema.json",
+  "title": "ANAB-over-A2A Description Extension Params",
+  "type": "object",
+  "required": [
+    "anabVersion",
+    "verificationTier",
+    "declaration",
+    "agentName",
+    "cardBinding",
+    "authorityBoundary",
+    "freshness"
+  ],
+  "properties": {
+    "anabVersion": {
+      "type": "string"
+    },
+    "verificationTier": {
+      "type": "string",
+      "enum": [
+        "AN-0",
+        "AN-1",
+        "AN-2",
+        "AN-3"
+      ]
+    },
+    "assuranceLevel": {
+      "type": "string",
+      "enum": [
+        "AL1",
+        "AL2",
+        "AL3",
+        "AL4"
+      ]
+    },
+    "bindingStrength": {
+      "type": "string"
+    },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "format",
+        "mediaType",
+        "uri"
+      ],
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "mediaType": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidenceBundle": {
+      "type": "object",
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "agentName": {
+      "type": "object",
+      "required": [
+        "displayName"
+      ],
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "pageUri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "resolverUri": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "operator": {
+      "type": "object",
+      "properties": {
+        "legalName": {
+          "type": "string"
+        },
+        "operatorId": {
+          "type": "string"
+        },
+        "contactUri": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cardBinding": {
+      "type": "object",
+      "required": [
+        "bindingMethod",
+        "issuer"
+      ],
+      "properties": {
+        "bindingMethod": {
+          "type": "string"
+        },
+        "issuer": {
+          "type": "string"
+        },
+        "kid": {
+          "type": "string"
+        },
+        "verificationMaterialUri": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "identityVerification": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "self_asserted",
+            "verified",
+            "revoked",
+            "suspended",
+            "unknown"
+          ]
+        },
+        "issuer": {
+          "type": "string"
+        },
+        "verificationUri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "revocationCheck": {
+          "type": "string",
+          "enum": [
+            "none",
+            "recommended",
+            "required"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorityBoundary": {
+      "type": "object",
+      "required": [
+        "statement"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "delegationRequired": {
+          "type": "boolean"
+        },
+        "delegationPolicyUri": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "freshness": {
+      "type": "object",
+      "required": [
+        "issuedAt"
+      ],
+      "properties": {
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "maxCacheAgeSeconds": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

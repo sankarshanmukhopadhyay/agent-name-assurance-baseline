@@ -10,7 +10,7 @@
 
 ANAB defines a **normative assurance baseline** for *Agent Names* and *Agent Pages*: how they are bound to cryptographic identifiers, how resolution and endpoints are verified, and how relying parties interpret “strength” via tiers and evidence.
 
-Upstream design input is tracked in `upstream/agent-names-and-agent-pages/` (non-normative extract). This repo converts those concepts into **controls, evidence expectations, and machine-checkable declarations**.
+Upstream design input is tracked against the ToIP Agent Names Task Force repository at `https://github.com/trustoverip/dtgwg-agent-names-tf`. Local notes under `upstream/agent-names-and-agent-pages/` are non-normative convenience material only. This repo converts those concepts into **controls, evidence expectations, and machine-checkable declarations**.
 
 ## Ecosystem & related repositories
 
@@ -58,6 +58,8 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
   - Identity & crypto alignment: `annex/I-identity-and-crypto-alignment.md`
   - Machine-readable crosswalk registry: `crosswalk/README.md`
 - **Threat model:** `threat-model/threat-matrix.md`
+- **ANAB-over-A2A binding:** `docs/anab-over-a2a-binding.md`
+- **Binding schema:** `conformance/anab-over-a2a-description-extension.schema.json`
 - **Repo validation tool:** `tools/validate_repo.py` (used by CI)
 
 
@@ -103,7 +105,7 @@ This release adds explicit alignment with **A2A 1.0** concepts that matter for n
 - webhook and streaming trust boundaries
 - multi-tenant endpoint isolation
 
-See `docs/a2a-alignment.md` and `annex/K-a2a-alignment.md`.
+See `docs/a2a-alignment.md`, `docs/anab-over-a2a-binding.md`, and `annex/K-a2a-alignment.md`.
 
 ## Cross-repo verifier composition
 

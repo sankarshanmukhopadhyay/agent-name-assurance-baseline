@@ -15,7 +15,9 @@ ANAB addresses those questions through verification tiers, evidence bundles, and
 
 ## New A2A-facing controls
 
-This release introduces six A2A-facing controls:
+This working increment introduces a more complete A2A description binding and expands the control set.
+
+The first six A2A-facing controls remain the baseline trust-surface controls:
 
 - **ANAGB-A2A-01** signed Agent Card / metadata integrity
 - **ANAGB-A2A-02** page-card-declaration consistency
@@ -23,6 +25,10 @@ This release introduces six A2A-facing controls:
 - **ANAGB-A2A-04** task, context, tenant, and subscription scoping
 - **ANAGB-A2A-05** authenticated streaming / push trust boundaries
 - **ANAGB-A2A-06** safe media-type declaration and handling
+- **ANAGB-A2A-07** Agent Card identity-proof and operator-binding coherence
+- **ANAGB-A2A-08** issuer trust anchor and verifier-policy disclosure for verified identity claims
+- **ANAGB-A2A-09** freshness, expiry, and revocation handling for published trust descriptions
+- **ANAGB-A2A-10** downgrade-safe behavior when ANAB extension content is absent, unsupported, or cannot be trusted
 
 ## How to compose ANAB with DCAS
 
@@ -33,3 +39,5 @@ A practical deployment stack looks like this:
 - optional sector overlays for payments, healthcare, public sector, or other higher-risk environments
 
 That separation keeps the architecture honest. A name can be well assured while the endpoint remains operationally weak. Conversely, a secure endpoint does not rescue a misleading name.
+
+The detailed binding is specified in `docs/anab-over-a2a-binding.md`.

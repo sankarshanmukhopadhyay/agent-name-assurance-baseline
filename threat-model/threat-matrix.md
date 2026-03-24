@@ -56,3 +56,6 @@ This matrix maps adversary goals → common attack paths → the ANAGB controls 
 | Cross-tenant task leakage | Task or context identifiers can be replayed or guessed across tenants or principals. | `ANAGB-A2A-04`, `ANAGB-ABUSE-02` |
 | Unsafely trusted callback | Push notifications or webhook updates are accepted without sufficient authenticity checks. | `ANAGB-A2A-05` |
 | Artifact trust inflation | A named agent returns unsupported or ambiguous output that is over-trusted by relying parties. | `ANAGB-A2A-06`, `ANAGB-AI-06` |
+| Mis-bound verified identity | The Agent Card carries a verification claim that is not coherently tied to the accountable operator or signing key. | `ANAGB-A2A-07`, `ANAGB-A2A-08` |
+| Stale trust description | Clients rely on expired, revoked, or cached ANAB-over-A2A metadata. | `ANAGB-A2A-09`, `ANAGB-IR-03` |
+| Silent trust downgrade or upgrade | A client ignores missing or unverifiable extension data and proceeds as if the higher-assurance trust claim still holds. | `ANAGB-A2A-10`, `ANAGB-UI-02` |

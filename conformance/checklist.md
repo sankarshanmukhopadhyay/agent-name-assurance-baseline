@@ -41,6 +41,10 @@
 - [ ] ANAGB-A2A-04 implemented
 - [ ] ANAGB-A2A-05 implemented
 - [ ] ANAGB-A2A-06 implemented
+- [ ] ANAGB-A2A-07 implemented
+- [ ] ANAGB-A2A-08 implemented
+- [ ] ANAGB-A2A-09 implemented
+- [ ] ANAGB-A2A-10 implemented
 
 ## AI (if used)
 - [ ] ANAGB-AI-01 implemented

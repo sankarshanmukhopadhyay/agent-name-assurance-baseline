@@ -168,3 +168,22 @@ Delivered:
 Delivered:
 - Composition note: `docs/dcas-composition.md`
 - DCAS-ready sample declaration: `conformance/samples/dcas-ready-enterprise-agent.json`
+
+## 11. ANAB-over-A2A description binding and verified-identity controls
+
+- Replace stale upstream-document references with the current ToIP Agent Names TF repository reference.
+- Define a detailed ANAB-over-A2A description extension using the A2A `AgentExtension` mechanism.
+- Add controls for operator/card identity-proof coherence, issuer trust anchoring, freshness and revocation semantics, and downgrade-safe client behavior.
+- Publish a machine-readable schema and example Agent Card using the binding.
+
+**Outcome:** A2A deployments can publish verifier-consumable trust metadata without mistaking a signed Agent Card for a complete assurance model.
+
+### Status
+✅ **Completed (post-v0.6.0 working increment)**
+
+Delivered:
+- Detailed binding spec: `docs/anab-over-a2a-binding.md`
+- Machine-readable extension schema: `conformance/anab-over-a2a-description-extension.schema.json`
+- Sample Agent Card using the extension: `conformance/samples/a2a-agent-card-with-anab-extension.json`
+- Expanded A2A control set: `ANAGB-A2A-07` through `ANAGB-A2A-10`
+- Freshness review of upstream references across README, spec, and docs

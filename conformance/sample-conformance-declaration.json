@@ -130,6 +130,22 @@
     "ANAGB-A2A-06": {
       "status": "implemented",
       "notes": "Supported media types declared and unsupported content safely rejected."
+    },
+    "ANAGB-A2A-07": {
+      "status": "implemented",
+      "notes": "Agent Card trust metadata is bound to the accountable operator identity and discloses the binding method."
+    },
+    "ANAGB-A2A-08": {
+      "status": "implemented",
+      "notes": "Verified identity status discloses issuer, verification method, and verifier-facing interpretation policy."
+    },
+    "ANAGB-A2A-09": {
+      "status": "implemented",
+      "notes": "ANAB trust description includes issuance freshness, expiry, and revocation handling."
+    },
+    "ANAGB-A2A-10": {
+      "status": "implemented",
+      "notes": "Clients fail safely when ANAB extension metadata is absent, stale, or unverifiable."
     }
   },
   "exceptions": [],

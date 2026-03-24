@@ -115,7 +115,10 @@ def main() -> int:
 
     # 2) Validate conformance declarations (canonical + samples)
     conformance_files = [ROOT / "conformance" / "sample-conformance-declaration.json"]
-    conformance_files += list(iter_json_files("conformance/samples"))
+    conformance_files += [
+        f for f in iter_json_files("conformance/samples")
+        if f.name != "a2a-agent-card-with-anab-extension.json"
+    ]
     all_sample_controls: set[str] = set()
 
     for f in conformance_files:
@@ -138,7 +141,16 @@ def main() -> int:
         inst = json.loads(f.read_text(encoding="utf-8"))
         validate_json(evidence_schema, inst, f"Evidence bundle {f.relative_to(ROOT)}")
 
-    print("OK: schemas valid; controls consistent; bundles valid.")
+    # 4) Validate ANAB-over-A2A extension sample
+    extension_schema = load_json("conformance/anab-over-a2a-description-extension.schema.json")
+    a2a_sample = load_json("conformance/samples/a2a-agent-card-with-anab-extension.json")
+    try:
+        params = a2a_sample["capabilities"]["extensions"][0]["params"]
+    except Exception as e:
+        raise RuntimeError(f"A2A extension sample malformed: {e}") from e
+    validate_json(extension_schema, params, "ANAB-over-A2A extension sample params")
+
+    print("OK: schemas valid; controls consistent; bundles valid; A2A binding sample valid.")
     return 0
 
 
