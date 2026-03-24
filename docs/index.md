@@ -37,3 +37,7 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - [Architecture snapshot](architecture.md)
 - [Transport alignment (TSP)](tsp-alignment.md)
 
+
+## Composition
+
+- `dcas-composition.md` — how ANAB declarations and evidence bundles feed a DCAS evaluation flow.

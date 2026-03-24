@@ -1,6 +1,6 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.5.1-blue)
+![Version](https://img.shields.io/badge/version-0.6.0-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
@@ -104,6 +104,13 @@ This release adds explicit alignment with **A2A 1.0** concepts that matter for n
 - multi-tenant endpoint isolation
 
 See `docs/a2a-alignment.md` and `annex/K-a2a-alignment.md`.
+
+## Cross-repo verifier composition
+
+This release adds a verifier-facing composition note showing how ANAB declarations and evidence bundles are intended to travel into DCAS evaluation workflows without rewriting the ANAB control namespace.
+
+- Composition note: `docs/dcas-composition.md`
+- DCAS-ready example declaration: `conformance/samples/dcas-ready-enterprise-agent.json`
 
 ## Release discipline
 - Changelog: `CHANGELOG.md`

@@ -153,3 +153,18 @@ Delivered:
 - A2A alignment guidance: `docs/a2a-alignment.md`
 - A2A annex: `annex/K-a2a-alignment.md`
 - Threat model expansion for A2A task trust surfaces
+
+
+## 10. DCAS-ready composition examples
+
+- Provide a verifier-facing composition note showing how ANAB declarations and evidence bundles should be consumed by DCAS.
+- Publish a sample declaration that keeps ANAB control identifiers intact while remaining easy for evaluators to consume.
+
+**Outcome:** downstream evaluation can be automated without flattening the ANAB namespace into ad hoc local labels.
+
+### Status
+✅ **Completed (v0.6.0)**
+
+Delivered:
+- Composition note: `docs/dcas-composition.md`
+- DCAS-ready sample declaration: `conformance/samples/dcas-ready-enterprise-agent.json`

@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 This repo follows semantic versioning as described in `docs/versioning-and-compatibility.md`.
 
+## [0.6.0] - 2026-03-24
+
+### Added
+- Added `docs/dcas-composition.md` to explain how ANAB declarations and evidence bundles compose with DCAS evaluation workflows.
+- Added `conformance/samples/dcas-ready-enterprise-agent.json` as a verifier-facing sample declaration with evidence bundle and standards alignment pointers.
+
+### Changed
+- Refreshed README navigation so cross-repo verifier composition is visible from the front door.
+- Updated roadmap tracking to record delivery of DCAS-ready composition examples.
+
 ## [0.5.1] - 2026-03-14
 
 ### Changed
