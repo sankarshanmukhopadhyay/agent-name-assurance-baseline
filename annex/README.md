@@ -32,3 +32,5 @@ Design goals:
 See: `crosswalk/README.md`
 
 - `K-a2a-alignment.md` — A2A concept-to-control mapping for named agents
+
+- `profiles/ais1/anab-profile.md` — relying-party interpretation profile for AIS-1 bonded identity inside ANAB

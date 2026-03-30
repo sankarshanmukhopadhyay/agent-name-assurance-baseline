@@ -11,6 +11,7 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - A2A alignment: `a2a-alignment.md`
 - ANAB-over-A2A binding: `anab-over-a2a-binding.md`
 - OASF integration: `oasf-integration.md`
+- AIS-1 interpretation profile: `ais1-interpretation-profile.md`
 
 ## Conformance
 

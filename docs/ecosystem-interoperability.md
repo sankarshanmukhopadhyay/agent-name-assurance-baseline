@@ -29,3 +29,8 @@ This repository provides the **domain baseline layer** for agent names and agent
 Interoperability depends on a transport substrate for secure, privacy-preserving exchange of messages and artifacts between endpoints. This repo aligns with the **Trust Spanning Protocol (TSP)** from ToIP as a candidate transport layer for these exchanges.
 
 See: https://trustoverip.github.io/tswg-tsp-specification/
+
+
+## AIS-1 note
+
+AIS-1 now has an ANAB interpretation profile in `profiles/ais1/anab-profile.md`. The main practical value is verifier discipline: distinguish identity assurance from authority assurance, require delegation for consequential actions, and preserve sponsor visibility and status freshness across the public trust surface.

@@ -187,3 +187,12 @@ Delivered:
 - Sample Agent Card using the extension: `conformance/samples/a2a-agent-card-with-anab-extension.json`
 - Expanded A2A control set: `ANAGB-A2A-07` through `ANAGB-A2A-10`
 - Freshness review of upstream references across README, spec, and docs
+
+
+## 12. AIS-1 relying-party interpretation
+
+- observe whether AIS-1-style bonded identity patterns appear in other ecosystems before promoting a more general profile into the normative core
+- keep verifier guidance explicit about tier interpretation, sponsor visibility, and revocation handling
+- align future ANAB examples with the canonical AIS-1 schema profile in `trust-infrastructure-schemas` where reuse pressure continues
+
+**Outcome:** ANAB can consume bonded identity surfaces consistently without confusing identity proof with delegated authority.
