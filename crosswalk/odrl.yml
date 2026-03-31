@@ -1,0 +1,17 @@
+mapping: ANAB-ODRL
+status: optional
+purpose: Optional ODRL-compatible policy references for ANAB deployments.
+concepts:
+  - anab_surface: Agent Page metadata disclosure conditions
+    odrl_surface: permission/prohibition with constraints
+    note: Useful for policy-gated access to extended metadata.
+  - anab_surface: Attribution or notice duties
+    odrl_surface: duty
+    note: Can express publication-time obligations without changing ANAB control semantics.
+  - anab_surface: Restrictions on downstream reuse of trust metadata
+    odrl_surface: prohibition
+    note: Helpful where agents publish machine-readable trust signals for discovery.
+boundaries:
+  - ODRL publication is optional and non-normative for ANAB conformance.
+  - ODRL publication does not prove runtime enforcement.
+  - ANAB declarations and evidence bundles remain authoritative.

@@ -11,6 +11,7 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - A2A alignment: `a2a-alignment.md`
 - ANAB-over-A2A binding: `anab-over-a2a-binding.md`
 - OASF integration: `oasf-integration.md`
+- Optional ODRL policy references: `odrl-policy-reference.md`
 - AIS-1 interpretation profile *(experimental)*: `ais1-interpretation-profile.md`
 
 ## Conformance
@@ -45,3 +46,4 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 
 - `dcas-composition.md` — how ANAB declarations and evidence bundles feed a DCAS evaluation flow.
 - `oasf-integration.md` — how ANAB declarations and evidence pointers travel through an OASF publication surface.
+- `odrl-policy-reference.md` — optional ODRL-compatible policy publication for bounded usage, disclosure, and notice conditions.

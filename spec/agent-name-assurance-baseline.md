@@ -1,4 +1,4 @@
-# Agent Name Assurance & Governance Baseline (ANAGB) v0.5.0
+# Agent Name Assurance & Governance Baseline (ANAGB) v0.7.0
 
 ## Status
 Draft — Working Group Review
@@ -168,6 +168,18 @@ This section applies where AI systems influence contact mediation, trust scoring
 
 Conformance claims MUST specify the adopted profile and the implemented control IDs.
 A tier/profile applicability matrix is provided in `conformance/applicability-matrix.md` to make control scoping auditable and repeatable.
+
+## 8.1 Optional policy-expression references
+
+Implementations MAY publish an **ODRL-compatible policy artifact or policy reference** for bounded conditions such as metadata disclosure gating, attribution duties, usage prohibitions, or notice requirements.
+
+Where used:
+
+- the ODRL artifact MUST be treated as **adjacent** to ANAB conformance, not as a replacement for it
+- the ANAB declaration and evidence bundle remain authoritative for assurance claims
+- relying parties MUST NOT infer runtime enforcement solely from policy publication
+
+This optional publication surface exists to improve machine readability for policy-like conditions without turning ANAB into a policy-language specification.
 
 ---
 

@@ -1,6 +1,6 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.6.0-blue)
+![Version](https://img.shields.io/badge/version-0.7.0-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
@@ -20,6 +20,7 @@ ANAB is a domain baseline within a broader assurance ecosystem:
 - **DCAS (`dtg-conformance-assurance`):** verifier workflow and evaluation method that can be used to assess ANAB conformance claims.
 - **ANAB (this repo):** domain-specific controls, declarations, and evidence bundles for Agent Names and Agent Pages.
 - **OASF:** optional publication surface for making ANAB declarations and evidence pointers discoverable in agent ecosystems.
+- **ODRL:** optional policy-expression surface for publishing bounded usage, disclosure, and notice conditions without changing ANAB conformance semantics.
 
 This repo adopts AL semantics from `trust-infrastructure-schemas` and focuses on domain-specific tiers (AN-0…AN-3) and operational profiles.
 
@@ -63,6 +64,7 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
 - **Binding schema:** `conformance/anab-over-a2a-description-extension.schema.json`
 - **Repo validation tool:** `tools/validate_repo.py` (used by CI)
 - **OASF integration:** `docs/oasf-integration.md`, `crosswalk/oasf.yml`, `conformance/oasf-anab-publication-profile.schema.json`
+- **Optional ODRL policy references:** `docs/odrl-policy-reference.md`, `crosswalk/odrl.yml`, `profiles/odrl/agent-name-policy.jsonld`
 
 
 ## Integration with DPI AI Governance Frameworks
@@ -115,6 +117,9 @@ This release adds a verifier-facing composition note showing how ANAB declaratio
 
 - Composition note: `docs/dcas-composition.md`
 - DCAS-ready example declaration: `conformance/samples/dcas-ready-enterprise-agent.json`
+
+## Optional ODRL policy references
+ANAB can now publish optional ODRL-compatible policy references for bounded conditions such as disclosure gating, attribution duties, and downstream reuse restrictions. This is an adjunct policy surface only. The ANAB declaration and evidence bundle remain authoritative.
 
 ## Release discipline
 - Changelog: `CHANGELOG.md`

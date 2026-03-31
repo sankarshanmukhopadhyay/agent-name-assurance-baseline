@@ -7,6 +7,23 @@ This repo follows semantic versioning as described in `docs/versioning-and-compa
 ## [Unreleased]
 
 ### Added
+- Added `docs/odrl-policy-reference.md` to define how ANAB can publish optional ODRL-compatible policy references without changing the normative baseline.
+- Added `crosswalk/odrl.yml` and `profiles/odrl/agent-name-policy.jsonld` as bounded policy-publication examples.
+
+### Changed
+- Refreshed README, docs index, and normative spec text to make the ODRL boundary explicit: optional policy carrier, not conformance core.
+
+## [0.7.0] - 2026-03-31
+
+### Added
+- Optional ODRL policy-reference guidance for usage, disclosure, attribution, and notice conditions.
+- Example ODRL policy artifact and a lightweight ANAB ↔ ODRL crosswalk.
+
+### Changed
+- Clarified in the normative spec that ODRL publication does not replace ANAB controls, declarations, or evidence bundles.
+
+
+### Added
 - Added `docs/anab-over-a2a-binding.md` as a detailed binding specification for carrying ANAB trust metadata in A2A Agent Cards through the A2A extension model.
 - Added `conformance/anab-over-a2a-description-extension.schema.json` and `conformance/samples/a2a-agent-card-with-anab-extension.json` for machine-readable binding validation and implementation guidance.
 - Added four new A2A-facing controls: `ANAGB-A2A-07` through `ANAGB-A2A-10`.

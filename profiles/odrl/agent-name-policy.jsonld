@@ -1,0 +1,32 @@
+{
+  "@context": "http://www.w3.org/ns/odrl.jsonld",
+  "@type": "Set",
+  "uid": "https://example.invalid/anab/policy/agent-name-metadata",
+  "profile": "https://example.invalid/anab/profiles/odrl/agent-name-policy/v1",
+  "permission": [
+    {
+      "target": "https://example.invalid/agents/example-agent#public-metadata",
+      "assignee": "https://example.invalid/parties/known-verifier",
+      "action": "read",
+      "constraint": [
+        {
+          "leftOperand": "dateTime",
+          "operator": "lteq",
+          "rightOperand": "2026-12-31T23:59:59Z"
+        }
+      ]
+    }
+  ],
+  "prohibition": [
+    {
+      "target": "https://example.invalid/agents/example-agent#trust-mark",
+      "action": "reproduce"
+    }
+  ],
+  "obligation": [
+    {
+      "action": "attribute",
+      "target": "https://example.invalid/agents/example-agent#public-metadata"
+    }
+  ]
+}
