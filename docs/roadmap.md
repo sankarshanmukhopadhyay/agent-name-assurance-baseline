@@ -191,7 +191,7 @@ Delivered:
 
 ## 12. AIS-1 relying-party interpretation
 
-- observe whether AIS-1-style bonded identity patterns appear in other ecosystems before promoting a more general profile into the normative core
+- keep the AIS-1 interpretation profile marked experimental while observing whether AIS-1-style bonded identity patterns appear in other ecosystems before promoting a more general profile into the normative core
 - keep verifier guidance explicit about tier interpretation, sponsor visibility, and revocation handling
 - align future ANAB examples with the canonical AIS-1 schema profile in `trust-infrastructure-schemas` where reuse pressure continues
 

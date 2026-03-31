@@ -128,6 +128,6 @@ Apache 2.0
 See `docs/ecosystem-interoperability.md` and `docs/architecture.md` for how this repo composes with DTG Labs upstream work (`dtg-credentials`, `verifiable-trust-infrastructure`, `openVTC`).
 
 
-## AIS-1 interpretation profile on main
+## AIS-1 experimental interpretation profile on main
 
-This repository now includes an AIS-1 interpretation profile at `profiles/ais1/anab-profile.md`. The profile tells relying parties how to read AIS-1 bonded identity signals inside ANAB without over-claiming what those signals prove. The key distinction is preserved explicitly: **bonded identity is not the same thing as delegated authority**.
+This repository now includes an **experimental** AIS-1 interpretation profile at `profiles/ais1/anab-profile.md`. The profile tells relying parties how to read AIS-1 bonded identity signals inside ANAB without over-claiming what those signals prove. The key distinction is preserved explicitly: **bonded identity is not the same thing as delegated authority**. Experimental status here means the interpretation guidance is useful now, but should still be treated as a maturing profile rather than a settled normative core.

@@ -1,4 +1,8 @@
-# AIS-1 Interpretation Profile for ANAB
+# AIS-1 Interpretation Profile for ANAB (Experimental)
+
+## Status
+
+This profile is **experimental**. It is included so relying parties can interpret AIS-1 consistently while the pattern is still being pressure-tested across the broader portfolio.
 
 ## Purpose
 

@@ -33,4 +33,4 @@ See: https://trustoverip.github.io/tswg-tsp-specification/
 
 ## AIS-1 note
 
-AIS-1 now has an ANAB interpretation profile in `profiles/ais1/anab-profile.md`. The main practical value is verifier discipline: distinguish identity assurance from authority assurance, require delegation for consequential actions, and preserve sponsor visibility and status freshness across the public trust surface.
+AIS-1 now has an **experimental** ANAB interpretation profile in `profiles/ais1/anab-profile.md`. The main practical value is verifier discipline: distinguish identity assurance from authority assurance, require delegation for consequential actions, and preserve sponsor visibility and status freshness across the public trust surface. The experimental marker keeps that guidance usable without overstating its maturity.

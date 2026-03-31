@@ -101,4 +101,4 @@ Use when: internal agents act inside enterprise boundaries, but still need clear
 
 ## AIS-1 as an identity-and-accountability input
 
-If you use AIS-1 with ANAB, treat it as a way to strengthen the public trust surface around a named agent. It can improve durable naming, sponsor visibility, and status freshness. It does not remove the need to publish authority boundaries, delegation checks, or higher-risk verifier rules.
+If you use AIS-1 with ANAB, treat it as an **experimental** way to strengthen the public trust surface around a named agent. It can improve durable naming, sponsor visibility, and status freshness. It does not remove the need to publish authority boundaries, delegation checks, or higher-risk verifier rules.

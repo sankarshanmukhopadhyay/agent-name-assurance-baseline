@@ -1,6 +1,8 @@
-# AIS-1 Interpretation Profile
+# AIS-1 Interpretation Profile (Experimental)
 
 This page mirrors the relying-party interpretation guidance published at `profiles/ais1/anab-profile.md` so the GitHub Pages documentation surface has a stable AIS-1 landing page.
+
+This guidance is **experimental**. It should be used as careful interpretation support, not as proof that AIS-1 is already part of ANAB's settled normative core.
 
 ## Summary
 
