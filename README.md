@@ -1,6 +1,6 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.7.0-blue)
+![Version](https://img.shields.io/badge/version-0.8.0-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
@@ -35,6 +35,7 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
    - Declaration schema: `conformance/conformance-declaration.schema.json`
    - Evidence bundle schema: `evidence-bundles/evidence-bundle.schema.json`
 5. Use implementation guidance + patterns: `docs/implementer-guidance.md`
+6. For higher-assurance runtime-governed deployments, review `docs/runtime-identity-lifecycle.md` *(experimental guidance)*
 
 ## Contents
 - **Normative spec:** `spec/agent-name-assurance-baseline.md`
@@ -136,3 +137,8 @@ See `docs/ecosystem-interoperability.md` and `docs/architecture.md` for how this
 ## AIS-1 experimental interpretation profile on main
 
 This repository now includes an **experimental** AIS-1 interpretation profile at `profiles/ais1/anab-profile.md`. The profile tells relying parties how to read AIS-1 bonded identity signals inside ANAB without over-claiming what those signals prove. The key distinction is preserved explicitly: **bonded identity is not the same thing as delegated authority**. Experimental status here means the interpretation guidance is useful now, but should still be treated as a maturing profile rather than a settled normative core.
+
+
+## Experimental runtime assurance layer
+
+This release adds an **experimental** runtime identity lifecycle interpretation for ANAB, using the Microsoft Agent Governance Toolkit as an upstream reference for runtime identity and decision-time governance concepts. The normative ANAB control catalog is unchanged.

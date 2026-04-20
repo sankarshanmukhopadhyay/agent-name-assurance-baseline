@@ -102,3 +102,8 @@ Use when: internal agents act inside enterprise boundaries, but still need clear
 ## AIS-1 as an identity-and-accountability input
 
 If you use AIS-1 with ANAB, treat it as an **experimental** way to strengthen the public trust surface around a named agent. It can improve durable naming, sponsor visibility, and status freshness. It does not remove the need to publish authority boundaries, delegation checks, or higher-risk verifier rules.
+
+
+## Experimental runtime lifecycle extension
+
+If your named agent performs delegated or side-effecting runtime actions, document how runtime identity is activated, rotated, revoked, and decommissioned. At higher assurance levels, pair your ANAB declaration with runtime traces or receipts that show how revocation freshness and delegation scope are handled at action time.

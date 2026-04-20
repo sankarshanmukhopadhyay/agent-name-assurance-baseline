@@ -29,8 +29,8 @@ In practice, AN-x and Profile determine **what controls apply**. AL determines *
 | --- | --- |
 | AL1 | Evidence bundle is complete and internally consistent. Policies and attestations exist, but verification is limited. |
 | AL2 | Evidence is verifiable where it matters: cryptographic integrity, provenance, identifier binding, audit logs retained. |
-| AL3 | Independent review is present for high-risk controls. Remediation closure is documented and traceable. |
-| AL4 | Continuous assurance: monitoring, audit-grade logs, recurring assessment, and strong governance controls. |
+| AL3 | Independent review is present for high-risk controls. Remediation closure is documented and traceable. Where runtime delegation or side-effecting actions are in scope, review SHOULD include runtime identity and revocation handling. |
+| AL4 | Continuous assurance: monitoring, audit-grade logs, recurring assessment, and strong governance controls. Where runtime-governed agents are in scope, this SHOULD include tamper-evident operational traces, rotation records, and orphan detection. |
 
 ## Recommended mapping (rule of thumb)
 
@@ -49,3 +49,8 @@ If an issuer claims a high tier/profile at a low AL, verifiers SHOULD treat that
 - Evidence bundles SHOULD justify the declared AL with references to artifacts and verification outputs.
 - Verifiers SHOULD report both the **declared AL** and the **achieved AL** after review.
 
+
+
+## Experimental runtime interpretation
+
+For ecosystems that need to assess named agents in live execution contexts, see `docs/runtime-identity-lifecycle.md`. This guidance is intentionally experimental and does not alter the normative ANAB control set.

@@ -1,4 +1,4 @@
-# Tier & Profile Applicability Matrix (ANAGB v0.5.0)
+# Tier & Profile Applicability Matrix (ANAGB v0.8.0)
 
 This document operationalizes **what you must implement** by combining:
 
@@ -104,3 +104,8 @@ For controls marked **C** (Conditional), either:
 - **AN-2**: issuer trust framework reference + revocation checking evidence
 - **AN-3**: legal entity validation evidence + change control + incident response attestations
 - **Deploy/Transact/Enterprise**: abuse monitoring metrics, logging retention configs, incident runbooks
+
+
+## Experimental runtime evidence note
+
+This matrix remains the normative ANAB applicability surface. For higher-assurance deployments that execute delegated or side-effecting runtime actions, assessors MAY request the additional experimental guidance in `docs/runtime-identity-lifecycle.md` without treating it as a new mandatory ANAB control family.

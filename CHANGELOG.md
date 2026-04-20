@@ -6,12 +6,14 @@ This repo follows semantic versioning as described in `docs/versioning-and-compa
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-04-20
+
 ### Added
-- Added `docs/odrl-policy-reference.md` to define how ANAB can publish optional ODRL-compatible policy references without changing the normative baseline.
-- Added `crosswalk/odrl.yml` and `profiles/odrl/agent-name-policy.jsonld` as bounded policy-publication examples.
+- Added `docs/runtime-identity-lifecycle.md` as experimental guidance for runtime identity activation, delegation, revocation, rotation, and decommissioning.
+- Added `docs/experimental/agent-governance-toolkit-alignment.md` to record the upstream conceptual boundary.
 
 ### Changed
-- Refreshed README, docs index, and normative spec text to make the ODRL boundary explicit: optional policy carrier, not conformance core.
+- Refreshed README, docs index, assurance-level guidance, implementer guidance, and applicability notes to make higher-assurance runtime identity expectations legible without changing the normative ANAB controls.
 
 ## [0.7.0] - 2026-03-31
 

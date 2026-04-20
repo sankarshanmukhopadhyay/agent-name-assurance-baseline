@@ -13,6 +13,8 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - OASF integration: `oasf-integration.md`
 - Optional ODRL policy references: `odrl-policy-reference.md`
 - AIS-1 interpretation profile *(experimental)*: `ais1-interpretation-profile.md`
+- Runtime identity lifecycle *(experimental guidance)*: `runtime-identity-lifecycle.md`
+- Agent Governance Toolkit alignment *(experimental)*: `experimental/agent-governance-toolkit-alignment.md`
 
 ## Conformance
 
