@@ -6,6 +6,25 @@ This repo follows semantic versioning as described in `docs/versioning-and-compa
 
 ## [Unreleased]
 
+
+## [0.9.0] - 2026-05-06
+
+### Added
+- Added a TIS v0.9 agent-name composition profile for DTG/OpenVTC/VTI runtime trust artifact references.
+- Added a TIS-backed enterprise agent conformance sample.
+- Added a machine-readable TIS compatibility review manifest and local drift review issue template.
+- Added known-good stack and TIS/DCAS/ANAB alignment documentation.
+
+### Changed
+- Refreshed README, docs index, architecture, interoperability, runtime lifecycle, A2A binding, roadmap, and version metadata for TIS v0.9 synchronization.
+- Clarified that TIS runtime artifacts support named-agent evidence but do not automatically prove ANAB conformance.
+- Updated validation tooling to check the TIS-backed sample and compatibility review manifest.
+
+### Quality
+- Preserved existing ANAB control IDs, declaration schema compatibility, and CI workflow behavior.
+- Validated schemas, samples, evidence bundles, markdown structure, and internal links.
+
+
 ## [0.8.0] - 2026-04-20
 
 ### Added

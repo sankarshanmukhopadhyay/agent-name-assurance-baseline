@@ -34,3 +34,9 @@ See: https://trustoverip.github.io/tswg-tsp-specification/
 ## AIS-1 note
 
 AIS-1 now has an **experimental** ANAB interpretation profile in `profiles/ais1/anab-profile.md`. The main practical value is verifier discipline: distinguish identity assurance from authority assurance, require delegation for consequential actions, and preserve sponsor visibility and status freshness across the public trust surface. The experimental marker keeps that guidance usable without overstating its maturity.
+
+## TIS v0.9 synchronization note
+
+ANAB v0.9.0 aligns with TIS v0.9.0 by allowing DTG/OpenVTC/VTI runtime trust artifacts to support named-agent evidence. These references do not replace ANAB controls, declarations, evidence bundles, or relying-party interpretation. They provide a canonical evidence substrate for credential, relationship, authorization, decision, and provision artifacts.
+
+For the governing composition model, see `tis-v0.9-agent-name-composition.md`.

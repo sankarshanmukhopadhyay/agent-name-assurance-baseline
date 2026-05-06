@@ -36,3 +36,9 @@ A strong name-to-identifier binding can still be operationally weak if the deplo
 ## Boundary
 
 This guidance is experimental and does not change the normative ANAB control catalog. It provides a sharper interpretation path for assessors and implementers working with DCAS and TSMM in runtime-governed agent ecosystems.
+
+## TIS v0.9 synchronization note
+
+ANAB v0.9.0 aligns with TIS v0.9.0 by allowing DTG/OpenVTC/VTI runtime trust artifacts to support named-agent evidence. These references do not replace ANAB controls, declarations, evidence bundles, or relying-party interpretation. They provide a canonical evidence substrate for credential, relationship, authorization, decision, and provision artifacts.
+
+For the governing composition model, see `tis-v0.9-agent-name-composition.md`.

@@ -14,6 +14,9 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - Optional ODRL policy references: `odrl-policy-reference.md`
 - AIS-1 interpretation profile *(experimental)*: `ais1-interpretation-profile.md`
 - Runtime identity lifecycle *(experimental guidance)*: `runtime-identity-lifecycle.md`
+- TIS v0.9 agent-name composition: `tis-v0.9-agent-name-composition.md`
+- TIS/DCAS/ANAB alignment matrix: `tis-dcas-anab-alignment-matrix.md`
+- Known-good stack: `known-good-stack.md`
 - Agent Governance Toolkit alignment *(experimental)*: `experimental/agent-governance-toolkit-alignment.md`
 
 ## Conformance
@@ -47,5 +50,6 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 ## Composition
 
 - `dcas-composition.md` — how ANAB declarations and evidence bundles feed a DCAS evaluation flow.
+- `tis-v0.9-agent-name-composition.md` — how TIS v0.9 DTG/OpenVTC/VTI runtime trust artifacts support named-agent evidence without replacing ANAB controls.
 - `oasf-integration.md` — how ANAB declarations and evidence pointers travel through an OASF publication surface.
 - `odrl-policy-reference.md` — optional ODRL-compatible policy publication for bounded usage, disclosure, and notice conditions.

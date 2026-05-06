@@ -234,3 +234,9 @@ This optional publication surface exists to improve machine readability for poli
 Normative requirements in this specification are informed by:
 - Annex A — Risk Surface & Harm Matrix
 - Annex B — NIST & SDO Crosswalk
+
+## TIS v0.9 synchronization note
+
+ANAB v0.9.0 aligns with TIS v0.9.0 by allowing DTG/OpenVTC/VTI runtime trust artifacts to support named-agent evidence. These references do not replace ANAB controls, declarations, evidence bundles, or relying-party interpretation. They provide a canonical evidence substrate for credential, relationship, authorization, decision, and provision artifacts.
+
+For the governing composition model, see `tis-v0.9-agent-name-composition.md`.

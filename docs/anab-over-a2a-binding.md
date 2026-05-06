@@ -201,3 +201,23 @@ This binding makes four additional control concerns explicit:
 - downgrade-safe behavior when clients cannot process or choose not to rely on ANAB extension content
 
 Those concerns are reflected in new controls `ANAGB-A2A-07` through `ANAGB-A2A-10` in the normative baseline.
+
+## TIS v0.9 synchronization note
+
+ANAB v0.9.0 aligns with TIS v0.9.0 by allowing DTG/OpenVTC/VTI runtime trust artifacts to support named-agent evidence. These references do not replace ANAB controls, declarations, evidence bundles, or relying-party interpretation. They provide a canonical evidence substrate for credential, relationship, authorization, decision, and provision artifacts.
+
+For the governing composition model, see `tis-v0.9-agent-name-composition.md`.
+
+## TIS artifact references in ANAB-over-A2A metadata
+
+ANAB-over-A2A metadata MAY include stable TIS artifact references when an agent is backed by DTG/OpenVTC/VTI runtime trust infrastructure. Recommended references include:
+
+- TIS evidence bundle manifest;
+- TIS decision receipt;
+- VTI authorization credential;
+- OpenVTC relationship state;
+- DTG credential envelope;
+- DCAS evaluation result, when available.
+
+Clients MUST NOT interpret the presence of TIS references as automatic proof of authority. A client should evaluate local policy, freshness, revocation status, and any DCAS evaluation result before relying on the agent for consequential tasks.
+

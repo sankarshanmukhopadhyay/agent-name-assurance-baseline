@@ -109,3 +109,9 @@ For controls marked **C** (Conditional), either:
 ## Experimental runtime evidence note
 
 This matrix remains the normative ANAB applicability surface. For higher-assurance deployments that execute delegated or side-effecting runtime actions, assessors MAY request the additional experimental guidance in `docs/runtime-identity-lifecycle.md` without treating it as a new mandatory ANAB control family.
+
+## TIS v0.9 synchronization note
+
+ANAB v0.9.0 aligns with TIS v0.9.0 by allowing DTG/OpenVTC/VTI runtime trust artifacts to support named-agent evidence. These references do not replace ANAB controls, declarations, evidence bundles, or relying-party interpretation. They provide a canonical evidence substrate for credential, relationship, authorization, decision, and provision artifacts.
+
+For the governing composition model, see `tis-v0.9-agent-name-composition.md`.

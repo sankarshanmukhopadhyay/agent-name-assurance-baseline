@@ -1,6 +1,6 @@
 # agent-name-assurance-baseline
 
-![Version](https://img.shields.io/badge/version-0.8.0-blue)
+![Version](https://img.shields.io/badge/version-0.9.0-blue)
 ![Status](https://img.shields.io/badge/status-draft-orange)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Conformance](https://img.shields.io/badge/conformance-machine--readable-success)
@@ -16,7 +16,7 @@ Upstream design input is tracked against the ToIP Agent Names Task Force reposit
 
 ANAB is a domain baseline within a broader assurance ecosystem:
 
-- **`trust-infrastructure-schemas` (OTAM implementation):** canonical trust artifact contracts and the normative definition of Assurance Levels (AL1–AL4).
+- **`trust-infrastructure-schemas` (OTAM implementation):** canonical trust artifact contracts, the normative definition of Assurance Levels (AL1–AL4), and the v0.9 DTG/OpenVTC/VTI runtime trust artifact compatibility profiles.
 - **DCAS (`dtg-conformance-assurance`):** verifier workflow and evaluation method that can be used to assess ANAB conformance claims.
 - **ANAB (this repo):** domain-specific controls, declarations, and evidence bundles for Agent Names and Agent Pages.
 - **OASF:** optional publication surface for making ANAB declarations and evidence pointers discoverable in agent ecosystems.
@@ -36,6 +36,7 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
    - Evidence bundle schema: `evidence-bundles/evidence-bundle.schema.json`
 5. Use implementation guidance + patterns: `docs/implementer-guidance.md`
 6. For higher-assurance runtime-governed deployments, review `docs/runtime-identity-lifecycle.md` *(experimental guidance)*
+7. For TIS-backed agent deployments, review `docs/tis-v0.9-agent-name-composition.md` and the sample `conformance/samples/tis-v0.9-backed-enterprise-agent.json`
 
 ## Contents
 - **Normative spec:** `spec/agent-name-assurance-baseline.md`
@@ -62,6 +63,8 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
   - Machine-readable crosswalk registry: `crosswalk/README.md`
 - **Threat model:** `threat-model/threat-matrix.md`
 - **ANAB-over-A2A binding:** `docs/anab-over-a2a-binding.md`
+- **TIS v0.9 agent-name composition:** `docs/tis-v0.9-agent-name-composition.md`
+- **TIS compatibility review manifest:** `model/tis-compatibility-review.json`
 - **Binding schema:** `conformance/anab-over-a2a-description-extension.schema.json`
 - **Repo validation tool:** `tools/validate_repo.py` (used by CI)
 - **OASF integration:** `docs/oasf-integration.md`, `crosswalk/oasf.yml`, `conformance/oasf-anab-publication-profile.schema.json`
@@ -142,3 +145,17 @@ This repository now includes an **experimental** AIS-1 interpretation profile at
 ## Experimental runtime assurance layer
 
 This release adds an **experimental** runtime identity lifecycle interpretation for ANAB, using the Microsoft Agent Governance Toolkit as an upstream reference for runtime identity and decision-time governance concepts. The normative ANAB control catalog is unchanged.
+
+## TIS v0.9 runtime trust artifact synchronization
+
+ANAB v0.9.0 adds a named-agent interpretation layer for TIS v0.9 DTG/OpenVTC/VTI runtime trust artifacts. The repo can now show how a named agent declaration references TIS artifacts for credential, relationship, authorization, decision, and evidence-bundle support while preserving the ANAB control namespace.
+
+The governing rule is simple: TIS artifacts can support ANAB evidence, but they do not automatically prove agent name assurance. Relying parties still need local policy, freshness checks, revocation interpretation, and, where appropriate, DCAS evaluation results.
+
+See:
+
+- `docs/tis-v0.9-agent-name-composition.md`
+- `docs/tis-dcas-anab-alignment-matrix.md`
+- `docs/known-good-stack.md`
+- `conformance/samples/tis-v0.9-backed-enterprise-agent.json`
+

@@ -97,6 +97,34 @@ def validate_crosswalk_registry() -> list[str]:
 
     return errors
 
+
+def validate_tis_alignment_artifacts(spec_controls: set[str]) -> None:
+    manifest_path = ROOT / "model" / "tis-compatibility-review.json"
+    if not manifest_path.exists():
+        raise RuntimeError("Missing model/tis-compatibility-review.json for TIS drift tracking.")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    required = {"aligned_to_tis_release", "reviewed_at", "review_status", "tracked_artifact_families", "drift_triggers"}
+    missing = required - set(manifest.keys())
+    if missing:
+        raise RuntimeError(f"TIS compatibility review manifest missing keys: {sorted(missing)}")
+    if manifest.get("aligned_to_tis_release") != "v0.9.0":
+        raise RuntimeError("TIS compatibility review manifest must declare alignment to v0.9.0 for this release.")
+    if not manifest.get("tracked_artifact_families"):
+        raise RuntimeError("TIS compatibility review manifest must track at least one artifact family.")
+
+    sample_path = ROOT / "conformance" / "samples" / "tis-v0.9-backed-enterprise-agent.json"
+    if not sample_path.exists():
+        raise RuntimeError("Missing TIS-backed enterprise agent sample.")
+    sample = json.loads(sample_path.read_text(encoding="utf-8"))
+    unknown = sorted(set(sample.get("controls", {}).keys()) - spec_controls)
+    if unknown:
+        raise RuntimeError(f"TIS-backed enterprise sample declares unknown control IDs: {', '.join(unknown)}")
+    alignments = sample.get("standards_alignment", [])
+    if not any(a.get("standard_id") == "TIS090" for a in alignments):
+        raise RuntimeError("TIS-backed enterprise sample must include a TIS090 standards_alignment entry.")
+    if not any(a.get("standard_id") == "DCAS080" for a in alignments):
+        raise RuntimeError("TIS-backed enterprise sample must include a DCAS080 standards_alignment entry.")
+
 def main() -> int:
     spec = read_text("spec/agent-name-assurance-baseline.md")
     checklist = read_text("conformance/checklist.md")
@@ -150,12 +178,15 @@ def main() -> int:
         raise RuntimeError(f"A2A extension sample malformed: {e}") from e
     validate_json(extension_schema, params, "ANAB-over-A2A extension sample params")
 
-    # 5) Validate OASF publication profile sample
+    # 5) Validate TIS alignment manifest and sample
+    validate_tis_alignment_artifacts(spec_controls)
+
+    # 6) Validate OASF publication profile sample
     oasf_profile_schema = load_json("conformance/oasf-anab-publication-profile.schema.json")
     oasf_profile_sample = load_json("conformance/samples/oasf-anab-publication-profile.json")
     validate_json(oasf_profile_schema, oasf_profile_sample, "OASF publication profile sample")
 
-    print("OK: schemas valid; controls consistent; bundles valid; A2A binding sample valid; OASF publication profile valid.")
+    print("OK: schemas valid; controls consistent; bundles valid; A2A binding sample valid; TIS alignment valid; OASF publication profile valid.")
     return 0
 
 

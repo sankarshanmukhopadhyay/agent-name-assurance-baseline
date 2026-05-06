@@ -1,0 +1,33 @@
+{
+  "aligned_to_tis_release": "v0.9.0",
+  "reviewed_at": "2026-05-06",
+  "review_status": "aligned",
+  "alignment_scope": "ANAB references TIS v0.9 DTG/OpenVTC/VTI runtime trust artifacts as named-agent evidence inputs without copying canonical schemas.",
+  "tracked_artifact_families": [
+    "DTG VC envelope and credential subject profiles",
+    "OpenVTC relationship state, VRC issuance, configuration, and DIDComm routing profiles",
+    "VTI VTA context, ACL, authorization credential, sealed transfer, DID template, TEE attestation, and provision integration profiles",
+    "TIS decision receipt schema",
+    "TIS evidence bundle manifest schema",
+    "TIS cross-repo compatibility matrix"
+  ],
+  "affected_local_artifacts": [
+    "docs/tis-v0.9-agent-name-composition.md",
+    "docs/anab-over-a2a-binding.md",
+    "docs/runtime-identity-lifecycle.md",
+    "conformance/samples/tis-v0.9-backed-enterprise-agent.json"
+  ],
+  "drift_triggers": [
+    "new or renamed TIS schema $id",
+    "changed authority, delegation, revocation, expiry, or scope semantics",
+    "changed decision receipt or evidence bundle manifest structure",
+    "changed TIS assurance-level guidance",
+    "new DTG/OpenVTC/VTI runtime evidence surface"
+  ],
+  "required_action_on_drift": "Open an ANAB drift review and update composition guidance, A2A metadata guidance, samples, or validation checks as needed.",
+  "upstream_references": [
+    "https://github.com/OpenVTC/dtg-credentials",
+    "https://github.com/OpenVTC/openvtc",
+    "https://github.com/OpenVTC/verifiable-trust-infrastructure"
+  ]
+}
