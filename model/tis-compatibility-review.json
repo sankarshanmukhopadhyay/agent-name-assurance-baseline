@@ -1,28 +1,38 @@
 {
-  "aligned_to_tis_release": "v0.9.0",
-  "reviewed_at": "2026-05-06",
+  "aligned_to_tis_release": "v0.10.0",
+  "reviewed_at": "2026-07-03",
   "review_status": "aligned",
-  "alignment_scope": "ANAB references TIS v0.9 DTG/OpenVTC/VTI runtime trust artifacts as named-agent evidence inputs without copying canonical schemas.",
+  "alignment_scope": "ANAB references TSMM-aligned TIS v0.10 runtime assurance artifacts as named-agent evidence inputs without copying canonical schemas or redefining ANAB control semantics.",
   "tracked_artifact_families": [
-    "DTG VC envelope and credential subject profiles",
-    "OpenVTC relationship state, VRC issuance, configuration, and DIDComm routing profiles",
-    "VTI VTA context, ACL, authorization credential, sealed transfer, DID template, TEE attestation, and provision integration profiles",
+    "TSMM runtime governance projection",
+    "TIS authority boundary schema",
+    "VTI ACL, authorization credential, and status-list reference profiles",
+    "OpenVTC state normalization and task evidence profiles",
+    "Trust Task lifecycle event and execution receipt schemas",
+    "Integrity-bound evidence bundle manifest schema",
     "TIS decision receipt schema",
-    "TIS evidence bundle manifest schema",
+    "Registry publication profile",
+    "TIS AIS-1 experimental schema profile",
     "TIS cross-repo compatibility matrix"
   ],
   "affected_local_artifacts": [
-    "docs/tis-v0.9-agent-name-composition.md",
+    "docs/tis-v0.10-agent-name-composition.md",
     "docs/anab-over-a2a-binding.md",
+    "docs/ais1-interpretation-profile.md",
     "docs/runtime-identity-lifecycle.md",
-    "conformance/samples/tis-v0.9-backed-enterprise-agent.json"
+    "profiles/ais1/anab-profile.md",
+    "conformance/ais1-v0.2-profile-extension.schema.json",
+    "conformance/samples/tis-v0.10-backed-enterprise-agent.json"
   ],
   "drift_triggers": [
     "new or renamed TIS schema $id",
     "changed authority, delegation, revocation, expiry, or scope semantics",
     "changed decision receipt or evidence bundle manifest structure",
     "changed TIS assurance-level guidance",
-    "new DTG/OpenVTC/VTI runtime evidence surface"
+    "new DTG/OpenVTC/VTI runtime evidence surface",
+    "changed TSMM runtime governance projection semantics",
+    "changed Trust Task lifecycle vocabulary",
+    "changed AIS-1 profile fields for agent class, parent DID, registry, timestamp service, or assurance container"
   ],
   "required_action_on_drift": "Open an ANAB drift review and update composition guidance, A2A metadata guidance, samples, or validation checks as needed.",
   "upstream_references": [

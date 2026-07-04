@@ -12,11 +12,13 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 - ANAB-over-A2A binding: `anab-over-a2a-binding.md`
 - OASF integration: `oasf-integration.md`
 - Optional ODRL policy references: `odrl-policy-reference.md`
-- AIS-1 interpretation profile *(experimental)*: `ais1-interpretation-profile.md`
+- AIS-1 v0.2 interpretation profile *(experimental)*: `ais1-interpretation-profile.md`
 - Runtime identity lifecycle *(experimental guidance)*: `runtime-identity-lifecycle.md`
-- TIS v0.9 agent-name composition: `tis-v0.9-agent-name-composition.md`
+- TIS v0.10 agent-name composition: `tis-v0.10-agent-name-composition.md`
 - TIS/DCAS/ANAB alignment matrix: `tis-dcas-anab-alignment-matrix.md`
 - Known-good stack: `known-good-stack.md`
+- Portfolio drift review for AIS-1 v0.2: `portfolio-drift-review-ais1-v0.2.md`
+- Release impact for v0.10.0: `release-impact-v0.10.0.md`
 - Agent Governance Toolkit alignment *(experimental)*: `experimental/agent-governance-toolkit-alignment.md`
 
 ## Conformance
@@ -50,6 +52,6 @@ This documentation set is the **front door** for the Agent Name Assurance Baseli
 ## Composition
 
 - `dcas-composition.md` — how ANAB declarations and evidence bundles feed a DCAS evaluation flow.
-- `tis-v0.9-agent-name-composition.md` — how TIS v0.9 DTG/OpenVTC/VTI runtime trust artifacts support named-agent evidence without replacing ANAB controls.
+- `tis-v0.10-agent-name-composition.md` — how TIS v0.10 runtime assurance artifacts support named-agent evidence without replacing ANAB controls.
 - `oasf-integration.md` — how ANAB declarations and evidence pointers travel through an OASF publication surface.
 - `odrl-policy-reference.md` — optional ODRL-compatible policy publication for bounded usage, disclosure, and notice conditions.

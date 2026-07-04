@@ -1,0 +1,92 @@
+{
+  "spec_version": "0.10.0",
+  "assurance_level": "AL3",
+  "implementation": {
+    "name": "Example Enterprise Agent with AIS-1 v0.2",
+    "version": "3.0.0",
+    "organization": "Example Enterprise Ltd",
+    "jurisdiction": "IN",
+    "deployment_environment": "production",
+    "public_endpoint": "https://agents.example.invalid/enterprise"
+  },
+  "verification_tier": "AN-3",
+  "conformance_profile": "Enterprise",
+  "evidence_bundle": {
+    "type": "path",
+    "ref": "evidence-bundles/examples/al3-best-practice/bundle.json",
+    "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+  },
+  "controls": {
+    "ANAGB-RES-01": {
+      "status": "implemented",
+      "evidence": "evidence://resolver-integrity"
+    },
+    "ANAGB-RES-06": {
+      "status": "implemented",
+      "evidence": "evidence://transparency-log"
+    },
+    "ANAGB-AGT-01": {
+      "status": "implemented",
+      "evidence": "evidence://agent-operator-binding"
+    },
+    "ANAGB-AGT-02": {
+      "status": "implemented",
+      "evidence": "evidence://agent-page-consistency"
+    },
+    "ANAGB-UI-01": {
+      "status": "implemented",
+      "notes": "AIS-1 tier is displayed as an identity and accountability signal, not as a generic verified badge."
+    },
+    "ANAGB-UI-03": {
+      "status": "implemented",
+      "notes": "High-risk actions require fresh status checks and separate delegation evidence."
+    },
+    "ANAGB-AI-05": {
+      "status": "implemented",
+      "notes": "Delegation is scoped, revocable, and external to the AIS-1 bond."
+    },
+    "ANAGB-AI-06": {
+      "status": "implemented",
+      "notes": "AIS-1 bond, tier, and registry status are not represented as runtime authority."
+    },
+    "ANAGB-IR-03": {
+      "status": "implemented",
+      "evidence": "evidence://ais1-registry-status"
+    },
+    "ANAGB-A2A-09": {
+      "status": "implemented",
+      "notes": "Publication includes issuance freshness, expiry, registry status, and AIS-1 v0.2 revocation handling."
+    },
+    "ANAGB-A2A-10": {
+      "status": "implemented",
+      "notes": "Clients fail safely when AIS-1 v0.2 status, parent status, or ANAB trust metadata is stale or unavailable."
+    }
+  },
+  "exceptions": [],
+  "declaration": {
+    "authorized_signatory": "Jane Doe",
+    "title": "Security Lead",
+    "date": "2026-07-03"
+  },
+  "standards_alignment": [
+    {
+      "standard_id": "TIS100",
+      "standard_name": "trust-infrastructure-schemas",
+      "standard_version": "0.10.0",
+      "crosswalk_ref": "model/tis-compatibility-review.json",
+      "notes": "Uses TIS v0.10 runtime assurance artifacts as evidence inputs."
+    },
+    {
+      "standard_id": "DCAS100",
+      "standard_name": "DTG Conformance and Assurance",
+      "standard_version": "0.10.0",
+      "notes": "Intended for evaluation under the DCAS v0.10 AIS-1 v0.2 experimental profile."
+    },
+    {
+      "standard_id": "AIS102",
+      "standard_name": "AIS-1 Agent Identity Standard",
+      "standard_version": "0.2",
+      "notes": "AIS-1 v0.2 is interpreted as bonded identity and accountability evidence only."
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/anagb/conformance/ais1-v0.2-profile-extension.schema.json",
+  "title": "ANAB AIS-1 v0.2 Profile Extension",
+  "description": "Optional ANAB extension for publishing AIS-1 v0.2 bonded identity evidence without treating bonded identity as delegated authority.",
+  "type": "object",
+  "required": [
+    "ais1Version",
+    "agentClass",
+    "agentDid",
+    "sponsorDid",
+    "bond",
+    "status",
+    "authorityBoundary"
+  ],
+  "properties": {
+    "ais1Version": {
+      "type": "string",
+      "const": "0.2"
+    },
+    "agentClass": {
+      "type": "string",
+      "enum": [
+        "ala",
+        "soa"
+      ]
+    },
+    "agentDid": {
+      "type": "string",
+      "pattern": "^did:ais1:.+"
+    },
+    "parentDid": {
+      "type": "string",
+      "pattern": "^$|^did:ais1:.+"
+    },
+    "sponsorDid": {
+      "type": "string",
+      "pattern": "^did:ais1:sponsor:.+"
+    },
+    "bond": {
+      "type": "object",
+      "required": [
+        "bondId",
+        "bondHash",
+        "issuedAt",
+        "issuedBy",
+        "tier"
+      ],
+      "properties": {
+        "bondId": {
+          "type": "string"
+        },
+        "bondHash": {
+          "type": "string"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "issuedBy": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string",
+          "enum": [
+            "basic",
+            "verified",
+            "sovereign"
+          ]
+        },
+        "jurisdiction": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "expiry": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "timestampServiceRef": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "object",
+      "required": [
+        "state",
+        "checkedAt",
+        "registryRef"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "active",
+            "suspended",
+            "revoked",
+            "unknown"
+          ]
+        },
+        "checkedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "registryRef": {
+          "type": "string",
+          "format": "uri"
+        },
+        "resolutionRef": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "soaParentCheck": {
+      "type": "object",
+      "required": [
+        "parentActive",
+        "cascadeRevocationChecked"
+      ],
+      "properties": {
+        "parentActive": {
+          "type": "boolean"
+        },
+        "parentStatusRef": {
+          "type": "string",
+          "format": "uri"
+        },
+        "cascadeRevocationChecked": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "assuranceContainer": {
+      "type": "object",
+      "required": [
+        "uri",
+        "version"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "version": {
+          "type": "string"
+        },
+        "digest": {
+          "type": "string"
+        },
+        "attestationTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorityBoundary": {
+      "type": "object",
+      "required": [
+        "statement",
+        "delegationRequired",
+        "prohibitedInferences"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "delegationRequired": {
+          "type": "boolean"
+        },
+        "delegationPolicyUri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "prohibitedInferences": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "agentClass": {
+            "const": "ala"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "parentDid": {
+            "const": ""
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "agentClass": {
+            "const": "soa"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "parentDid",
+          "soaParentCheck"
+        ]
+      }
+    }
+  ],
+  "additionalProperties": false
+}

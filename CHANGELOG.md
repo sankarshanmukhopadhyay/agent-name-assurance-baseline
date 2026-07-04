@@ -6,6 +6,25 @@ This repo follows semantic versioning as described in `docs/versioning-and-compa
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-07-03
+
+### Added
+- Added TIS v0.10 agent-name composition guidance for runtime governance projection, authority boundary, status evidence, decision receipts, Trust Task receipts, registry publication, and integrity-bound evidence bundles.
+- Added an optional AIS-1 v0.2 profile extension schema for ALA/SOA agent identity evidence.
+- Added AIS-1 v0.2 ALA and SOA extension examples.
+- Added a TIS v0.10-backed enterprise agent declaration sample intended for DCAS v0.10 evaluation.
+- Added portfolio drift review and release impact records for AIS-1 v0.2 and TIS v0.10 alignment.
+
+### Changed
+- Updated the TIS compatibility manifest from v0.9.0 to v0.10.0.
+- Expanded the AIS-1 interpretation profile to cover `agentClass`, `parentDid`, DID resolution, registry status, `timestampServiceRef`, Assurance Container references, and SOA cascade revocation handling.
+- Refreshed README, docs index, known-good stack, roadmap, and validation tooling for the v0.10.0 release.
+
+### Quality
+- Preserved existing ANAB control IDs and conformance declaration compatibility.
+- Added validation coverage for the AIS-1 v0.2 extension schema and examples.
+- Kept AIS-1 v0.2 experimental and bounded to identity/accountability interpretation rather than delegated authority, runtime authorization, or message provenance.
+
 
 ## [0.9.0] - 2026-05-06
 

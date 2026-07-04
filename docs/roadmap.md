@@ -202,3 +202,18 @@ Delivered:
 ANAB v0.9.0 aligns with TIS v0.9.0 by allowing DTG/OpenVTC/VTI runtime trust artifacts to support named-agent evidence. These references do not replace ANAB controls, declarations, evidence bundles, or relying-party interpretation. They provide a canonical evidence substrate for credential, relationship, authorization, decision, and provision artifacts.
 
 For the governing composition model, see `tis-v0.9-agent-name-composition.md`.
+
+## 13. TIS v0.10 and AIS-1 v0.2 synchronized interpretation
+
+### Status
+✅ **Completed (v0.10.0)**
+
+Delivered:
+- TIS v0.10 agent-name composition profile: `docs/tis-v0.10-agent-name-composition.md`
+- Updated TIS compatibility review manifest: `model/tis-compatibility-review.json`
+- AIS-1 v0.2 extension schema: `conformance/ais1-v0.2-profile-extension.schema.json`
+- ALA and SOA extension examples: `profiles/ais1/examples/`
+- TIS v0.10-backed enterprise declaration sample: `conformance/samples/tis-v0.10-backed-enterprise-agent.json`
+- Portfolio drift review and release impact documentation for cross-repo maintenance.
+
+**Outcome:** ANAB can interpret TIS v0.10 runtime assurance artifacts and AIS-1 v0.2 bonded identity signals without converting identity into authority or registry status into provenance.

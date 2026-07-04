@@ -1,0 +1,42 @@
+{
+  "ais1Version": "0.2",
+  "agentClass": "ala",
+  "agentDid": "did:ais1:base:enterprise-ala-001",
+  "parentDid": "",
+  "sponsorDid": "did:ais1:sponsor:example-enterprise",
+  "bond": {
+    "bondId": "ais1:base:1001",
+    "bondHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "issuedAt": "2026-04-15T09:00:00Z",
+    "issuedBy": "did:web:issuer.example.invalid",
+    "tier": "verified",
+    "jurisdiction": "IN",
+    "expiry": null,
+    "timestampServiceRef": "rfc3161:tsa.example.invalid"
+  },
+  "status": {
+    "state": "active",
+    "checkedAt": "2026-07-03T00:00:00Z",
+    "registryRef": "https://ais-1.org/registry.json",
+    "resolutionRef": "https://ais-1.org/resolve/enterprise-ala-001.json"
+  },
+  "assuranceContainer": {
+    "uri": "https://example.invalid/ais1/enterprise-ala-001/assurance-container.json",
+    "version": "1.2",
+    "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "attestationTypes": [
+      "aml-clearance",
+      "audit"
+    ]
+  },
+  "authorityBoundary": {
+    "statement": "AIS-1 v0.2 bond verification establishes sponsor-backed identity and accountability state only.",
+    "delegationRequired": true,
+    "delegationPolicyUri": "https://example.invalid/policies/delegation.json",
+    "prohibitedInferences": [
+      "Do not infer spend authority from AIS-1 bond state.",
+      "Do not infer runtime authorization from AIS-1 tier.",
+      "Do not infer message provenance from DID resolution."
+    ]
+  }
+}
