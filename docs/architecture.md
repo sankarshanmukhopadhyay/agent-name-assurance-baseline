@@ -5,8 +5,7 @@ This diagram is a **non-normative** view of how this repository composes with DT
 ```mermaid
 flowchart TB
   subgraph A[Assurance and Conformance Layer]
-    S[Trust Infrastructure Schemas
-(OTAM)]
+    S["Trust Infrastructure Schemas<br/>(OTAM)"]
     D[DCAS]
     N[ANAB]
     S --> D --> N
