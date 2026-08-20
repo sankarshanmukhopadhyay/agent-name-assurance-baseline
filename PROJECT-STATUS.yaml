@@ -1,0 +1,35 @@
+schema_version: "1.0"
+project:
+  name: agent-name-assurance-baseline
+  maturity: implementation-draft
+  lifecycle: active
+  operational_status: active-development
+  specification_status: working-draft
+  intended_use:
+    - agent-name-assurance-baseline-development
+    - conformance-and-assurance-testing
+    - interoperability-analysis
+  not_asserted:
+    - production-certification
+    - universal-agent-name-authority
+    - independent-third-party-assurance
+authority:
+  normative_scope:
+    - agent-name-assurance-baseline
+  does_not_own:
+    - external-agent-registry-governance
+    - upstream-protocol-authority
+    - relying-party-policy
+  delegation: "Repository maintainers approve baseline content, conformance artifacts, and project-local releases; external governance and registry authorities retain their own decision rights."
+  revocation_or_supersession: "Requirements and evidence are superseded only through versioned repository changes; prior versions remain auditable through Git history and releases."
+evidence:
+  validation_commands:
+    - python tools/validate_repo.py
+    - python tools/lint_markdown.py
+    - python tools/check_links.py
+  evidence_outputs:
+    - evidence-bundles/
+    - conformance/
+  known_limitations:
+    - production certification is not asserted
+    - external governance legitimacy is outside repository authority
