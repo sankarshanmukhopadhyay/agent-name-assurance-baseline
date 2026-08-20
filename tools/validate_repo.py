@@ -286,6 +286,13 @@ def main() -> int:
         raise RuntimeError(f"A2A extension sample malformed: {e}") from e
     validate_json(extension_schema, params, "ANAB-over-A2A extension sample params")
 
+    # 4a) Exercise cross-field, freshness, downgrade and non-implication rules
+    # that JSON Schema alone cannot express.
+    from validate_a2a_assurance import run as run_a2a_assurance
+    a2a_passed, a2a_total = run_a2a_assurance()
+    if a2a_passed != a2a_total:
+        raise RuntimeError(f"ANAB A2A assurance vectors failed: {a2a_passed}/{a2a_total}")
+
     # 5) Validate TIS alignment manifest and sample
     validate_tis_alignment_artifacts(spec_controls)
 
@@ -297,7 +304,7 @@ def main() -> int:
     oasf_profile_sample = load_json("conformance/samples/oasf-anab-publication-profile.json")
     validate_json(oasf_profile_schema, oasf_profile_sample, "OASF publication profile sample")
 
-    print("OK: schemas valid; controls consistent; bundles valid; A2A binding sample valid; TIS alignment valid; AIS-1 v0.2 extension valid; OASF publication profile valid.")
+    print("OK: schemas valid; controls consistent; bundles valid; A2A binding and assurance vectors valid; TIS alignment valid; AIS-1 v0.2 extension valid; OASF publication profile valid.")
     return 0
 
 

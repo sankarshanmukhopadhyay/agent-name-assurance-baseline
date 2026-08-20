@@ -26,6 +26,7 @@ jobs:
         with:
           python-version: "3.11"
           cache: "pip"
+          cache-dependency-path: requirements-ci.txt
 
       - name: Install dependencies
         run: |
@@ -49,22 +50,13 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: "20"
-          cache: "npm"
 
       - name: Validate Mermaid diagrams
         run: |
           set -euo pipefail
           awk '/```mermaid/{flag=1;next}/```/{if(flag){flag=0;exit}}flag{print}' docs/architecture.md > /tmp/architecture.mmd
-          npm install --no-save mermaid@10.9.1
-          node --input-type=module - <<'NODE'
-          import fs from "fs";
-          import mermaid from "mermaid";
-          const code = fs.readFileSync("/tmp/architecture.mmd","utf8");
-          try {
-            await mermaid.parse(code);
-            console.log("Mermaid parse OK");
-          } catch (e) {
-            console.error(e);
-            process.exit(1);
-          }
-          NODE
+          printf '%s\n' '{"args":["--no-sandbox"]}' > /tmp/puppeteer-config.json
+          npx --yes @mermaid-js/mermaid-cli@11.12.0 \
+            --input /tmp/architecture.mmd \
+            --output /tmp/architecture.svg \
+            --puppeteerConfigFile /tmp/puppeteer-config.json
