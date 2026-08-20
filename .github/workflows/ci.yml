@@ -55,6 +55,8 @@ jobs:
         run: |
           set -euo pipefail
           awk '/```mermaid/{flag=1;next}/```/{if(flag){flag=0;exit}}flag{print}' docs/architecture.md > /tmp/architecture.mmd
+          printf '%s\n' '{"args":["--no-sandbox"]}' > /tmp/puppeteer-config.json
           npx --yes @mermaid-js/mermaid-cli@11.12.0 \
             --input /tmp/architecture.mmd \
-            --output /tmp/architecture.svg
+            --output /tmp/architecture.svg \
+            --puppeteerConfigFile /tmp/puppeteer-config.json
