@@ -1,7 +1,14 @@
 {
   "name": "Example Research Agent",
   "description": "Research and policy synthesis agent with published ANAB declaration.",
-  "url": "https://example.org/a2a",
+  "protocolVersion": "1.0",
+  "interfaces": [
+    {
+      "url": "https://example.org/a2a",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    }
+  ],
   "provider": {
     "organization": "Example Corp",
     "url": "https://example.org"
@@ -17,7 +24,7 @@
         "description": "Publishes ANAB declaration, operator binding, and verifier-consumable trust metadata for this agent.",
         "required": false,
         "params": {
-          "anabVersion": "0.6.0",
+          "anabVersion": "0.10.0",
           "verificationTier": "AN-2",
           "assuranceLevel": "AL2",
           "bindingStrength": "operator-bound",
@@ -59,8 +66,8 @@
             "delegationPolicyUri": "https://example.org/policy/delegation"
           },
           "freshness": {
-            "issuedAt": "2026-03-24T08:00:00Z",
-            "expiresAt": "2026-06-22T08:00:00Z",
+            "issuedAt": "2026-08-19T08:00:00Z",
+            "expiresAt": "2026-11-17T08:00:00Z",
             "maxCacheAgeSeconds": 86400
           }
         }

@@ -1,0 +1,12 @@
+{
+  "profile": "anab-over-a2a-v1",
+  "vectors": [
+    {"id": "ANAB-A2A-POS-001", "file": "valid-verified-agent.json", "expected": "allow-assurance-evaluation"},
+    {"id": "ANAB-A2A-POS-002", "file": "optional-extension-absent.json", "expected": "continue-without-anab"},
+    {"id": "ANAB-A2A-NEG-001", "file": "name-mismatch.json", "expected": "deny-name-mismatch"},
+    {"id": "ANAB-A2A-NEG-002", "file": "stale-assurance.json", "expected": "deny-stale"},
+    {"id": "ANAB-A2A-NEG-003", "file": "revoked-identity.json", "expected": "deny-identity-status"},
+    {"id": "ANAB-A2A-NEG-004", "file": "incomplete-verified-claim.json", "expected": "deny-incomplete-verified-claim"},
+    {"id": "ANAB-A2A-NEG-005", "file": "unsupported-required-extension.json", "expected": "deny-unsupported-required-extension"}
+  ]
+}

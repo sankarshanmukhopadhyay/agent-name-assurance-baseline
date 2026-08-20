@@ -43,7 +43,7 @@ The extension is carried as an A2A `AgentExtension` object.
   "description": "Publishes ANAB declaration, operator binding, and verifier-consumable trust metadata for this agent.",
   "required": false,
   "params": {
-    "anabVersion": "0.6.0",
+        "anabVersion": "0.10.0",
     "verificationTier": "AN-2",
     "assuranceLevel": "AL2",
     "bindingStrength": "operator-bound",
@@ -85,8 +85,8 @@ The extension is carried as an A2A `AgentExtension` object.
       "delegationPolicyUri": "https://example.org/policy/delegation"
     },
     "freshness": {
-      "issuedAt": "2026-03-24T08:00:00Z",
-      "expiresAt": "2026-06-22T08:00:00Z",
+      "issuedAt": "2026-08-19T08:00:00Z",
+      "expiresAt": "2026-11-17T08:00:00Z",
       "maxCacheAgeSeconds": 86400
     }
   }
@@ -202,6 +202,10 @@ This binding makes four additional control concerns explicit:
 
 Those concerns are reflected in new controls `ANAGB-A2A-07` through `ANAGB-A2A-10` in the normative baseline.
 
+## Executable assurance gate
+
+`python tools/validate_a2a_assurance.py` exercises the cross-field rules that the extension JSON Schema cannot enforce by itself. The vectors under `conformance/a2a-v1.0/vectors/` cover name consistency, freshness, revoked identity, completeness of a `verified` claim, required-extension downgrade behavior, and the no-ANAB optional path. A passing result establishes only deterministic behavior for the repository-owned vectors; it is not verification of a live Agent Card or its external evidence.
+
 ## TIS v0.9 synchronization note
 
 ANAB v0.9.0 aligns with TIS v0.9.0 by allowing DTG/OpenVTC/VTI runtime trust artifacts to support named-agent evidence. These references do not replace ANAB controls, declarations, evidence bundles, or relying-party interpretation. They provide a canonical evidence substrate for credential, relationship, authorization, decision, and provision artifacts.
@@ -220,4 +224,3 @@ ANAB-over-A2A metadata MAY include stable TIS artifact references when an agent 
 - DCAS evaluation result, when available.
 
 Clients MUST NOT interpret the presence of TIS references as automatic proof of authority. A client should evaluate local policy, freshness, revocation status, and any DCAS evaluation result before relying on the agent for consequential tasks.
-

@@ -1,0 +1,19 @@
+{
+  "card_name": "Example Research Agent",
+  "evaluated_at": "2026-08-20T00:00:00Z",
+  "consequential": true,
+  "extension": {
+    "uri": "https://trustoverip.github.io/dtgwg-agent-names-tf/extensions/anab-description/v1",
+    "required": true,
+    "params": {
+      "anabVersion": "0.10.0",
+      "agentName": {"displayName": "Example Research Agent"},
+      "operator": {"operatorId": "did:web:example.org"},
+      "declaration": {"sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+      "cardBinding": {"kid": "did:web:example.org#card-1", "verificationMaterialUri": "https://example.org/.well-known/jwks.json"},
+      "identityVerification": {"status": "verified", "verificationUri": "https://registry.example/agents/research", "revocationCheck": "required"},
+      "authorityBoundary": {"delegationRequired": true},
+      "freshness": {"issuedAt": "2026-08-19T00:00:00Z", "expiresAt": "2026-09-19T00:00:00Z"}
+    }
+  }
+}
