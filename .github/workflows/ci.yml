@@ -55,7 +55,8 @@ jobs:
         run: |
           set -euo pipefail
           awk '/```mermaid/{flag=1;next}/```/{if(flag){flag=0;exit}}flag{print}' docs/architecture.md > /tmp/architecture.mmd
-          npm install --no-save mermaid@10.9.1
+          # Mermaid 10.9.1 expects the DOMPurify 3.0 API when parsed in Node.
+          npm install --no-save mermaid@10.9.1 dompurify@3.0.11
           node --input-type=module - <<'NODE'
           import fs from "fs";
           import mermaid from "mermaid";
