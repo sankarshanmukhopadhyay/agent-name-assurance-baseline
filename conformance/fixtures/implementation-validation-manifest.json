@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "baseline": {
+    "name": "ANAB",
+    "version": "0.10.0"
+  },
+  "purpose": "Falsifiable implementation-validation vectors for independent assurance evaluation.",
+  "authority": {
+    "owns": ["ANAB domain requirements", "ANAB evidence expectations", "expected domain outcome"],
+    "does_not_own": ["DCAS evaluation algorithm", "Interop Lab admission or promotion decision", "delegated authority semantics outside ANAB"]
+  },
+  "outcomes": ["PASS", "FAIL", "INDETERMINATE"],
+  "fixtures": [
+    {
+      "id": "ANAB-FX-001",
+      "title": "Conforming production named agent",
+      "source": "../samples/dcas-ready-enterprise-agent.json",
+      "expected_outcome": "PASS",
+      "rationale": "Declaration and evidence are expected to satisfy the selected ANAB target when current and verifiable."
+    },
+    {
+      "id": "ANAB-FX-002",
+      "title": "Stale identity/name binding",
+      "mutation": "binding freshness is outside the relying-party acceptance window",
+      "expected_outcome": "FAIL",
+      "rationale": "A stale binding cannot support a current name-assurance claim."
+    },
+    {
+      "id": "ANAB-FX-003",
+      "title": "Revoked operator or binding",
+      "mutation": "current status evidence demonstrates revocation",
+      "expected_outcome": "FAIL",
+      "rationale": "Positive revocation evidence contradicts the current assurance proposition."
+    },
+    {
+      "id": "ANAB-FX-004",
+      "title": "Missing freshness evidence",
+      "mutation": "freshness/status evidence is absent or unverifiable",
+      "expected_outcome": "INDETERMINATE",
+      "rationale": "Absence of evidence is not evidence of validity and MUST NOT be treated as PASS."
+    },
+    {
+      "id": "ANAB-FX-005",
+      "title": "Assurance overclaim",
+      "mutation": "claimed tier or assurance level exceeds evidence demonstrated by the bundle",
+      "expected_outcome": "FAIL",
+      "rationale": "The evaluated claim is stronger than the supporting evidence."
+    },
+    {
+      "id": "ANAB-FX-006",
+      "title": "Identity valid; authority unproven",
+      "mutation": "identity/name binding evidence is valid but no action-specific authority evidence is supplied",
+      "expected_outcome": "INDETERMINATE",
+      "rationale": "ANAB identity assurance MUST NOT be interpreted as delegated or action-specific authority."
+    }
+  ],
+  "falsification": "If an expected outcome cannot be represented using existing ANAB requirement and evidence semantics, record the concrete gap before changing the normative core."
+}
