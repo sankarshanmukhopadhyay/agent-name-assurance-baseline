@@ -15,6 +15,7 @@
       "id": "ANAB-FX-001",
       "title": "Conforming production named agent",
       "source": "../samples/dcas-ready-enterprise-agent.json",
+      "requirements": ["ANAGB-RES-01", "ANAGB-RES-02", "ANAGB-A2A-07", "ANAGB-A2A-09", "ANAGB-IR-03"],
       "expected_outcome": "PASS",
       "rationale": "Declaration and evidence are expected to satisfy the selected ANAB target when current and verifiable."
     },
@@ -22,6 +23,7 @@
       "id": "ANAB-FX-002",
       "title": "Stale identity/name binding",
       "mutation": "binding freshness is outside the relying-party acceptance window",
+      "requirements": ["ANAGB-RES-02", "ANAGB-A2A-09", "ANAGB-A2A-10"],
       "expected_outcome": "FAIL",
       "rationale": "A stale binding cannot support a current name-assurance claim."
     },
@@ -29,6 +31,7 @@
       "id": "ANAB-FX-003",
       "title": "Revoked operator or binding",
       "mutation": "current status evidence demonstrates revocation",
+      "requirements": ["ANAGB-A2A-09", "ANAGB-A2A-10", "ANAGB-IR-03", "ANAGB-IR-04"],
       "expected_outcome": "FAIL",
       "rationale": "Positive revocation evidence contradicts the current assurance proposition."
     },
@@ -36,6 +39,7 @@
       "id": "ANAB-FX-004",
       "title": "Missing freshness evidence",
       "mutation": "freshness/status evidence is absent or unverifiable",
+      "requirements": ["ANAGB-A2A-09", "ANAGB-A2A-10", "ANAGB-IR-03"],
       "expected_outcome": "INDETERMINATE",
       "rationale": "Absence of evidence is not evidence of validity and MUST NOT be treated as PASS."
     },
@@ -43,6 +47,7 @@
       "id": "ANAB-FX-005",
       "title": "Assurance overclaim",
       "mutation": "claimed tier or assurance level exceeds evidence demonstrated by the bundle",
+      "requirements": ["ANAGB-UI-01", "ANAGB-UI-02", "ANAGB-RES-06"],
       "expected_outcome": "FAIL",
       "rationale": "The evaluated claim is stronger than the supporting evidence."
     },
@@ -50,6 +55,7 @@
       "id": "ANAB-FX-006",
       "title": "Identity valid; authority unproven",
       "mutation": "identity/name binding evidence is valid but no action-specific authority evidence is supplied",
+      "requirements": ["ANAGB-UI-02", "ANAGB-UI-03", "ANAGB-AI-05", "ANAGB-AI-06"],
       "expected_outcome": "INDETERMINATE",
       "rationale": "ANAB identity assurance MUST NOT be interpreted as delegated or action-specific authority."
     }
