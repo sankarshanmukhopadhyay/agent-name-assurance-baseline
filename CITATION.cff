@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite the version or commit consulted; this work does not assert external governance or certification authority."
+title: "Agent Name Assurance Baseline"
+type: software
+authors:
+  - family-names: Mukhopadhyay
+    given-names: Sankarshan
+repository-code: https://github.com/sankarshanmukhopadhyay/agent-name-assurance-baseline
+version: "0.10.0"
+abstract: "Local agent-name assurance baseline and machine-checkable artifacts; upstream Agent Names work remains independently governed."
