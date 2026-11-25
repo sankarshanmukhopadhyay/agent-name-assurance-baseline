@@ -293,6 +293,10 @@ def main() -> int:
     if a2a_passed != a2a_total:
         raise RuntimeError(f"ANAB A2A assurance vectors failed: {a2a_passed}/{a2a_total}")
 
+    from validate_implementation_fixtures import validate_pack
+    _, cases = validate_pack()
+    print(f"Validated {len(cases)} synthetic implementation fixtures (structure and bindings).")
+
     # 5) Validate TIS alignment manifest and sample
     validate_tis_alignment_artifacts(spec_controls)
 

@@ -107,3 +107,7 @@ If you use AIS-1 with ANAB, treat it as an **experimental** way to strengthen th
 ## Experimental runtime lifecycle extension
 
 If your named agent performs delegated or side-effecting runtime actions, document how runtime identity is activated, rotated, revoked, and decommissioned. At higher assurance levels, pair your ANAB declaration with runtime traces or receipts that show how revocation freshness and delegation scope are handled at action time.
+
+## Test before relying
+
+Use the [implementation validation guide](implementation-validation.md) to reproduce bounded synthetic results and test the integration with DCAS. A declaration and a passing A2A admission gate do not authenticate source evidence or confer action authority.

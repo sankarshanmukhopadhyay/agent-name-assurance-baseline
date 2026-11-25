@@ -1,0 +1,64 @@
+{
+  "fixture_id": "ANAB-FX-006",
+  "synthetic": true,
+  "evaluation_time": "2026-11-25T00:00:00Z",
+  "target": {
+    "baseline": "ANAB",
+    "version": "0.10.0",
+    "profile": "Enterprise"
+  },
+  "policy": {
+    "missing_evidence": "INDETERMINATE",
+    "stale_evidence": "FAIL",
+    "revoked_evidence": "FAIL",
+    "authority_inference_from_identity": false
+  },
+  "requirement_evidence": {
+    "ANAGB-UI-02": [
+      "assurance-distinction"
+    ],
+    "ANAGB-UI-03": [
+      "step-up",
+      "status",
+      "action-authority"
+    ],
+    "ANAGB-AI-05": [
+      "action-authority"
+    ],
+    "ANAGB-AI-06": [
+      "authority-display"
+    ]
+  },
+  "observations": [
+    {
+      "id": "assurance-distinction",
+      "status": "available",
+      "description": "Synthetic observation of separation of identity and authority assurance",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-006:assurance-distinction"
+    },
+    {
+      "id": "step-up",
+      "status": "available",
+      "description": "Synthetic observation of step-up verification",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-006:step-up"
+    },
+    {
+      "id": "status",
+      "status": "available",
+      "description": "Synthetic observation of current binding/operator status",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-006:status"
+    },
+    {
+      "id": "action-authority",
+      "status": "missing",
+      "description": "Synthetic observation of scoped, purposeful, revocable action authority",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-006:action-authority"
+    },
+    {
+      "id": "authority-display",
+      "status": "available",
+      "description": "Synthetic observation of non-inflated authority presentation",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-006:authority-display"
+    }
+  ]
+}

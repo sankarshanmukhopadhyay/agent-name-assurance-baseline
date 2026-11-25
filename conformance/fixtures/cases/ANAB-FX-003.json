@@ -1,0 +1,56 @@
+{
+  "fixture_id": "ANAB-FX-003",
+  "synthetic": true,
+  "evaluation_time": "2026-11-25T00:00:00Z",
+  "target": {
+    "baseline": "ANAB",
+    "version": "0.10.0",
+    "profile": "Enterprise"
+  },
+  "policy": {
+    "missing_evidence": "INDETERMINATE",
+    "stale_evidence": "FAIL",
+    "revoked_evidence": "FAIL",
+    "authority_inference_from_identity": false
+  },
+  "requirement_evidence": {
+    "ANAGB-A2A-09": [
+      "status"
+    ],
+    "ANAGB-A2A-10": [
+      "safe-client"
+    ],
+    "ANAGB-IR-03": [
+      "status-mechanism"
+    ],
+    "ANAGB-IR-04": [
+      "suspension"
+    ]
+  },
+  "observations": [
+    {
+      "id": "status",
+      "status": "revoked",
+      "description": "Synthetic observation of current binding/operator status",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-003:status"
+    },
+    {
+      "id": "safe-client",
+      "status": "available",
+      "description": "Synthetic observation of client refusing reliance on adverse or missing metadata",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-003:safe-client"
+    },
+    {
+      "id": "status-mechanism",
+      "status": "available",
+      "description": "Synthetic observation of machine-verifiable revocation mechanism, not a positive status assertion",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-003:status-mechanism"
+    },
+    {
+      "id": "suspension",
+      "status": "available",
+      "description": "Synthetic observation of safe suspension behavior",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-003:suspension"
+    }
+  ]
+}

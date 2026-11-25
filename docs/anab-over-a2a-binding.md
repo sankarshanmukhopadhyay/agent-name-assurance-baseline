@@ -224,3 +224,7 @@ ANAB-over-A2A metadata MAY include stable TIS artifact references when an agent 
 - DCAS evaluation result, when available.
 
 Clients MUST NOT interpret the presence of TIS references as automatic proof of authority. A client should evaluate local policy, freshness, revocation status, and any DCAS evaluation result before relying on the agent for consequential tasks.
+
+## Executable admission checks (unreleased)
+
+The experimental `tools/validate_a2a_assurance.py` validates extension parameters against the published schema before semantic admission, rejects future issuance and invalid intervals, and applies expiry and declared cache age. For verified claims this local admission policy requires expiry or a maximum cache age. It does not change the normative schema. Its `allow-assurance-evaluation` result is neither authenticated identity nor permission to act. Signature, trust-anchor and live status checks remain separate. Run `python tools/validate_a2a_assurance.py` after installing `requirements-ci.txt`.

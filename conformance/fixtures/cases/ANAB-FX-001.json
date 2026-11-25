@@ -1,0 +1,60 @@
+{
+  "fixture_id": "ANAB-FX-001",
+  "synthetic": true,
+  "evaluation_time": "2026-11-25T00:00:00Z",
+  "target": {
+    "baseline": "ANAB",
+    "version": "0.10.0",
+    "profile": "Enterprise"
+  },
+  "policy": {
+    "missing_evidence": "INDETERMINATE",
+    "stale_evidence": "FAIL",
+    "revoked_evidence": "FAIL",
+    "authority_inference_from_identity": false
+  },
+  "requirement_evidence": {
+    "ANAGB-RES-01": [
+      "name-proof"
+    ],
+    "ANAGB-RES-02": [
+      "binding-freshness"
+    ],
+    "ANAGB-A2A-07": [
+      "operator-binding"
+    ],
+    "ANAGB-A2A-09": [
+      "binding-freshness",
+      "status"
+    ],
+    "ANAGB-IR-03": [
+      "status"
+    ]
+  },
+  "observations": [
+    {
+      "id": "name-proof",
+      "status": "available",
+      "description": "Synthetic assessor observation of name-to-identifier proof verification",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-001:name-proof"
+    },
+    {
+      "id": "binding-freshness",
+      "status": "available",
+      "description": "Synthetic observation of binding freshness against relying-party interval",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-001:binding-freshness"
+    },
+    {
+      "id": "operator-binding",
+      "status": "available",
+      "description": "Synthetic observation of card/operator proof and disclosed method",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-001:operator-binding"
+    },
+    {
+      "id": "status",
+      "status": "available",
+      "description": "Synthetic observation of current binding/operator status",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-001:status"
+    }
+  ]
+}

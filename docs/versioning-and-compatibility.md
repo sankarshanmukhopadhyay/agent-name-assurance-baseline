@@ -32,3 +32,7 @@ A conformance claim MUST declare:
 
 Reviewers SHOULD validate claims using the corresponding tagged release version.
 
+
+## Unreleased tooling and fixture compatibility
+
+The synthetic manifest advances from 1.0 to 1.1 with concrete case paths and expected per-control findings. Consumers of the former manifest must use the new schema. The A2A experimental admission gate now rejects schema-invalid parameters and verified claims without a freshness bound; migrate vectors to schema-valid parameters. ANAB v0.10.0 normative controls and public declaration schemas are unchanged. DCAS 0.2 requires reviewed explicit bindings; historical results are not migrated automatically.

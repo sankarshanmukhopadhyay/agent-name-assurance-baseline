@@ -21,3 +21,7 @@ AIS-1 v0.2 is experimental in this stack. It contributes bonded identity, sponso
 If TIS changes any runtime governance, authority boundary, status, decision receipt, registry publication, or evidence bundle schema, maintainers SHOULD open a drift review before issuing a new ANAB minor release.
 
 If AIS-1 changes `agentClass`, `parentDid`, DID resolution, registry status, timestamp semantics, SOA cascade revocation, or Assurance Container semantics, maintainers SHOULD open a standards drift review before issuing a new ANAB minor release.
+
+## Unreleased executable integration
+
+The released alignment above is unchanged. The synthetic fixture suite pins the DCAS evaluator at `f1c81870d5a3e130841ff550d17e5a6f2fc3683c` (contract 0.2), not the DCAS v0.10.0 release. See [implementation validation](implementation-validation.md). This is not a new released stack or live interoperability claim.

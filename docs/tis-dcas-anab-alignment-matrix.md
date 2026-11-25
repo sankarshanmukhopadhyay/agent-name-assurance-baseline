@@ -16,3 +16,7 @@
 ## Non-overlap principle
 
 The three repositories MUST NOT collapse into one another. TIS should not become an evaluator. DCAS should not redefine TIS schemas. ANAB should not become a generic conformance method. Interoperability comes from explicit boundaries, stable references, and repeatable validation.
+
+## Unreleased assessment contract
+
+ANAB v0.10.0 remains the normative target. The synthetic implementation pack uses pinned DCAS contract 0.2, with explicit requirement bindings, while TIS artifact semantics remain unchanged. See [DCAS composition](dcas-composition.md).

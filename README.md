@@ -39,6 +39,10 @@ A normative assurance and governance baseline for **Agent Names** and **Agent Pa
 7. For TIS-backed agent deployments, review `docs/tis-v0.10-agent-name-composition.md` and the sample `conformance/samples/tis-v0.10-backed-enterprise-agent.json`
 8. For AIS-1 v0.2-backed agent deployments, review `profiles/ais1/anab-profile.md` and the optional extension schema `conformance/ais1-v0.2-profile-extension.schema.json`
 
+## Validate and evaluate (unreleased tooling)
+
+Follow [implementation validation](docs/implementation-validation.md) for local checks and a pinned DCAS 0.2 round trip. See [DCAS composition](docs/dcas-composition.md) for evidence boundaries and migration. Synthetic fixtures are not production assurance.
+
 ## Contents
 - **Normative spec:** `spec/agent-name-assurance-baseline.md`
 - **Control catalog:** embedded in the spec (Control IDs like `ANAGB-RES-01`, `ANAGB-AI-03`)
@@ -97,7 +101,7 @@ Implementers SHOULD publish a **signed** conformance declaration using `conforma
 
 4. **Validate locally (same checks as CI)**
    ```bash
-   python -m pip install jsonschema
+   python -m pip install -r requirements-ci.txt
    python tools/validate_repo.py
    ```
 

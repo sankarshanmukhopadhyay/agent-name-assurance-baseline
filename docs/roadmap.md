@@ -217,3 +217,7 @@ Delivered:
 - Portfolio drift review and release impact documentation for cross-repo maintenance.
 
 **Outcome:** ANAB can interpret TIS v0.10 runtime assurance artifacts and AIS-1 v0.2 bonded identity signals without converting identity into authority or registry status into provenance.
+
+## Implementation assurance maturation (unreleased)
+
+Issue #15 operationalizes six bounded synthetic assessment cases with independently consumed requirement bindings, a pinned DCAS evaluator, and an expanded A2A admission regression suite. No normative-core expansion. Real source evidence authentication and independent platform execution remain outside this tranche.
