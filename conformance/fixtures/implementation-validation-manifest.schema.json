@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "baseline",
+    "purpose",
+    "authority",
+    "outcomes",
+    "fixtures",
+    "falsification",
+    "dcas"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "const": "ANAB"
+        },
+        "version": {
+          "const": "0.10.0"
+        }
+      }
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owns",
+        "does_not_own"
+      ],
+      "properties": {
+        "owns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "does_not_own": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "outcomes": {
+      "const": [
+        "PASS",
+        "FAIL",
+        "INDETERMINATE"
+      ]
+    },
+    "falsification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dcas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "revision",
+        "contract_version"
+      ],
+      "properties": {
+        "repository": {
+          "const": "sankarshanmukhopadhyay/dtg-conformance-assurance"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "contract_version": {
+          "const": "0.2"
+        }
+      }
+    },
+    "fixtures": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "requirements",
+          "expected_outcome",
+          "rationale",
+          "input",
+          "expected_findings"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ANAB-FX-[0-9]{3}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requirements": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "expected_outcome": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "INDETERMINATE"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input": {
+            "type": "string",
+            "pattern": "^cases/ANAB-FX-[0-9]{3}\\.json$"
+          },
+          "expected_findings": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "enum": [
+                "PASS",
+                "FAIL",
+                "INDETERMINATE"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

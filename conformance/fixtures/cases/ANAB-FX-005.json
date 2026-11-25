@@ -1,0 +1,47 @@
+{
+  "fixture_id": "ANAB-FX-005",
+  "synthetic": true,
+  "evaluation_time": "2026-11-25T00:00:00Z",
+  "target": {
+    "baseline": "ANAB",
+    "version": "0.10.0",
+    "profile": "Enterprise"
+  },
+  "policy": {
+    "missing_evidence": "INDETERMINATE",
+    "stale_evidence": "FAIL",
+    "revoked_evidence": "FAIL",
+    "authority_inference_from_identity": false
+  },
+  "requirement_evidence": {
+    "ANAGB-UI-01": [
+      "tier-display"
+    ],
+    "ANAGB-UI-02": [
+      "assurance-distinction"
+    ],
+    "ANAGB-RES-06": [
+      "transparency-log"
+    ]
+  },
+  "observations": [
+    {
+      "id": "tier-display",
+      "status": "contradicted",
+      "description": "Synthetic observation of displayed tier versus demonstrated tier",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-005:tier-display"
+    },
+    {
+      "id": "assurance-distinction",
+      "status": "available",
+      "description": "Synthetic observation of separation of identity and authority assurance",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-005:assurance-distinction"
+    },
+    {
+      "id": "transparency-log",
+      "status": "missing",
+      "description": "Synthetic observation of Enterprise material binding change log",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-005:transparency-log"
+    }
+  ]
+}

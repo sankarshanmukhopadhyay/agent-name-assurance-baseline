@@ -1,0 +1,48 @@
+{
+  "fixture_id": "ANAB-FX-002",
+  "synthetic": true,
+  "evaluation_time": "2026-11-25T00:00:00Z",
+  "target": {
+    "baseline": "ANAB",
+    "version": "0.10.0",
+    "profile": "Enterprise"
+  },
+  "policy": {
+    "missing_evidence": "INDETERMINATE",
+    "stale_evidence": "FAIL",
+    "revoked_evidence": "FAIL",
+    "authority_inference_from_identity": false
+  },
+  "requirement_evidence": {
+    "ANAGB-RES-02": [
+      "binding-freshness"
+    ],
+    "ANAGB-A2A-09": [
+      "binding-freshness",
+      "status"
+    ],
+    "ANAGB-A2A-10": [
+      "safe-client"
+    ]
+  },
+  "observations": [
+    {
+      "id": "binding-freshness",
+      "status": "stale",
+      "description": "Synthetic observation of binding freshness against relying-party interval",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-002:binding-freshness"
+    },
+    {
+      "id": "status",
+      "status": "available",
+      "description": "Synthetic observation of current binding/operator status",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-002:status"
+    },
+    {
+      "id": "safe-client",
+      "status": "available",
+      "description": "Synthetic observation of client refusing reliance on adverse or missing metadata",
+      "observation_ref": "urn:anab:synthetic:ANAB-FX-002:safe-client"
+    }
+  ]
+}

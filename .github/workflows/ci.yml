@@ -38,6 +38,29 @@ jobs:
         run: |
           python tools/validate_repo.py
 
+      - name: Checkout pinned DCAS evaluator
+        uses: actions/checkout@v7
+        with:
+          repository: sankarshanmukhopadhyay/dtg-conformance-assurance
+          ref: f1c81870d5a3e130841ff550d17e5a6f2fc3683c
+          path: .dcas-evaluator
+          persist-credentials: false
+
+      - name: Compare independent DCAS fixture outcomes
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python tools/validate_implementation_fixtures.py --dcas .dcas-evaluator --output "$RUNNER_TEMP/anab-assessment"
+
+      - name: Retain synthetic assessment evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: anab-dcas-synthetic-assessment
+          path: ${{ runner.temp }}/anab-assessment/
+          if-no-files-found: error
+
+      - name: Remove independent checkout before repository-wide checks
+        run: rm -rf .dcas-evaluator
+
       - name: Lint markdown (structural)
         run: |
           python tools/lint_markdown.py

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_id",
+    "synthetic",
+    "evaluation_time",
+    "target",
+    "policy",
+    "requirement_evidence",
+    "observations"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "const": true
+    },
+    "evaluation_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline",
+        "version",
+        "profile"
+      ],
+      "properties": {
+        "baseline": {
+          "const": "ANAB"
+        },
+        "version": {
+          "const": "0.10.0"
+        },
+        "profile": {
+          "const": "Enterprise"
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "missing_evidence",
+        "stale_evidence",
+        "revoked_evidence",
+        "authority_inference_from_identity"
+      ],
+      "properties": {
+        "missing_evidence": {
+          "const": "INDETERMINATE"
+        },
+        "stale_evidence": {
+          "const": "FAIL"
+        },
+        "revoked_evidence": {
+          "const": "FAIL"
+        },
+        "authority_inference_from_identity": {
+          "const": false
+        }
+      }
+    },
+    "requirement_evidence": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "description",
+          "observation_ref"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "available",
+              "missing",
+              "unverifiable",
+              "stale",
+              "revoked",
+              "contradicted"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observation_ref": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  }
+}

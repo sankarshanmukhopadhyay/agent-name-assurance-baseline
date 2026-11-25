@@ -1,64 +1,143 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "baseline": {
     "name": "ANAB",
     "version": "0.10.0"
   },
-  "purpose": "Falsifiable implementation-validation vectors for independent assurance evaluation.",
+  "purpose": "Synthetic bounded requirement-level assessment fixtures; not production assurance.",
   "authority": {
-    "owns": ["ANAB domain requirements", "ANAB evidence expectations", "expected domain outcome"],
-    "does_not_own": ["DCAS evaluation algorithm", "Interop Lab admission or promotion decision", "delegated authority semantics outside ANAB"]
+    "owns": [
+      "ANAB domain requirements",
+      "ANAB evidence expectations",
+      "expected domain outcome"
+    ],
+    "does_not_own": [
+      "DCAS evaluation algorithm",
+      "Interop Lab admission or promotion decision",
+      "delegated authority semantics outside ANAB"
+    ]
   },
-  "outcomes": ["PASS", "FAIL", "INDETERMINATE"],
+  "outcomes": [
+    "PASS",
+    "FAIL",
+    "INDETERMINATE"
+  ],
   "fixtures": [
     {
       "id": "ANAB-FX-001",
-      "title": "Conforming production named agent",
-      "source": "../samples/dcas-ready-enterprise-agent.json",
-      "requirements": ["ANAGB-RES-01", "ANAGB-RES-02", "ANAGB-A2A-07", "ANAGB-A2A-09", "ANAGB-IR-03"],
+      "title": "Conforming bounded synthetic named-agent propositions",
+      "requirements": [
+        "ANAGB-RES-01",
+        "ANAGB-RES-02",
+        "ANAGB-A2A-07",
+        "ANAGB-A2A-09",
+        "ANAGB-IR-03"
+      ],
       "expected_outcome": "PASS",
-      "rationale": "Declaration and evidence are expected to satisfy the selected ANAB target when current and verifiable."
+      "rationale": "Only the listed propositions are assessed, not complete Enterprise or production conformance.",
+      "input": "cases/ANAB-FX-001.json",
+      "expected_findings": {
+        "ANAGB-RES-01": "PASS",
+        "ANAGB-RES-02": "PASS",
+        "ANAGB-A2A-07": "PASS",
+        "ANAGB-A2A-09": "PASS",
+        "ANAGB-IR-03": "PASS"
+      }
     },
     {
       "id": "ANAB-FX-002",
       "title": "Stale identity/name binding",
-      "mutation": "binding freshness is outside the relying-party acceptance window",
-      "requirements": ["ANAGB-RES-02", "ANAGB-A2A-09", "ANAGB-A2A-10"],
+      "requirements": [
+        "ANAGB-RES-02",
+        "ANAGB-A2A-09",
+        "ANAGB-A2A-10"
+      ],
       "expected_outcome": "FAIL",
-      "rationale": "A stale binding cannot support a current name-assurance claim."
+      "rationale": "A stale binding cannot support a current name-assurance claim.",
+      "input": "cases/ANAB-FX-002.json",
+      "expected_findings": {
+        "ANAGB-RES-02": "FAIL",
+        "ANAGB-A2A-09": "FAIL",
+        "ANAGB-A2A-10": "PASS"
+      }
     },
     {
       "id": "ANAB-FX-003",
       "title": "Revoked operator or binding",
-      "mutation": "current status evidence demonstrates revocation",
-      "requirements": ["ANAGB-A2A-09", "ANAGB-A2A-10", "ANAGB-IR-03", "ANAGB-IR-04"],
+      "requirements": [
+        "ANAGB-A2A-09",
+        "ANAGB-A2A-10",
+        "ANAGB-IR-03",
+        "ANAGB-IR-04"
+      ],
       "expected_outcome": "FAIL",
-      "rationale": "Positive revocation evidence contradicts the current assurance proposition."
+      "rationale": "Revoked status contradicts current reliance; the revocation mechanism and safe suspension can still work.",
+      "input": "cases/ANAB-FX-003.json",
+      "expected_findings": {
+        "ANAGB-A2A-09": "FAIL",
+        "ANAGB-A2A-10": "PASS",
+        "ANAGB-IR-03": "PASS",
+        "ANAGB-IR-04": "PASS"
+      }
     },
     {
       "id": "ANAB-FX-004",
       "title": "Missing freshness evidence",
-      "mutation": "freshness/status evidence is absent or unverifiable",
-      "requirements": ["ANAGB-A2A-09", "ANAGB-A2A-10", "ANAGB-IR-03"],
+      "requirements": [
+        "ANAGB-A2A-09",
+        "ANAGB-A2A-10",
+        "ANAGB-IR-03"
+      ],
       "expected_outcome": "INDETERMINATE",
-      "rationale": "Absence of evidence is not evidence of validity and MUST NOT be treated as PASS."
+      "rationale": "Missing freshness prevents current reliance; fail-safe handling and status mechanism may still be demonstrated.",
+      "input": "cases/ANAB-FX-004.json",
+      "expected_findings": {
+        "ANAGB-A2A-09": "INDETERMINATE",
+        "ANAGB-A2A-10": "PASS",
+        "ANAGB-IR-03": "PASS"
+      }
     },
     {
       "id": "ANAB-FX-005",
       "title": "Assurance overclaim",
-      "mutation": "claimed tier or assurance level exceeds evidence demonstrated by the bundle",
-      "requirements": ["ANAGB-UI-01", "ANAGB-UI-02", "ANAGB-RES-06"],
+      "requirements": [
+        "ANAGB-UI-01",
+        "ANAGB-UI-02",
+        "ANAGB-RES-06"
+      ],
       "expected_outcome": "FAIL",
-      "rationale": "The evaluated claim is stronger than the supporting evidence."
+      "rationale": "Tier display contradicts achieved tier; missing transparency log separately remains indeterminate.",
+      "input": "cases/ANAB-FX-005.json",
+      "expected_findings": {
+        "ANAGB-UI-01": "FAIL",
+        "ANAGB-UI-02": "PASS",
+        "ANAGB-RES-06": "INDETERMINATE"
+      }
     },
     {
       "id": "ANAB-FX-006",
       "title": "Identity valid; authority unproven",
-      "mutation": "identity/name binding evidence is valid but no action-specific authority evidence is supplied",
-      "requirements": ["ANAGB-UI-02", "ANAGB-UI-03", "ANAGB-AI-05", "ANAGB-AI-06"],
+      "requirements": [
+        "ANAGB-UI-02",
+        "ANAGB-UI-03",
+        "ANAGB-AI-05",
+        "ANAGB-AI-06"
+      ],
       "expected_outcome": "INDETERMINATE",
-      "rationale": "ANAB identity assurance MUST NOT be interpreted as delegated or action-specific authority."
+      "rationale": "Identity/authority distinction and honest display can pass while action authority and step-up reliance remain unestablished.",
+      "input": "cases/ANAB-FX-006.json",
+      "expected_findings": {
+        "ANAGB-UI-02": "PASS",
+        "ANAGB-UI-03": "INDETERMINATE",
+        "ANAGB-AI-05": "INDETERMINATE",
+        "ANAGB-AI-06": "PASS"
+      }
     }
   ],
-  "falsification": "If an expected outcome cannot be represented using existing ANAB requirement and evidence semantics, record the concrete gap before changing the normative core."
+  "falsification": "If an expected outcome cannot be represented using existing ANAB requirement and evidence semantics, record the concrete gap before changing the normative core.",
+  "dcas": {
+    "repository": "sankarshanmukhopadhyay/dtg-conformance-assurance",
+    "revision": "f1c81870d5a3e130841ff550d17e5a6f2fc3683c",
+    "contract_version": "0.2"
+  }
 }
