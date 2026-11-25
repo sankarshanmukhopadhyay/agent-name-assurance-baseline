@@ -37,6 +37,7 @@ jobs:
       - name: Validate repo
         run: |
           python tools/validate_repo.py
+          python -m unittest discover -s tests -p 'test_*.py'
 
       - name: Checkout pinned DCAS evaluator
         uses: actions/checkout@v7

@@ -1,22 +1,19 @@
 # ANAB composition with DCAS
 
-ANAB is a domain baseline. It does not try to be the evaluator. Its job is to define what a named agent implementation claims, what evidence should exist, and how that evidence is packaged.
+ANAB defines named-agent domain requirements and evidence expectations. DCAS independently evaluates assessed evidence; neither a declaration nor an evaluator decision alone establishes relying-party acceptance.
 
-DCAS is the verifier workflow that can consume those claims and determine whether reliance is justified for a given use case.
+## Adoption path
 
-## Composition pattern
+1. Choose ANAB tier, profile and applicable controls using the normative baseline and applicability matrix.
+2. Publish a signed declaration and evidence bundle, preserving control IDs and artifact references.
+3. An assessor establishes the relevance, authenticity, freshness and sufficiency of evidence for each requirement. Record missing, unverifiable, stale, revoked and contradicted evidence explicitly.
+4. Submit explicit requirement-to-evidence bindings and a deterministic evaluation context to DCAS contract 0.2.
+5. Retain per-requirement findings, source evidence and evaluator identity for audit. The relying party decides whether the bounded result supports reliance.
 
-1. The implementer publishes an ANAB conformance declaration.
-2. The implementer or assessor publishes an ANAB evidence bundle.
-3. A DCAS evaluator maps the declared ANAB controls to its own control objectives and produces an evaluation result.
-4. Relying parties consume the evaluation result while preserving the original ANAB identifiers for traceability.
+## Executable integration (unreleased)
 
-## What changed in this increment
+The [implementation validation pack](implementation-validation.md) runs the DCAS reference CLI at [the pinned evaluator revision](https://github.com/sankarshanmukhopadhyay/dtg-conformance-assurance/tree/f1c81870d5a3e130841ff550d17e5a6f2fc3683c). This is evaluator contract 0.2, not the published DCAS v0.10.0 release. The ANAB normative target remains v0.10.0.
 
-This release adds a DCAS-ready sample declaration so downstream evaluators have a concrete starting point. The intent is to reduce one of the most common integration failures: translating away the original ANAB control identifiers too early.
+The older `conformance/samples/dcas-ready-enterprise-agent.json` is an illustrative declaration, not an assessed input or a real evidence bundle. Its placeholder references and digest are not proof. Historical DCAS 0.1 results remain historical; reassess explicit bindings before producing a current 0.2 result. Do not map every available observation to every control.
 
-## Practical guidance
-
-- keep the ANAB declaration authoritative for domain-specific control status
-- use DCAS for evaluation posture, not for renaming the baseline
-- preserve assurance level and evidence bundle references as stable pointers
+The synthetic case adapter is not a production evidence authenticator. It does not consume live Trust Tasks records; such intake belongs to DCAS. A future real assessment must preserve the original source evidence, scope and assessor authority independently. Identity/name assurance cannot imply permission to execute a consequential action.

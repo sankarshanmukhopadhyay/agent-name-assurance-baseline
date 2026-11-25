@@ -1,57 +1,34 @@
 # ANAB documentation
 
-This documentation set is the **front door** for the Agent Name Assurance Baseline (ANAB), a domain baseline that composes with canonical trust artifact schemas from `trust-infrastructure-schemas` (OTAM implementation).
+ANAB is a domain baseline for Agent Names and Agent Pages. Choose a path by role.
 
-## Start here
+## Adopt the baseline
 
-- Normative spec: `../spec/agent-name-assurance-baseline.md`
-- Assurance model: `assurance-levels.md`
-- Implementer guidance: `implementer-guidance.md`
-- Versioning & compatibility: `versioning-and-compatibility.md`
-- A2A alignment: `a2a-alignment.md`
-- ANAB-over-A2A binding: `anab-over-a2a-binding.md`
-- OASF integration: `oasf-integration.md`
-- Optional ODRL policy references: `odrl-policy-reference.md`
-- AIS-1 v0.2 interpretation profile *(experimental)*: `ais1-interpretation-profile.md`
-- Runtime identity lifecycle *(experimental guidance)*: `runtime-identity-lifecycle.md`
-- TIS v0.10 agent-name composition: `tis-v0.10-agent-name-composition.md`
-- TIS/DCAS/ANAB alignment matrix: `tis-dcas-anab-alignment-matrix.md`
-- Known-good stack: `known-good-stack.md`
-- Portfolio drift review for AIS-1 v0.2: `portfolio-drift-review-ais1-v0.2.md`
-- Release impact for v0.10.0: `release-impact-v0.10.0.md`
-- Agent Governance Toolkit alignment *(experimental)*: `experimental/agent-governance-toolkit-alignment.md`
+- [Normative specification](../spec/agent-name-assurance-baseline.md)
+- [Applicability matrix](../conformance/applicability-matrix.md) and [checklist](../conformance/checklist.md)
+- [Assurance levels](assurance-levels.md) and [implementer guidance](implementer-guidance.md)
+- [Declaration schema](../conformance/conformance-declaration.schema.json) and [sample](../conformance/sample-conformance-declaration.json)
+- [Evidence bundles](../evidence-bundles/README.md)
 
-## Conformance
+## Assess and test
 
-- Applicability matrix (tier/profile): `../conformance/applicability-matrix.md`
-- Checklist: `../conformance/checklist.md`
-- Declaration schema + example:
-  - `../conformance/conformance-declaration.schema.json`
-  - `../conformance/sample-conformance-declaration.json`
+- [Implementation validation and executable fixtures](implementation-validation.md)
+- [DCAS composition and migration](dcas-composition.md)
+- [ANAB-over-A2A binding](anab-over-a2a-binding.md) and [A2A alignment](a2a-alignment.md)
+- [Runtime identity lifecycle](runtime-identity-lifecycle.md) (experimental)
 
-## Upstream inputs
+## Integrate with an ecosystem
 
-- Upstream reference and local notes: `../upstream/agent-names-and-agent-pages/README.md`
+- [Architecture](architecture.md), [ecosystem interoperability](ecosystem-interoperability.md), [transport alignment](tsp-alignment.md)
+- [TIS v0.10 composition](tis-v0.10-agent-name-composition.md), [alignment matrix](tis-dcas-anab-alignment-matrix.md), [known-good stack](known-good-stack.md)
+- [AIS-1 interpretation](ais1-interpretation-profile.md), [AIS-1 drift review](portfolio-drift-review-ais1-v0.2.md)
+- [OASF publication](oasf-integration.md), [ODRL policy references](odrl-policy-reference.md)
+- [Agent Governance Toolkit alignment](experimental/agent-governance-toolkit-alignment.md) (experimental)
+- [Upstream Agent Names reference](../upstream/agent-names-and-agent-pages/README.md), [DTG credentials](../upstream/dtg-credentials.md), [VTI](../upstream/verifiable-trust-infrastructure.md), [openVTC](../upstream/openvtc.md)
 
-## Ecosystem interoperability
+## Maintainers and releases
 
-- Ecosystem interoperability: `ecosystem-interoperability.md`
-- Architecture snapshot: `architecture.md`
-- Upstream references:
-  - `../upstream/dtg-credentials.md`
-  - `../upstream/verifiable-trust-infrastructure.md`
-  - `../upstream/openvtc.md`
-
-## Interoperability
-
-- [Ecosystem interoperability](ecosystem-interoperability.md)
-- [Architecture snapshot](architecture.md)
-- [Transport alignment (TSP)](tsp-alignment.md)
-
-
-## Composition
-
-- `dcas-composition.md` — how ANAB declarations and evidence bundles feed a DCAS evaluation flow.
-- `tis-v0.10-agent-name-composition.md` — how TIS v0.10 runtime assurance artifacts support named-agent evidence without replacing ANAB controls.
-- `oasf-integration.md` — how ANAB declarations and evidence pointers travel through an OASF publication surface.
-- `odrl-policy-reference.md` — optional ODRL-compatible policy publication for bounded usage, disclosure, and notice conditions.
+- [Versioning and compatibility](versioning-and-compatibility.md)
+- [Roadmap](roadmap.md)
+- [v0.10.0 release impact](release-impact-v0.10.0.md)
+- [GitHub Pages](github-pages.md)

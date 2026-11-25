@@ -41,3 +41,7 @@ A practical deployment stack looks like this:
 That separation keeps the architecture honest. A name can be well assured while the endpoint remains operationally weak. Conversely, a secure endpoint does not rescue a misleading name.
 
 The detailed binding is specified in `docs/anab-over-a2a-binding.md`.
+
+## Admission regression suite
+
+The experimental A2A admission gate tests structural validity, freshness, downgrade behavior and the declared authority boundary. It permits assessment, not execution. See [binding guidance](anab-over-a2a-binding.md) and [implementation validation](implementation-validation.md).

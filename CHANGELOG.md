@@ -6,6 +6,15 @@ This repo follows semantic versioning as described in `docs/versioning-and-compa
 
 ## [Unreleased]
 
+### Added
+- Six concrete synthetic assessment cases, versioned manifest/case schemas, explicit requirement bindings and pinned DCAS 0.2 CLI comparison with retained evidence.
+- Regression tests for false success, missing observations, invalid policy and A2A admission.
+
+### Changed
+- Experimental A2A gate rejects schema-invalid metadata, invalid temporal intervals and verified claims without a freshness bound. Admission remains distinct from authorization.
+- Fixture manifest 1.1 replaces prose mutations with executable inputs and expected per-control findings; consumers must migrate from 1.0.
+- Refreshed adoption, compatibility and evaluation guidance. ANAB normative controls and public declaration schemas unchanged.
+
 ## [0.10.0] - 2026-07-03
 
 ### Added
