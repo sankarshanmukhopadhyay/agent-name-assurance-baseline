@@ -53,7 +53,7 @@ jobs:
         run: python tools/validate_implementation_fixtures.py --dcas .dcas-evaluator --output "$RUNNER_TEMP/anab-assessment"
 
       - name: Retain synthetic assessment evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: anab-dcas-synthetic-assessment
           path: ${{ runner.temp }}/anab-assessment/
